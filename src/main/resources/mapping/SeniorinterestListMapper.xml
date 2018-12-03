@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.SeniorinterestListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.SeniorinterestList" >
+    <id column="cat_id" property="catId" jdbcType="VARCHAR" />
+    <result column="cat_name" property="catName" jdbcType="VARCHAR" />
+    <result column="interest_id" property="interestId" jdbcType="VARCHAR" />
+    <result column="interest_name" property="interestName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cat_id, cat_name, interest_id, interest_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from target_seniorinterest_list
+    where cat_id = #{catId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from target_seniorinterest_list
+    where cat_id = #{catId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.SeniorinterestList" >
+    insert into target_seniorinterest_list (cat_id, cat_name, interest_id, 
+      interest_name)
+    values (#{catId,jdbcType=VARCHAR}, #{catName,jdbcType=VARCHAR}, #{interestId,jdbcType=VARCHAR}, 
+      #{interestName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.SeniorinterestList" >
+    insert into target_seniorinterest_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="catId != null" >
+        cat_id,
+      </if>
+      <if test="catName != null" >
+        cat_name,
+      </if>
+      <if test="interestId != null" >
+        interest_id,
+      </if>
+      <if test="interestName != null" >
+        interest_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="catId != null" >
+        #{catId,jdbcType=VARCHAR},
+      </if>
+      <if test="catName != null" >
+        #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="interestId != null" >
+        #{interestId,jdbcType=VARCHAR},
+      </if>
+      <if test="interestName != null" >
+        #{interestName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.SeniorinterestList" >
+    update target_seniorinterest_list
+    <set >
+      <if test="catName != null" >
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="interestId != null" >
+        interest_id = #{interestId,jdbcType=VARCHAR},
+      </if>
+      <if test="interestName != null" >
+        interest_name = #{interestName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cat_id = #{catId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.SeniorinterestList" >
+    update target_seniorinterest_list
+    set cat_name = #{catName,jdbcType=VARCHAR},
+      interest_id = #{interestId,jdbcType=VARCHAR},
+      interest_name = #{interestName,jdbcType=VARCHAR}
+    where cat_id = #{catId,jdbcType=VARCHAR}
+  </update>
+</mapper>
