@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AdgroupRptsDayGetMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdgroupRptsDayGet" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
+    <result column="campaign_name" property="campaignName" jdbcType="VARCHAR" />
+    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
+    <result column="adgroup_name" property="adgroupName" jdbcType="VARCHAR" />
+    <result column="cvr" property="cvr" jdbcType="VARCHAR" />
+    <result column="alipay_inshop_amt" property="alipayInshopAmt" jdbcType="VARCHAR" />
+    <result column="alipay_in_shop_num" property="alipayInShopNum" jdbcType="VARCHAR" />
+    <result column="gmv_inshop_amt" property="gmvInshopAmt" jdbcType="VARCHAR" />
+    <result column="gmv_inshop_num" property="gmvInshopNum" jdbcType="VARCHAR" />
+    <result column="cart_num" property="cartNum" jdbcType="VARCHAR" />
+    <result column="dir_shop_col_num" property="dirShopColNum" jdbcType="VARCHAR" />
+    <result column="inshop_item_col_num" property="inshopItemColNum" jdbcType="VARCHAR" />
+    <result column="avg_access_page_num" property="avgAccessPageNum" jdbcType="VARCHAR" />
+    <result column="avg_access_time" property="avgAccessTime" jdbcType="VARCHAR" />
+    <result column="deep_inshop_uv" property="deepInshopUv" jdbcType="VARCHAR" />
+    <result column="uv" property="uv" jdbcType="VARCHAR" />
+    <result column="ecpm" property="ecpm" jdbcType="VARCHAR" />
+    <result column="ecpc" property="ecpc" jdbcType="VARCHAR" />
+    <result column="ctr" property="ctr" jdbcType="VARCHAR" />
+    <result column="charge" property="charge" jdbcType="VARCHAR" />
+    <result column="click" property="click" jdbcType="VARCHAR" />
+    <result column="ad_pv" property="adPv" jdbcType="VARCHAR" />
+    <result column="roi" property="roi" jdbcType="VARCHAR" />
+    <result column="commodity_purchase_rate" property="commodityPurchaseRate" jdbcType="VARCHAR" />
+    <result column="commodity_collection_rate" property="commodityCollectionRate" jdbcType="VARCHAR" />
+    <result column="total_collection_rate" property="totalCollectionRate" jdbcType="VARCHAR" />
+    <result column="commodity_plus_cost" property="commodityPlusCost" jdbcType="VARCHAR" />
+    <result column="commodity_collection_cost" property="commodityCollectionCost" jdbcType="VARCHAR" />
+    <result column="total_collection_plus_cost" property="totalCollectionPlusCost" jdbcType="VARCHAR" />
+    <result column="average_cost_of_order" property="averageCostOfOrder" jdbcType="VARCHAR" />
+    <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
+    <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
+    <result column="log_date" property="logDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, campaign_id, campaign_name, adgroup_id, adgroup_name, cvr, alipay_inshop_amt, 
+    alipay_in_shop_num, gmv_inshop_amt, gmv_inshop_num, cart_num, dir_shop_col_num, inshop_item_col_num, 
+    avg_access_page_num, avg_access_time, deep_inshop_uv, uv, ecpm, ecpc, ctr, charge, 
+    click, ad_pv, roi, commodity_purchase_rate, commodity_collection_rate, total_collection_rate, 
+    commodity_plus_cost, commodity_collection_cost, total_collection_plus_cost, average_cost_of_order, 
+    order_average_amount, average_uv_value, log_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from advertiser_adgroup_rpts_day_get
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from advertiser_adgroup_rpts_day_get
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdgroupRptsDayGet" >
+    insert into advertiser_adgroup_rpts_day_get (id, taobao_user_id, campaign_id, 
+      campaign_name, adgroup_id, adgroup_name, 
+      cvr, alipay_inshop_amt, alipay_in_shop_num, 
+      gmv_inshop_amt, gmv_inshop_num, cart_num, 
+      dir_shop_col_num, inshop_item_col_num, avg_access_page_num, 
+      avg_access_time, deep_inshop_uv, uv, 
+      ecpm, ecpc, ctr, charge, 
+      click, ad_pv, roi, commodity_purchase_rate, 
+      commodity_collection_rate, total_collection_rate, 
+      commodity_plus_cost, commodity_collection_cost, 
+      total_collection_plus_cost, average_cost_of_order, 
+      order_average_amount, average_uv_value, log_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{campaignName,jdbcType=VARCHAR}, #{adgroupId,jdbcType=BIGINT}, #{adgroupName,jdbcType=VARCHAR}, 
+      #{cvr,jdbcType=VARCHAR}, #{alipayInshopAmt,jdbcType=VARCHAR}, #{alipayInShopNum,jdbcType=VARCHAR}, 
+      #{gmvInshopAmt,jdbcType=VARCHAR}, #{gmvInshopNum,jdbcType=VARCHAR}, #{cartNum,jdbcType=VARCHAR}, 
+      #{dirShopColNum,jdbcType=VARCHAR}, #{inshopItemColNum,jdbcType=VARCHAR}, #{avgAccessPageNum,jdbcType=VARCHAR}, 
+      #{avgAccessTime,jdbcType=VARCHAR}, #{deepInshopUv,jdbcType=VARCHAR}, #{uv,jdbcType=VARCHAR}, 
+      #{ecpm,jdbcType=VARCHAR}, #{ecpc,jdbcType=VARCHAR}, #{ctr,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
+      #{click,jdbcType=VARCHAR}, #{adPv,jdbcType=VARCHAR}, #{roi,jdbcType=VARCHAR}, #{commodityPurchaseRate,jdbcType=VARCHAR}, 
+      #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
+      #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
+      #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
+      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdgroupRptsDayGet" >
+    insert into advertiser_adgroup_rpts_day_get
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="campaignId != null" >
+        campaign_id,
+      </if>
+      <if test="campaignName != null" >
+        campaign_name,
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id,
+      </if>
+      <if test="adgroupName != null" >
+        adgroup_name,
+      </if>
+      <if test="cvr != null" >
+        cvr,
+      </if>
+      <if test="alipayInshopAmt != null" >
+        alipay_inshop_amt,
+      </if>
+      <if test="alipayInShopNum != null" >
+        alipay_in_shop_num,
+      </if>
+      <if test="gmvInshopAmt != null" >
+        gmv_inshop_amt,
+      </if>
+      <if test="gmvInshopNum != null" >
+        gmv_inshop_num,
+      </if>
+      <if test="cartNum != null" >
+        cart_num,
+      </if>
+      <if test="dirShopColNum != null" >
+        dir_shop_col_num,
+      </if>
+      <if test="inshopItemColNum != null" >
+        inshop_item_col_num,
+      </if>
+      <if test="avgAccessPageNum != null" >
+        avg_access_page_num,
+      </if>
+      <if test="avgAccessTime != null" >
+        avg_access_time,
+      </if>
+      <if test="deepInshopUv != null" >
+        deep_inshop_uv,
+      </if>
+      <if test="uv != null" >
+        uv,
+      </if>
+      <if test="ecpm != null" >
+        ecpm,
+      </if>
+      <if test="ecpc != null" >
+        ecpc,
+      </if>
+      <if test="ctr != null" >
+        ctr,
+      </if>
+      <if test="charge != null" >
+        charge,
+      </if>
+      <if test="click != null" >
+        click,
+      </if>
+      <if test="adPv != null" >
+        ad_pv,
+      </if>
+      <if test="roi != null" >
+        roi,
+      </if>
+      <if test="commodityPurchaseRate != null" >
+        commodity_purchase_rate,
+      </if>
+      <if test="commodityCollectionRate != null" >
+        commodity_collection_rate,
+      </if>
+      <if test="totalCollectionRate != null" >
+        total_collection_rate,
+      </if>
+      <if test="commodityPlusCost != null" >
+        commodity_plus_cost,
+      </if>
+      <if test="commodityCollectionCost != null" >
+        commodity_collection_cost,
+      </if>
+      <if test="totalCollectionPlusCost != null" >
+        total_collection_plus_cost,
+      </if>
+      <if test="averageCostOfOrder != null" >
+        average_cost_of_order,
+      </if>
+      <if test="orderAverageAmount != null" >
+        order_average_amount,
+      </if>
+      <if test="averageUvValue != null" >
+        average_uv_value,
+      </if>
+      <if test="logDate != null" >
+        log_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="campaignName != null" >
+        #{campaignName,jdbcType=VARCHAR},
+      </if>
+      <if test="adgroupId != null" >
+        #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupName != null" >
+        #{adgroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cvr != null" >
+        #{cvr,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayInshopAmt != null" >
+        #{alipayInshopAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayInShopNum != null" >
+        #{alipayInShopNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gmvInshopAmt != null" >
+        #{gmvInshopAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="gmvInshopNum != null" >
+        #{gmvInshopNum,jdbcType=VARCHAR},
+      </if>
+      <if test="cartNum != null" >
+        #{cartNum,jdbcType=VARCHAR},
+      </if>
+      <if test="dirShopColNum != null" >
+        #{dirShopColNum,jdbcType=VARCHAR},
+      </if>
+      <if test="inshopItemColNum != null" >
+        #{inshopItemColNum,jdbcType=VARCHAR},
+      </if>
+      <if test="avgAccessPageNum != null" >
+        #{avgAccessPageNum,jdbcType=VARCHAR},
+      </if>
+      <if test="avgAccessTime != null" >
+        #{avgAccessTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deepInshopUv != null" >
+        #{deepInshopUv,jdbcType=VARCHAR},
+      </if>
+      <if test="uv != null" >
+        #{uv,jdbcType=VARCHAR},
+      </if>
+      <if test="ecpm != null" >
+        #{ecpm,jdbcType=VARCHAR},
+      </if>
+      <if test="ecpc != null" >
+        #{ecpc,jdbcType=VARCHAR},
+      </if>
+      <if test="ctr != null" >
+        #{ctr,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null" >
+        #{charge,jdbcType=VARCHAR},
+      </if>
+      <if test="click != null" >
+        #{click,jdbcType=VARCHAR},
+      </if>
+      <if test="adPv != null" >
+        #{adPv,jdbcType=VARCHAR},
+      </if>
+      <if test="roi != null" >
+        #{roi,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPurchaseRate != null" >
+        #{commodityPurchaseRate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityCollectionRate != null" >
+        #{commodityCollectionRate,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCollectionRate != null" >
+        #{totalCollectionRate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPlusCost != null" >
+        #{commodityPlusCost,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityCollectionCost != null" >
+        #{commodityCollectionCost,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCollectionPlusCost != null" >
+        #{totalCollectionPlusCost,jdbcType=VARCHAR},
+      </if>
+      <if test="averageCostOfOrder != null" >
+        #{averageCostOfOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAverageAmount != null" >
+        #{orderAverageAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="averageUvValue != null" >
+        #{averageUvValue,jdbcType=VARCHAR},
+      </if>
+      <if test="logDate != null" >
+        #{logDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdgroupRptsDayGet" >
+    update advertiser_adgroup_rpts_day_get
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="campaignName != null" >
+        campaign_name = #{campaignName,jdbcType=VARCHAR},
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupName != null" >
+        adgroup_name = #{adgroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cvr != null" >
+        cvr = #{cvr,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayInshopAmt != null" >
+        alipay_inshop_amt = #{alipayInshopAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayInShopNum != null" >
+        alipay_in_shop_num = #{alipayInShopNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gmvInshopAmt != null" >
+        gmv_inshop_amt = #{gmvInshopAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="gmvInshopNum != null" >
+        gmv_inshop_num = #{gmvInshopNum,jdbcType=VARCHAR},
+      </if>
+      <if test="cartNum != null" >
+        cart_num = #{cartNum,jdbcType=VARCHAR},
+      </if>
+      <if test="dirShopColNum != null" >
+        dir_shop_col_num = #{dirShopColNum,jdbcType=VARCHAR},
+      </if>
+      <if test="inshopItemColNum != null" >
+        inshop_item_col_num = #{inshopItemColNum,jdbcType=VARCHAR},
+      </if>
+      <if test="avgAccessPageNum != null" >
+        avg_access_page_num = #{avgAccessPageNum,jdbcType=VARCHAR},
+      </if>
+      <if test="avgAccessTime != null" >
+        avg_access_time = #{avgAccessTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deepInshopUv != null" >
+        deep_inshop_uv = #{deepInshopUv,jdbcType=VARCHAR},
+      </if>
+      <if test="uv != null" >
+        uv = #{uv,jdbcType=VARCHAR},
+      </if>
+      <if test="ecpm != null" >
+        ecpm = #{ecpm,jdbcType=VARCHAR},
+      </if>
+      <if test="ecpc != null" >
+        ecpc = #{ecpc,jdbcType=VARCHAR},
+      </if>
+      <if test="ctr != null" >
+        ctr = #{ctr,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null" >
+        charge = #{charge,jdbcType=VARCHAR},
+      </if>
+      <if test="click != null" >
+        click = #{click,jdbcType=VARCHAR},
+      </if>
+      <if test="adPv != null" >
+        ad_pv = #{adPv,jdbcType=VARCHAR},
+      </if>
+      <if test="roi != null" >
+        roi = #{roi,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPurchaseRate != null" >
+        commodity_purchase_rate = #{commodityPurchaseRate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityCollectionRate != null" >
+        commodity_collection_rate = #{commodityCollectionRate,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCollectionRate != null" >
+        total_collection_rate = #{totalCollectionRate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPlusCost != null" >
+        commodity_plus_cost = #{commodityPlusCost,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityCollectionCost != null" >
+        commodity_collection_cost = #{commodityCollectionCost,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCollectionPlusCost != null" >
+        total_collection_plus_cost = #{totalCollectionPlusCost,jdbcType=VARCHAR},
+      </if>
+      <if test="averageCostOfOrder != null" >
+        average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAverageAmount != null" >
+        order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="averageUvValue != null" >
+        average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
+      </if>
+      <if test="logDate != null" >
+        log_date = #{logDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdgroupRptsDayGet" >
+    update advertiser_adgroup_rpts_day_get
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
+      campaign_name = #{campaignName,jdbcType=VARCHAR},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      adgroup_name = #{adgroupName,jdbcType=VARCHAR},
+      cvr = #{cvr,jdbcType=VARCHAR},
+      alipay_inshop_amt = #{alipayInshopAmt,jdbcType=VARCHAR},
+      alipay_in_shop_num = #{alipayInShopNum,jdbcType=VARCHAR},
+      gmv_inshop_amt = #{gmvInshopAmt,jdbcType=VARCHAR},
+      gmv_inshop_num = #{gmvInshopNum,jdbcType=VARCHAR},
+      cart_num = #{cartNum,jdbcType=VARCHAR},
+      dir_shop_col_num = #{dirShopColNum,jdbcType=VARCHAR},
+      inshop_item_col_num = #{inshopItemColNum,jdbcType=VARCHAR},
+      avg_access_page_num = #{avgAccessPageNum,jdbcType=VARCHAR},
+      avg_access_time = #{avgAccessTime,jdbcType=VARCHAR},
+      deep_inshop_uv = #{deepInshopUv,jdbcType=VARCHAR},
+      uv = #{uv,jdbcType=VARCHAR},
+      ecpm = #{ecpm,jdbcType=VARCHAR},
+      ecpc = #{ecpc,jdbcType=VARCHAR},
+      ctr = #{ctr,jdbcType=VARCHAR},
+      charge = #{charge,jdbcType=VARCHAR},
+      click = #{click,jdbcType=VARCHAR},
+      ad_pv = #{adPv,jdbcType=VARCHAR},
+      roi = #{roi,jdbcType=VARCHAR},
+      commodity_purchase_rate = #{commodityPurchaseRate,jdbcType=VARCHAR},
+      commodity_collection_rate = #{commodityCollectionRate,jdbcType=VARCHAR},
+      total_collection_rate = #{totalCollectionRate,jdbcType=VARCHAR},
+      commodity_plus_cost = #{commodityPlusCost,jdbcType=VARCHAR},
+      commodity_collection_cost = #{commodityCollectionCost,jdbcType=VARCHAR},
+      total_collection_plus_cost = #{totalCollectionPlusCost,jdbcType=VARCHAR},
+      average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
+      order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
+      average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
+      log_date = #{logDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
