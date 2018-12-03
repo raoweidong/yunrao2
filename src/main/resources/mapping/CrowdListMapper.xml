@@ -35,6 +35,11 @@
     from banner_crowd_find
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectAllCrowd" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from banner_crowd_find
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from banner_crowd_find
     where id = #{id,jdbcType=INTEGER}
