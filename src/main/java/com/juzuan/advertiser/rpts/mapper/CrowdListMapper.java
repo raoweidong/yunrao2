@@ -1,0 +1,19 @@
+package com.juzuan.advertiser.rpts.mapper;
+
+import com.juzuan.advertiser.rpts.model.CrowdList;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface CrowdListMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(CrowdList record);
+
+    int insertSelective(CrowdList record);
+
+    CrowdList selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(CrowdList record);
+
+    int updateByPrimaryKey(CrowdList record);
+}
