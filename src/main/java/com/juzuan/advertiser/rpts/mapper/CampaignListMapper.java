@@ -20,4 +20,6 @@ public interface CampaignListMapper {
     int updateByPrimaryKey(CampaignList record);
 
     List<CampaignList> selectAllCampaign();
+    List<CampaignList> selectDistinct();
+
 }
