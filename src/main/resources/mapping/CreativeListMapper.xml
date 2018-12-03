@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.CreativeListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.CreativeList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="creative_id" property="creativeId" jdbcType="BIGINT" />
+    <result column="creative_name" property="creativeName" jdbcType="VARCHAR" />
+    <result column="audit_status" property="auditStatus" jdbcType="INTEGER" />
+    <result column="cat_id" property="catId" jdbcType="VARCHAR" />
+    <result column="cat_name" property="catName" jdbcType="VARCHAR" />
+    <result column="click_url" property="clickUrl" jdbcType="VARCHAR" />
+    <result column="creative_level" property="creativeLevel" jdbcType="INTEGER" />
+    <result column="creative_size" property="creativeSize" jdbcType="VARCHAR" />
+    <result column="expire_time" property="expireTime" jdbcType="VARCHAR" />
+    <result column="format" property="format" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP" />
+    <result column="image_path" property="imagePath" jdbcType="VARCHAR" />
+    <result column="package_type" property="packageType" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, creative_id, creative_name, audit_status, cat_id, cat_name, click_url, 
+    creative_level, creative_size, expire_time, format, create_time, modified_time, image_path, 
+    package_type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from creative_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from creative_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CreativeList" >
+    insert into creative_list (id, taobao_user_id, creative_id, 
+      creative_name, audit_status, cat_id, 
+      cat_name, click_url, creative_level, 
+      creative_size, expire_time, format, 
+      create_time, modified_time, image_path, 
+      package_type)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{creativeId,jdbcType=BIGINT}, 
+      #{creativeName,jdbcType=VARCHAR}, #{auditStatus,jdbcType=INTEGER}, #{catId,jdbcType=VARCHAR}, 
+      #{catName,jdbcType=VARCHAR}, #{clickUrl,jdbcType=VARCHAR}, #{creativeLevel,jdbcType=INTEGER}, 
+      #{creativeSize,jdbcType=VARCHAR}, #{expireTime,jdbcType=VARCHAR}, #{format,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}, #{imagePath,jdbcType=VARCHAR}, 
+      #{packageType,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.CreativeList" >
+    insert into creative_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="creativeId != null" >
+        creative_id,
+      </if>
+      <if test="creativeName != null" >
+        creative_name,
+      </if>
+      <if test="auditStatus != null" >
+        audit_status,
+      </if>
+      <if test="catId != null" >
+        cat_id,
+      </if>
+      <if test="catName != null" >
+        cat_name,
+      </if>
+      <if test="clickUrl != null" >
+        click_url,
+      </if>
+      <if test="creativeLevel != null" >
+        creative_level,
+      </if>
+      <if test="creativeSize != null" >
+        creative_size,
+      </if>
+      <if test="expireTime != null" >
+        expire_time,
+      </if>
+      <if test="format != null" >
+        format,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time,
+      </if>
+      <if test="imagePath != null" >
+        image_path,
+      </if>
+      <if test="packageType != null" >
+        package_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="creativeId != null" >
+        #{creativeId,jdbcType=BIGINT},
+      </if>
+      <if test="creativeName != null" >
+        #{creativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="catId != null" >
+        #{catId,jdbcType=VARCHAR},
+      </if>
+      <if test="catName != null" >
+        #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="clickUrl != null" >
+        #{clickUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="creativeLevel != null" >
+        #{creativeLevel,jdbcType=INTEGER},
+      </if>
+      <if test="creativeSize != null" >
+        #{creativeSize,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        #{expireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null" >
+        #{format,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imagePath != null" >
+        #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="packageType != null" >
+        #{packageType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.CreativeList" >
+    update creative_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="creativeId != null" >
+        creative_id = #{creativeId,jdbcType=BIGINT},
+      </if>
+      <if test="creativeName != null" >
+        creative_name = #{creativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        audit_status = #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="catId != null" >
+        cat_id = #{catId,jdbcType=VARCHAR},
+      </if>
+      <if test="catName != null" >
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="clickUrl != null" >
+        click_url = #{clickUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="creativeLevel != null" >
+        creative_level = #{creativeLevel,jdbcType=INTEGER},
+      </if>
+      <if test="creativeSize != null" >
+        creative_size = #{creativeSize,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        expire_time = #{expireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null" >
+        format = #{format,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imagePath != null" >
+        image_path = #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="packageType != null" >
+        package_type = #{packageType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.CreativeList" >
+    update creative_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      creative_id = #{creativeId,jdbcType=BIGINT},
+      creative_name = #{creativeName,jdbcType=VARCHAR},
+      audit_status = #{auditStatus,jdbcType=INTEGER},
+      cat_id = #{catId,jdbcType=VARCHAR},
+      cat_name = #{catName,jdbcType=VARCHAR},
+      click_url = #{clickUrl,jdbcType=VARCHAR},
+      creative_level = #{creativeLevel,jdbcType=INTEGER},
+      creative_size = #{creativeSize,jdbcType=VARCHAR},
+      expire_time = #{expireTime,jdbcType=VARCHAR},
+      format = #{format,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      image_path = #{imagePath,jdbcType=VARCHAR},
+      package_type = #{packageType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
