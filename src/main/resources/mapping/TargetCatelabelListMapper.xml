@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.TargetCatelabelListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
+    <id column="cate_id" property="cateId" jdbcType="INTEGER" />
+    <result column="cate_name" property="cateName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cate_id, cate_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from target_catelabel_list
+    where cate_id = #{cateId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from target_catelabel_list
+    where cate_id = #{cateId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
+    insert into target_catelabel_list (cate_id, cate_name)
+    values (#{cateId,jdbcType=INTEGER}, #{cateName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
+    insert into target_catelabel_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cateId != null" >
+        cate_id,
+      </if>
+      <if test="cateName != null" >
+        cate_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cateId != null" >
+        #{cateId,jdbcType=INTEGER},
+      </if>
+      <if test="cateName != null" >
+        #{cateName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
+    update target_catelabel_list
+    <set >
+      <if test="cateName != null" >
+        cate_name = #{cateName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cate_id = #{cateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
+    update target_catelabel_list
+    set cate_name = #{cateName,jdbcType=VARCHAR}
+    where cate_id = #{cateId,jdbcType=INTEGER}
+  </update>
+</mapper>
