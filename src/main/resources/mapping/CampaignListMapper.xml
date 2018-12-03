@@ -32,6 +32,11 @@
     <include refid="Base_Column_List" />
     from campaign_list
   </select>
+  <select id="selectDistinct" resultMap="BaseResultMap"  >
+  select distinct taobao_user_id, campaign_type
+  from campaign_list
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from campaign_list
     where id = #{id,jdbcType=BIGINT}
