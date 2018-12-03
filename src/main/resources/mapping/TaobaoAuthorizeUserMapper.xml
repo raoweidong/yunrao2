@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="taobao_open_uid" property="taobaoOpenUid" jdbcType="VARCHAR" />
+    <result column="taobao_user_nick" property="taobaoUserNick" jdbcType="VARCHAR" />
+    <result column="access_token" property="accessToken" jdbcType="VARCHAR" />
+    <result column="refresh_token" property="refreshToken" jdbcType="VARCHAR" />
+    <result column="token_type" property="tokenType" jdbcType="VARCHAR" />
+    <result column="re_expires_in" property="reExpiresIn" jdbcType="VARCHAR" />
+    <result column="expires_in" property="expiresIn" jdbcType="VARCHAR" />
+    <result column="r1_expires_in" property="r1ExpiresIn" jdbcType="VARCHAR" />
+    <result column="r2_expires_in" property="r2ExpiresIn" jdbcType="VARCHAR" />
+    <result column="w1_expires_in" property="w1ExpiresIn" jdbcType="VARCHAR" />
+    <result column="w2_expires_in" property="w2ExpiresIn" jdbcType="VARCHAR" />
+    <result column="r1_valid" property="r1Valid" jdbcType="VARCHAR" />
+    <result column="r2_valid" property="r2Valid" jdbcType="VARCHAR" />
+    <result column="w1_valid" property="w1Valid" jdbcType="VARCHAR" />
+    <result column="w2_valid" property="w2Valid" jdbcType="VARCHAR" />
+    <result column="refresh_token_valid_time" property="refreshTokenValidTime" jdbcType="VARCHAR" />
+    <result column="expire_time" property="expireTime" jdbcType="VARCHAR" />
+    <result column="expire_date" property="expireDate" jdbcType="TIMESTAMP" />
+    <result column="taobao_admin_status" property="taobaoAdminStatus" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, taobao_open_uid, taobao_user_nick, access_token, refresh_token, 
+    token_type, re_expires_in, expires_in, r1_expires_in, r2_expires_in, w1_expires_in, 
+    w2_expires_in, r1_valid, r2_valid, w1_valid, w2_valid, refresh_token_valid_time, 
+    expire_time, expire_date, taobao_admin_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_authorize_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAllToken" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from taobao_authorize_user
+  </select>
+  <select id="slectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from taobao_authorize_user where taobao_user_id=#{taobaoUserId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from taobao_authorize_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser" >
+    insert into taobao_authorize_user (id, taobao_user_id, taobao_open_uid, 
+      taobao_user_nick, access_token, refresh_token, 
+      token_type, re_expires_in, expires_in, 
+      r1_expires_in, r2_expires_in, w1_expires_in, 
+      w2_expires_in, r1_valid, r2_valid, 
+      w1_valid, w2_valid, refresh_token_valid_time, 
+      expire_time, expire_date, taobao_admin_status
+      )
+    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{taobaoOpenUid,jdbcType=VARCHAR}, 
+      #{taobaoUserNick,jdbcType=VARCHAR}, #{accessToken,jdbcType=VARCHAR}, #{refreshToken,jdbcType=VARCHAR}, 
+      #{tokenType,jdbcType=VARCHAR}, #{reExpiresIn,jdbcType=VARCHAR}, #{expiresIn,jdbcType=VARCHAR}, 
+      #{r1ExpiresIn,jdbcType=VARCHAR}, #{r2ExpiresIn,jdbcType=VARCHAR}, #{w1ExpiresIn,jdbcType=VARCHAR}, 
+      #{w2ExpiresIn,jdbcType=VARCHAR}, #{r1Valid,jdbcType=VARCHAR}, #{r2Valid,jdbcType=VARCHAR}, 
+      #{w1Valid,jdbcType=VARCHAR}, #{w2Valid,jdbcType=VARCHAR}, #{refreshTokenValidTime,jdbcType=VARCHAR}, 
+      #{expireTime,jdbcType=VARCHAR}, #{expireDate,jdbcType=TIMESTAMP}, #{taobaoAdminStatus,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser" >
+    insert into taobao_authorize_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="taobaoOpenUid != null" >
+        taobao_open_uid,
+      </if>
+      <if test="taobaoUserNick != null" >
+        taobao_user_nick,
+      </if>
+      <if test="accessToken != null" >
+        access_token,
+      </if>
+      <if test="refreshToken != null" >
+        refresh_token,
+      </if>
+      <if test="tokenType != null" >
+        token_type,
+      </if>
+      <if test="reExpiresIn != null" >
+        re_expires_in,
+      </if>
+      <if test="expiresIn != null" >
+        expires_in,
+      </if>
+      <if test="r1ExpiresIn != null" >
+        r1_expires_in,
+      </if>
+      <if test="r2ExpiresIn != null" >
+        r2_expires_in,
+      </if>
+      <if test="w1ExpiresIn != null" >
+        w1_expires_in,
+      </if>
+      <if test="w2ExpiresIn != null" >
+        w2_expires_in,
+      </if>
+      <if test="r1Valid != null" >
+        r1_valid,
+      </if>
+      <if test="r2Valid != null" >
+        r2_valid,
+      </if>
+      <if test="w1Valid != null" >
+        w1_valid,
+      </if>
+      <if test="w2Valid != null" >
+        w2_valid,
+      </if>
+      <if test="refreshTokenValidTime != null" >
+        refresh_token_valid_time,
+      </if>
+      <if test="expireTime != null" >
+        expire_time,
+      </if>
+      <if test="expireDate != null" >
+        expire_date,
+      </if>
+      <if test="taobaoAdminStatus != null" >
+        taobao_admin_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="taobaoOpenUid != null" >
+        #{taobaoOpenUid,jdbcType=VARCHAR},
+      </if>
+      <if test="taobaoUserNick != null" >
+        #{taobaoUserNick,jdbcType=VARCHAR},
+      </if>
+      <if test="accessToken != null" >
+        #{accessToken,jdbcType=VARCHAR},
+      </if>
+      <if test="refreshToken != null" >
+        #{refreshToken,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenType != null" >
+        #{tokenType,jdbcType=VARCHAR},
+      </if>
+      <if test="reExpiresIn != null" >
+        #{reExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="expiresIn != null" >
+        #{expiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r1ExpiresIn != null" >
+        #{r1ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r2ExpiresIn != null" >
+        #{r2ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="w1ExpiresIn != null" >
+        #{w1ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="w2ExpiresIn != null" >
+        #{w2ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r1Valid != null" >
+        #{r1Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="r2Valid != null" >
+        #{r2Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="w1Valid != null" >
+        #{w1Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="w2Valid != null" >
+        #{w2Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="refreshTokenValidTime != null" >
+        #{refreshTokenValidTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        #{expireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expireDate != null" >
+        #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taobaoAdminStatus != null" >
+        #{taobaoAdminStatus,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser" >
+    update taobao_authorize_user
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="taobaoOpenUid != null" >
+        taobao_open_uid = #{taobaoOpenUid,jdbcType=VARCHAR},
+      </if>
+      <if test="taobaoUserNick != null" >
+        taobao_user_nick = #{taobaoUserNick,jdbcType=VARCHAR},
+      </if>
+      <if test="accessToken != null" >
+        access_token = #{accessToken,jdbcType=VARCHAR},
+      </if>
+      <if test="refreshToken != null" >
+        refresh_token = #{refreshToken,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenType != null" >
+        token_type = #{tokenType,jdbcType=VARCHAR},
+      </if>
+      <if test="reExpiresIn != null" >
+        re_expires_in = #{reExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="expiresIn != null" >
+        expires_in = #{expiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r1ExpiresIn != null" >
+        r1_expires_in = #{r1ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r2ExpiresIn != null" >
+        r2_expires_in = #{r2ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="w1ExpiresIn != null" >
+        w1_expires_in = #{w1ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="w2ExpiresIn != null" >
+        w2_expires_in = #{w2ExpiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="r1Valid != null" >
+        r1_valid = #{r1Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="r2Valid != null" >
+        r2_valid = #{r2Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="w1Valid != null" >
+        w1_valid = #{w1Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="w2Valid != null" >
+        w2_valid = #{w2Valid,jdbcType=VARCHAR},
+      </if>
+      <if test="refreshTokenValidTime != null" >
+        refresh_token_valid_time = #{refreshTokenValidTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        expire_time = #{expireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expireDate != null" >
+        expire_date = #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taobaoAdminStatus != null" >
+        taobao_admin_status = #{taobaoAdminStatus,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser" >
+    update taobao_authorize_user
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      taobao_open_uid = #{taobaoOpenUid,jdbcType=VARCHAR},
+      taobao_user_nick = #{taobaoUserNick,jdbcType=VARCHAR},
+      access_token = #{accessToken,jdbcType=VARCHAR},
+      refresh_token = #{refreshToken,jdbcType=VARCHAR},
+      token_type = #{tokenType,jdbcType=VARCHAR},
+      re_expires_in = #{reExpiresIn,jdbcType=VARCHAR},
+      expires_in = #{expiresIn,jdbcType=VARCHAR},
+      r1_expires_in = #{r1ExpiresIn,jdbcType=VARCHAR},
+      r2_expires_in = #{r2ExpiresIn,jdbcType=VARCHAR},
+      w1_expires_in = #{w1ExpiresIn,jdbcType=VARCHAR},
+      w2_expires_in = #{w2ExpiresIn,jdbcType=VARCHAR},
+      r1_valid = #{r1Valid,jdbcType=VARCHAR},
+      r2_valid = #{r2Valid,jdbcType=VARCHAR},
+      w1_valid = #{w1Valid,jdbcType=VARCHAR},
+      w2_valid = #{w2Valid,jdbcType=VARCHAR},
+      refresh_token_valid_time = #{refreshTokenValidTime,jdbcType=VARCHAR},
+      expire_time = #{expireTime,jdbcType=VARCHAR},
+      expire_date = #{expireDate,jdbcType=TIMESTAMP},
+      taobao_admin_status = #{taobaoAdminStatus,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

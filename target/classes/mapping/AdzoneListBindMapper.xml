@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AdzoneListBindMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
+    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
+    <result column="adzone_id" property="adzoneId" jdbcType="BIGINT" />
+    <result column="adzone_name" property="adzoneName" jdbcType="VARCHAR" />
+    <result column="adzone_size_list" property="adzoneSizeList" jdbcType="VARCHAR" />
+    <result column="allow_ad_format_list" property="allowAdFormatList" jdbcType="VARCHAR" />
+    <result column="allow_adv_type" property="allowAdvType" jdbcType="BIGINT" />
+    <result column="media_type" property="mediaType" jdbcType="BIGINT" />
+    <result column="adzone_level" property="adzoneLevel" jdbcType="BIGINT" />
+    <result column="crowd_id" property="crowdId" jdbcType="BIGINT" />
+    <result column="crowd_type" property="crowdType" jdbcType="BIGINT" />
+    <result column="price" property="price" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, campaign_id, adgroup_id, adzone_id, adzone_name, adzone_size_list, 
+    allow_ad_format_list, allow_adv_type, media_type, adzone_level, crowd_id, crowd_type, 
+    price
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from adzone_list_bind
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllAdzoneListBind" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from adzone_list_bind
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from adzone_list_bind
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
+    insert into adzone_list_bind (id, taobao_user_id, campaign_id, 
+      adgroup_id, adzone_id, adzone_name, 
+      adzone_size_list, allow_ad_format_list, allow_adv_type, 
+      media_type, adzone_level, crowd_id, 
+      crowd_type, price)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{adgroupId,jdbcType=BIGINT}, #{adzoneId,jdbcType=BIGINT}, #{adzoneName,jdbcType=VARCHAR}, 
+      #{adzoneSizeList,jdbcType=VARCHAR}, #{allowAdFormatList,jdbcType=VARCHAR}, #{allowAdvType,jdbcType=BIGINT}, 
+      #{mediaType,jdbcType=BIGINT}, #{adzoneLevel,jdbcType=BIGINT}, #{crowdId,jdbcType=BIGINT}, 
+      #{crowdType,jdbcType=BIGINT}, #{price,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
+    insert into adzone_list_bind
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="campaignId != null" >
+        campaign_id,
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id,
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id,
+      </if>
+      <if test="adzoneName != null" >
+        adzone_name,
+      </if>
+      <if test="adzoneSizeList != null" >
+        adzone_size_list,
+      </if>
+      <if test="allowAdFormatList != null" >
+        allow_ad_format_list,
+      </if>
+      <if test="allowAdvType != null" >
+        allow_adv_type,
+      </if>
+      <if test="mediaType != null" >
+        media_type,
+      </if>
+      <if test="adzoneLevel != null" >
+        adzone_level,
+      </if>
+      <if test="crowdId != null" >
+        crowd_id,
+      </if>
+      <if test="crowdType != null" >
+        crowd_type,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneId != null" >
+        #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneName != null" >
+        #{adzoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneSizeList != null" >
+        #{adzoneSizeList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdFormatList != null" >
+        #{allowAdFormatList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdvType != null" >
+        #{allowAdvType,jdbcType=BIGINT},
+      </if>
+      <if test="mediaType != null" >
+        #{mediaType,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneLevel != null" >
+        #{adzoneLevel,jdbcType=BIGINT},
+      </if>
+      <if test="crowdId != null" >
+        #{crowdId,jdbcType=BIGINT},
+      </if>
+      <if test="crowdType != null" >
+        #{crowdType,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
+    update adzone_list_bind
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id = #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneName != null" >
+        adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneSizeList != null" >
+        adzone_size_list = #{adzoneSizeList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdFormatList != null" >
+        allow_ad_format_list = #{allowAdFormatList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdvType != null" >
+        allow_adv_type = #{allowAdvType,jdbcType=BIGINT},
+      </if>
+      <if test="mediaType != null" >
+        media_type = #{mediaType,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneLevel != null" >
+        adzone_level = #{adzoneLevel,jdbcType=BIGINT},
+      </if>
+      <if test="crowdId != null" >
+        crowd_id = #{crowdId,jdbcType=BIGINT},
+      </if>
+      <if test="crowdType != null" >
+        crowd_type = #{crowdType,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
+    update adzone_list_bind
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      adzone_id = #{adzoneId,jdbcType=BIGINT},
+      adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      adzone_size_list = #{adzoneSizeList,jdbcType=VARCHAR},
+      allow_ad_format_list = #{allowAdFormatList,jdbcType=VARCHAR},
+      allow_adv_type = #{allowAdvType,jdbcType=BIGINT},
+      media_type = #{mediaType,jdbcType=BIGINT},
+      adzone_level = #{adzoneLevel,jdbcType=BIGINT},
+      crowd_id = #{crowdId,jdbcType=BIGINT},
+      crowd_type = #{crowdType,jdbcType=BIGINT},
+      price = #{price,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

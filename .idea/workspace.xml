@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e90cc9f-75d0-4711-8251-b7ac86001c76" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-247400105">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.25" value="2" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.30" value="2" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="11" />
+          <entry key="gitignore" value="1" />
+          <entry key="java" value="250" />
+          <entry key="properties" value="1" />
+          <entry key="sql" value="16" />
+          <entry key="xml" value="67" />
+          <entry key="yml" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="11" />
+          <entry key="JAVA" value="250" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="1" />
+          <entry key="Scratch" value="16" />
+          <entry key="XML" value="67" />
+          <entry key="YAML" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="15740" />
+          <entry key="sql" value="327" />
+          <entry key="txt" value="73" />
+          <entry key="xml" value="526" />
+          <entry key="yml" value="121" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="15740" />
+          <entry key="PLAIN_TEXT" value="73" />
+          <entry key="SQL" value="7" />
+          <entry key="Scratch" value="327" />
+          <entry key="XML" value="519" />
+          <entry key="YAML" value="121" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="advertiser" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3078">
+              <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/taobao/alidayu/1.1.1/alidayu-1.1.1.jar!/com/taobao/api/TaobaoClient.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="10" column="97" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1593">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsDayGetMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneRptsDayGetController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Singleton" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>select</find>
+      <find>insert</find>
+      <find>log</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupList.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b64c1ab0-ed0f-4c4d-95c0-5e1106968662/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/campaign_listMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/Campaign.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAccountRptsDayGetMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/RptsDayGetService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAccountRptsDayGetMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AccountRptsDayGetMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AccountRptsDayGetService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AccountRptsDayGetServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e75455c2-06af-4b50-8d1d-d17663797607/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/CampaignListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdgroupListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/TaobaoAuthorizeUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TaobaoAuthorizeUserServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e75455c2-06af-4b50-8d1d-d17663797607/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4fc3c2ff-8936-4a73-9916-65a5051db018/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/TaobaoAuthorizeUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TaobaoAuthorizeUserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TaobaoAuthorizeUserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserCampaignRptsDayGetMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CampaignList.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/juzuan/advertiser/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CampaignRptsDayGetData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsDayGet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneRptsDay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/BannerAdgroupAdzoneBind.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsDayGetMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneRptsDayGetController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\tools\maven\Repository" />
+        <option name="userSettingsFile" value="D:\tools\maven\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="springboot-mybatis-demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="springboot-mybatis-demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="415" />
+    <option name="y" value="120" />
+    <option name="width" value="1400" />
+    <option name="height" value="452" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>EncapsulationJava</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>SetupSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring AOPSpring</id>
+          </State>
+          <State>
+            <id>Spring BatchSpring</id>
+          </State>
+          <State>
+            <id>Spring BootSpring</id>
+          </State>
+          <State>
+            <id>Spring CloudSpring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring DataSpring</id>
+          </State>
+          <State>
+            <id>Spring IntegrationSpring</id>
+          </State>
+          <State>
+            <id>Spring MVCSpring</id>
+          </State>
+          <State>
+            <id>Spring OSGiSpring</id>
+          </State>
+          <State>
+            <id>Spring SecuritySpring</id>
+          </State>
+          <State>
+            <id>Spring Web FlowSpring</id>
+          </State>
+          <State>
+            <id>Spring Web ServicesSpring</id>
+          </State>
+          <State>
+            <id>Spring WebSocketSpring</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaConstructorAutowiringInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="rpts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advertiser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advertiser" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543809540137" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="D:/Git/Git/bin/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AdvertiserApplication">
+    <configuration name="AdvertiserAdzoneRptsDayGetServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.juzuan.advertiser.rpts.service.impl.AdvertiserAdzoneRptsDayGetServiceImpl" />
+      <module name="advertiser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.juzuan.advertiser.rpts.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdzoneListServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.juzuan.advertiser.rpts.service.impl.AdzoneListServiceImpl" />
+      <module name="advertiser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.juzuan.advertiser.rpts.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.juzuan.advertiser.Test" />
+      <module name="advertiser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.juzuan.advertiser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdvertiserApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="advertiser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.juzuan.advertiser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.juzuan.advertiser" />
+      <option name="MAIN_CLASS_NAME" value="com.juzuan.advertiser.AdvertiserApplicationTests" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="AdvertiserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="advertiser" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juzuan.advertiser.AdvertiserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.generator" />
+      <item itemvalue="Spring Boot.AdvertiserApplication" />
+      <item itemvalue="JUnit.AdvertiserApplicationTests.test" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.AdzoneListServiceImpl" />
+      <item itemvalue="Application.AdvertiserAdzoneRptsDayGetServiceImpl" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AdvertiserAdzoneRptsDayGetServiceImpl" />
+        <item itemvalue="Application.AdzoneListServiceImpl" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.AdvertiserApplicationTests.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e90cc9f-75d0-4711-8251-b7ac86001c76" name="Default Changelist" comment="" />
+      <created>1542599821653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542599821653</updated>
+      <workItem from="1542599827127" duration="16977000" />
+      <workItem from="1542676015556" duration="14545000" />
+      <workItem from="1542700024204" duration="57940000" />
+      <workItem from="1542848464074" duration="1641000" />
+      <workItem from="1542850464026" duration="28169000" />
+      <workItem from="1542935289070" duration="3736000" />
+      <workItem from="1542940763979" duration="52000" />
+      <workItem from="1542940851426" duration="6803000" />
+      <workItem from="1542951032880" duration="35566000" />
+      <workItem from="1543021956361" duration="57333000" />
+      <workItem from="1543203004965" duration="35228000" />
+      <workItem from="1543281041419" duration="29100000" />
+      <workItem from="1543367128601" duration="109979000" />
+      <workItem from="1543631104224" duration="1018000" />
+      <workItem from="1543632403441" duration="18360000" />
+      <workItem from="1543718179137" duration="14805000" />
+      <workItem from="1543742405007" duration="6972000" />
+      <workItem from="1543799307470" duration="3243000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 00h 23m 18s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 00h 23m 50s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 10h 10m 28s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 10h 11m 37s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 10h 27m 02s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 10h 31m 15s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvertiserApplicationTests_test - 2018.11.21 at 11h 38m 54s.xml">
+      <configuration name="AdvertiserApplicationTests.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="441467000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" weight="0.32995737" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Web" order="5" side_tool="true" weight="0.32995737" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.22441365" />
+      <window_info anchor="bottom" id="Spring" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.40195015" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.15384616" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.19393283" />
+      <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="14" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="2" weight="0.20575693" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" weight="0.32995737" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Web" order="5" side_tool="true" weight="0.32995737" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.25053304" />
+      <window_info anchor="bottom" id="Spring" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.40195015" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.283857" />
+      <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="14" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="2" weight="0.20575693" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java</url>
+          <line>196</line>
+          <properties />
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java</url>
+          <line>202</line>
+          <properties />
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="sixObject" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>obb.getString(&quot;marketingdemand&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CampaignRptsDayGetData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="157" column="60" lean-forward="true" selection-start-line="157" selection-start-column="60" selection-end-line="157" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdvertiserAdzoneRptsDayGetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TaobaoAuthorizeUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TaobaoAuthorizeUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/ArrayUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/math/NumberUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3267">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/time/DateFormatUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-jdbc/8.5.16/tomcat-jdbc-8.5.16-sources.jar!/org/apache/tomcat/jdbc/pool/DataSourceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2619">
+          <caret line="234" column="20" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7151">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/ObjectUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsDayGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/BannerAdgroupAdzoneBind.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneRptsDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/BannerAdgroupAdzoneFindpageServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/adzoneListBind.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneListBind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2055">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1971">
+          <caret line="101" column="46" lean-forward="true" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TaobaoAuthorizeUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAccountRptsDayGetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6201" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdvertiserCampaignRptsDayGetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10044" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="73" lean-forward="true" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdzoneListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3774">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/BannerCrowdFindMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/RptsDayGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="96" column="43" lean-forward="true" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserAdzoneRptsDayGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="206" column="37" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3078">
+          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/taobao/alidayu/1.1.1/alidayu-1.1.1.jar!/com/taobao/api/TaobaoClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="97" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1593">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsDayGetMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneRptsDayGetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>advertiser:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>advertiser</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

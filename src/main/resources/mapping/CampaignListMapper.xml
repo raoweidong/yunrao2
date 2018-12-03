@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.CampaignListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.CampaignList" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
+    <result column="campaign_name" property="campaignName" jdbcType="VARCHAR" />
+    <result column="campaign_type" property="campaignType" jdbcType="INTEGER" />
+    <result column="start_time" property="startTime" jdbcType="DATE" />
+    <result column="end_time" property="endTime" jdbcType="DATE" />
+    <result column="day_budget" property="dayBudget" jdbcType="DOUBLE" />
+    <result column="online_status" property="onlineStatus" jdbcType="INTEGER" />
+    <result column="speed_type" property="speedType" jdbcType="INTEGER" />
+    <result column="workdays" property="workdays" jdbcType="VARCHAR" />
+    <result column="week_ends" property="weekEnds" jdbcType="VARCHAR" />
+    <result column="life_cycle" property="lifeCycle" jdbcType="VARCHAR" />
+    <result column="marketingdemand" property="marketingdemand" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, campaign_id, campaign_name, campaign_type, start_time, end_time, 
+    day_budget, online_status, speed_type, workdays, week_ends, life_cycle, marketingdemand
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from campaign_list
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAllCampaign" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from campaign_list
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from campaign_list
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into campaign_list (taobao_user_id, campaign_id,
+      campaign_name, campaign_type, start_time, 
+      end_time, day_budget, online_status, 
+      speed_type, workdays, week_ends, 
+      life_cycle, marketingdemand)
+    values (#{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT},
+      #{campaignName,jdbcType=VARCHAR}, #{campaignType,jdbcType=INTEGER}, #{startTime,jdbcType=DATE}, 
+      #{endTime,jdbcType=DATE}, #{dayBudget,jdbcType=DOUBLE}, #{onlineStatus,jdbcType=INTEGER}, 
+      #{speedType,jdbcType=INTEGER}, #{workdays,jdbcType=VARCHAR}, #{weekEnds,jdbcType=VARCHAR}, 
+      #{lifeCycle,jdbcType=VARCHAR}, #{marketingdemand,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
+    insert into campaign_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="campaignId != null" >
+        campaign_id,
+      </if>
+      <if test="campaignName != null" >
+        campaign_name,
+      </if>
+      <if test="campaignType != null" >
+        campaign_type,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="dayBudget != null" >
+        day_budget,
+      </if>
+      <if test="onlineStatus != null" >
+        online_status,
+      </if>
+      <if test="speedType != null" >
+        speed_type,
+      </if>
+      <if test="workdays != null" >
+        workdays,
+      </if>
+      <if test="weekEnds != null" >
+        week_ends,
+      </if>
+      <if test="lifeCycle != null" >
+        life_cycle,
+      </if>
+      <if test="marketingdemand != null" >
+        marketingdemand,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="campaignName != null" >
+        #{campaignName,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignType != null" >
+        #{campaignType,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=DATE},
+      </if>
+      <if test="dayBudget != null" >
+        #{dayBudget,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineStatus != null" >
+        #{onlineStatus,jdbcType=INTEGER},
+      </if>
+      <if test="speedType != null" >
+        #{speedType,jdbcType=INTEGER},
+      </if>
+      <if test="workdays != null" >
+        #{workdays,jdbcType=VARCHAR},
+      </if>
+      <if test="weekEnds != null" >
+        #{weekEnds,jdbcType=VARCHAR},
+      </if>
+      <if test="lifeCycle != null" >
+        #{lifeCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="marketingdemand != null" >
+        #{marketingdemand,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
+    update campaign_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="campaignName != null" >
+        campaign_name = #{campaignName,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignType != null" >
+        campaign_type = #{campaignType,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=DATE},
+      </if>
+      <if test="dayBudget != null" >
+        day_budget = #{dayBudget,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineStatus != null" >
+        online_status = #{onlineStatus,jdbcType=INTEGER},
+      </if>
+      <if test="speedType != null" >
+        speed_type = #{speedType,jdbcType=INTEGER},
+      </if>
+      <if test="workdays != null" >
+        workdays = #{workdays,jdbcType=VARCHAR},
+      </if>
+      <if test="weekEnds != null" >
+        week_ends = #{weekEnds,jdbcType=VARCHAR},
+      </if>
+      <if test="lifeCycle != null" >
+        life_cycle = #{lifeCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="marketingdemand != null" >
+        marketingdemand = #{marketingdemand,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
+    update campaign_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
+      campaign_name = #{campaignName,jdbcType=VARCHAR},
+      campaign_type = #{campaignType,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=DATE},
+      end_time = #{endTime,jdbcType=DATE},
+      day_budget = #{dayBudget,jdbcType=DOUBLE},
+      online_status = #{onlineStatus,jdbcType=INTEGER},
+      speed_type = #{speedType,jdbcType=INTEGER},
+      workdays = #{workdays,jdbcType=VARCHAR},
+      week_ends = #{weekEnds,jdbcType=VARCHAR},
+      life_cycle = #{lifeCycle,jdbcType=VARCHAR},
+      marketingdemand = #{marketingdemand,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

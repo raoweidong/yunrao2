@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AdzoneListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="adzone_id" property="adzoneId" jdbcType="BIGINT" />
+    <result column="adzone_name" property="adzoneName" jdbcType="VARCHAR" />
+    <result column="adzone_size_list" property="adzoneSizeList" jdbcType="VARCHAR" />
+    <result column="allow_ad_format_list" property="allowAdFormatList" jdbcType="VARCHAR" />
+    <result column="allow_adv_type" property="allowAdvType" jdbcType="BIGINT" />
+    <result column="adzone_level" property="adzoneLevel" jdbcType="BIGINT" />
+    <result column="media_type" property="mediaType" jdbcType="BIGINT" />
+    <result column="tpv" property="tpv" jdbcType="BIGINT" />
+    <result column="ctr" property="ctr" jdbcType="VARCHAR" />
+    <result column="first_time" property="firstTime" jdbcType="TIMESTAMP" />
+    <result column="rcmd_score" property="rcmdScore" jdbcType="BIGINT" />
+    <result column="bid_score" property="bidScore" jdbcType="BIGINT" />
+    <result column="cpm_score" property="cpmScore" jdbcType="BIGINT" />
+    <result column="cpc_score" property="cpcScore" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, adzone_id, adzone_name, adzone_size_list, allow_ad_format_list, 
+    allow_adv_type, adzone_level, media_type, tpv, ctr, first_time, rcmd_score, bid_score, 
+    cpm_score, cpc_score
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from adzone_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllAdzoneList" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from adzone_list
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from adzone_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    insert into adzone_list (id, taobao_user_id, adzone_id, 
+      adzone_name, adzone_size_list, allow_ad_format_list, 
+      allow_adv_type, adzone_level, media_type, 
+      tpv, ctr, first_time, 
+      rcmd_score, bid_score, cpm_score, 
+      cpc_score)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{adzoneId,jdbcType=BIGINT}, 
+      #{adzoneName,jdbcType=VARCHAR}, #{adzoneSizeList,jdbcType=VARCHAR}, #{allowAdFormatList,jdbcType=VARCHAR}, 
+      #{allowAdvType,jdbcType=BIGINT}, #{adzoneLevel,jdbcType=BIGINT}, #{mediaType,jdbcType=BIGINT}, 
+      #{tpv,jdbcType=BIGINT}, #{ctr,jdbcType=VARCHAR}, #{firstTime,jdbcType=TIMESTAMP}, 
+      #{rcmdScore,jdbcType=BIGINT}, #{bidScore,jdbcType=BIGINT}, #{cpmScore,jdbcType=BIGINT}, 
+      #{cpcScore,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    insert into adzone_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id,
+      </if>
+      <if test="adzoneName != null" >
+        adzone_name,
+      </if>
+      <if test="adzoneSizeList != null" >
+        adzone_size_list,
+      </if>
+      <if test="allowAdFormatList != null" >
+        allow_ad_format_list,
+      </if>
+      <if test="allowAdvType != null" >
+        allow_adv_type,
+      </if>
+      <if test="adzoneLevel != null" >
+        adzone_level,
+      </if>
+      <if test="mediaType != null" >
+        media_type,
+      </if>
+      <if test="tpv != null" >
+        tpv,
+      </if>
+      <if test="ctr != null" >
+        ctr,
+      </if>
+      <if test="firstTime != null" >
+        first_time,
+      </if>
+      <if test="rcmdScore != null" >
+        rcmd_score,
+      </if>
+      <if test="bidScore != null" >
+        bid_score,
+      </if>
+      <if test="cpmScore != null" >
+        cpm_score,
+      </if>
+      <if test="cpcScore != null" >
+        cpc_score,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneId != null" >
+        #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneName != null" >
+        #{adzoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneSizeList != null" >
+        #{adzoneSizeList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdFormatList != null" >
+        #{allowAdFormatList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdvType != null" >
+        #{allowAdvType,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneLevel != null" >
+        #{adzoneLevel,jdbcType=BIGINT},
+      </if>
+      <if test="mediaType != null" >
+        #{mediaType,jdbcType=BIGINT},
+      </if>
+      <if test="tpv != null" >
+        #{tpv,jdbcType=BIGINT},
+      </if>
+      <if test="ctr != null" >
+        #{ctr,jdbcType=VARCHAR},
+      </if>
+      <if test="firstTime != null" >
+        #{firstTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rcmdScore != null" >
+        #{rcmdScore,jdbcType=BIGINT},
+      </if>
+      <if test="bidScore != null" >
+        #{bidScore,jdbcType=BIGINT},
+      </if>
+      <if test="cpmScore != null" >
+        #{cpmScore,jdbcType=BIGINT},
+      </if>
+      <if test="cpcScore != null" >
+        #{cpcScore,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    update adzone_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id = #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneName != null" >
+        adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="adzoneSizeList != null" >
+        adzone_size_list = #{adzoneSizeList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdFormatList != null" >
+        allow_ad_format_list = #{allowAdFormatList,jdbcType=VARCHAR},
+      </if>
+      <if test="allowAdvType != null" >
+        allow_adv_type = #{allowAdvType,jdbcType=BIGINT},
+      </if>
+      <if test="adzoneLevel != null" >
+        adzone_level = #{adzoneLevel,jdbcType=BIGINT},
+      </if>
+      <if test="mediaType != null" >
+        media_type = #{mediaType,jdbcType=BIGINT},
+      </if>
+      <if test="tpv != null" >
+        tpv = #{tpv,jdbcType=BIGINT},
+      </if>
+      <if test="ctr != null" >
+        ctr = #{ctr,jdbcType=VARCHAR},
+      </if>
+      <if test="firstTime != null" >
+        first_time = #{firstTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rcmdScore != null" >
+        rcmd_score = #{rcmdScore,jdbcType=BIGINT},
+      </if>
+      <if test="bidScore != null" >
+        bid_score = #{bidScore,jdbcType=BIGINT},
+      </if>
+      <if test="cpmScore != null" >
+        cpm_score = #{cpmScore,jdbcType=BIGINT},
+      </if>
+      <if test="cpcScore != null" >
+        cpc_score = #{cpcScore,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    update adzone_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      adzone_id = #{adzoneId,jdbcType=BIGINT},
+      adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      adzone_size_list = #{adzoneSizeList,jdbcType=VARCHAR},
+      allow_ad_format_list = #{allowAdFormatList,jdbcType=VARCHAR},
+      allow_adv_type = #{allowAdvType,jdbcType=BIGINT},
+      adzone_level = #{adzoneLevel,jdbcType=BIGINT},
+      media_type = #{mediaType,jdbcType=BIGINT},
+      tpv = #{tpv,jdbcType=BIGINT},
+      ctr = #{ctr,jdbcType=VARCHAR},
+      first_time = #{firstTime,jdbcType=TIMESTAMP},
+      rcmd_score = #{rcmdScore,jdbcType=BIGINT},
+      bid_score = #{bidScore,jdbcType=BIGINT},
+      cpm_score = #{cpmScore,jdbcType=BIGINT},
+      cpc_score = #{cpcScore,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
