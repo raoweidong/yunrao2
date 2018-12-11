@@ -34,7 +34,7 @@ public class CrowdListServiceImpl implements CrowdListService {
     @Autowired
     private AdgroupListMapper adgroupListMapper;
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String CrowdList() throws ApiException {
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adl: cam) {
