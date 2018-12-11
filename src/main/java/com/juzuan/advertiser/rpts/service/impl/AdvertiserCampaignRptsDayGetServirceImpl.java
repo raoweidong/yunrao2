@@ -198,7 +198,7 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
 
                     }
 
-                //advertiserCampaignRptsDayGetMapper.insert(advertiserCampaignRptsDayGet);
+                advertiserCampaignRptsDayGetMapper.insert(advertiserCampaignRptsDayGet);
 
                     System.out.println("呵呵呵");
                 }
