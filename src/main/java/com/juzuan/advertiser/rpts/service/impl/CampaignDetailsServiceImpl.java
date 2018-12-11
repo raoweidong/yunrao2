@@ -32,7 +32,7 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private CampaignDetailsMapper campaignDetailsMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+   // @Scheduled(cron = "*/5 * * * * ?")
     public String getCampaignDetail(){
 
         List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();
