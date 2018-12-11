@@ -16,6 +16,7 @@ import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.ZuanshiBannerCreativeFindBindRequest;
 import com.taobao.api.response.ZuanshiBannerCreativeFindBindResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
