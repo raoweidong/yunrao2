@@ -99,7 +99,7 @@ public class RptsDayGetServiceImpl implements RptsDayGetService {
             if(selectObj==null){
                 advertiserAccountRptsDayGetMapper.insert(item);//遍历对象数组并保存
             }else{
-                System.out.println("该记录已存在,");
+                System.out.println("该记录已存在,更改了字段");
               /*  System.out.println(selectAll().toString());
                 List<AdvertiserAccountRptsDayGet>A=selectAll();
 
