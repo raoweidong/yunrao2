@@ -29,7 +29,7 @@ public class CampaignListServiceImpl implements CampaignListService {
     @Autowired
     private  CampaignListMapper campaignListMapper;
 
-    //@Scheduled(cron = "*/5 * * * * ?")
+    @Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
     public String campaignList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
@@ -38,6 +38,7 @@ public class CampaignListServiceImpl implements CampaignListService {
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiBannerCampaignFindRequest req = new ZuanshiBannerCampaignFindRequest();
             ZuanshiBannerCampaignFindResponse rsp = null;
+            req.setPageSize(100L);
             try {
                 rsp = client.execute(req, taobaoAuthorizeUser.getAccessToken());
             } catch (ApiException e) {
@@ -86,7 +87,7 @@ public class CampaignListServiceImpl implements CampaignListService {
 
             JSONObject propertie=obb.getJSONObject("properties");
             System.out.println("最后  "+propertie.toString());
-            campaignList.setMarketingdemand(propertie.getString("marketingdemand"));//计划类型：-1：自定义，1：日常托管，2：日常推荐，3：拉新托管，4：拉新推荐',
+            campaignList.setMarketingdemand(propertie.getString("marketingdemand")==null?"0":propertie.getString("marketingdemand"));//计划类型：-1：自定义，1：日常托管，2：日常推荐，3：拉新托管，4：拉新推荐',
             System.out.println( "得到的计划id "+ obb.getInteger("id"));
             Long campId=obb.getLong("id");
             campaignList.setCampaignId(campId);//计划id
@@ -117,7 +118,7 @@ public class CampaignListServiceImpl implements CampaignListService {
             campaignList.setTaobaoUserId(taobao.getTaobaoUserId());
             //______________________________________________
             System.out.println("接受的第一个数据 "+campaignList.getCampaignId());
-            campaignListMapper.insert(campaignList);
+           // campaignListMapper.insert(campaignList);
            /* List<CampaignList> campp=selectAllCampaign();
             for (CampaignList camm:campp){
                 System.out.println(camm.getCampaignName());
