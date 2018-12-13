@@ -149,12 +149,7 @@ public class AdvertiserAccountRptsTotalGetServiceImpl {
                     advertiserAccountRptsTotalGetMapper.insert(advertiserAccountRptsTotalGet);
 
                 }
-                System.out.println("hah");
-
             }
-
         }
-
-
     }
 }
