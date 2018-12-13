@@ -37,7 +37,7 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
     private AdvertiserAdzoneRptsDayGetMapper advertiserAdzoneRptsDayGetMapper;
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
-   //@Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String getAdzone(){
 
           List<AdzoneListBind> adzoneListBindd=adzoneListBindMapper.selectAllAdzoneListBind();
@@ -162,11 +162,11 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
 
                        }
                        advertiserAdzoneRptsDayGet.setTaobaoUserId(ad.getTaobaoUserId());
-                       Map<String,Object> data=new HashMap<>();
+                     /*  Map<String,Object> data=new HashMap<>();
                        data.put("currIndex",0);
                        data.put("pageSize",10);
-                      List<AdvertiserAdzoneRptsDayGet> advertiserAdzoneRptsDayGets=advertiserAdzoneRptsDayGetMapper.queryAdzoneRptsDayGetsBySql(data);
-                       advertiserAdzoneRptsDayGetMapper.insert(advertiserAdzoneRptsDayGet);
+                      List<AdvertiserAdzoneRptsDayGet> advertiserAdzoneRptsDayGets=advertiserAdzoneRptsDayGetMapper.queryAdzoneRptsDayGetsBySql(data);*/
+                       //advertiserAdzoneRptsDayGetMapper.insert(advertiserAdzoneRptsDayGet);
 
                    }
                    System.out.println("hah");

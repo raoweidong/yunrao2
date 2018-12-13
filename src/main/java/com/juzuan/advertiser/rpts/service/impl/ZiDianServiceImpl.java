@@ -31,7 +31,7 @@ public class ZiDianServiceImpl {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private TaobaoZsRelationshopPackgeTargetConditionMapper taobaoZsRelationshopPackgeTargetConditionMapper;
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String getZiDian(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
        for (TaobaoAuthorizeUser au:taobaoAuthorizeUsers){

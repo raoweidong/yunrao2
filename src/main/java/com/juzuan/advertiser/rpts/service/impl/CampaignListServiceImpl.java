@@ -29,7 +29,7 @@ public class CampaignListServiceImpl implements CampaignListService {
     @Autowired
     private  CampaignListMapper campaignListMapper;
 
-    @Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
+   // @Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
     public String campaignList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
@@ -118,7 +118,7 @@ public class CampaignListServiceImpl implements CampaignListService {
             campaignList.setTaobaoUserId(taobao.getTaobaoUserId());
             //______________________________________________
             System.out.println("接受的第一个数据 "+campaignList.getCampaignId());
-           // campaignListMapper.insert(campaignList);
+           campaignListMapper.insert(campaignList);
            /* List<CampaignList> campp=selectAllCampaign();
             for (CampaignList camm:campp){
                 System.out.println(camm.getCampaignName());
