@@ -11,19 +11,19 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from target_catelabel_list
+    from taobao_zs_tcatelabel_target_list
     where cate_id = #{cateId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from target_catelabel_list
+    delete from taobao_zs_tcatelabel_target_list
     where cate_id = #{cateId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
-    insert into target_catelabel_list (cate_id, cate_name)
+    insert into taobao_zs_tcatelabel_target_list (cate_id, cate_name)
     values (#{cateId,jdbcType=INTEGER}, #{cateName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
-    insert into target_catelabel_list
+    insert into taobao_zs_tcatelabel_target_list
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cateId != null" >
         cate_id,
@@ -42,7 +42,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
-    update target_catelabel_list
+    update taobao_zs_tcatelabel_target_list
     <set >
       <if test="cateName != null" >
         cate_name = #{cateName,jdbcType=VARCHAR},
@@ -51,7 +51,7 @@
     where cate_id = #{cateId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.TargetCatelabelList" >
-    update target_catelabel_list
+    update taobao_zs_tcatelabel_target_list
     set cate_name = #{cateName,jdbcType=VARCHAR}
     where cate_id = #{cateId,jdbcType=INTEGER}
   </update>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.IntelligenceListMapper">
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.IntelligenceList">
+    <id column="campaign_type" jdbcType="BIGINT" property="campaignType" />
+    <result column="scale_desc" jdbcType="VARCHAR" property="scaleDesc" />
+    <result column="scale_level" jdbcType="VARCHAR" property="scaleLevel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    campaign_type, scale_desc, scale_level
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_zs_intelligence_target_list
+    where campaign_type = #{campaignType,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from taobao_zs_intelligence_target_list
+    where campaign_type = #{campaignType,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.IntelligenceList">
+    insert into taobao_zs_intelligence_target_list (campaign_type, scale_desc, scale_level
+      )
+    values (#{campaignType,jdbcType=BIGINT}, #{scaleDesc,jdbcType=VARCHAR}, #{scaleLevel,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.IntelligenceList">
+    insert into taobao_zs_intelligence_target_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="campaignType != null">
+        campaign_type,
+      </if>
+      <if test="scaleDesc != null">
+        scale_desc,
+      </if>
+      <if test="scaleLevel != null">
+        scale_level,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="campaignType != null">
+        #{campaignType,jdbcType=BIGINT},
+      </if>
+      <if test="scaleDesc != null">
+        #{scaleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="scaleLevel != null">
+        #{scaleLevel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.IntelligenceList">
+    update taobao_zs_intelligence_target_list
+    <set>
+      <if test="scaleDesc != null">
+        scale_desc = #{scaleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="scaleLevel != null">
+        scale_level = #{scaleLevel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where campaign_type = #{campaignType,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.IntelligenceList">
+    update taobao_zs_intelligence_target_list
+    set scale_desc = #{scaleDesc,jdbcType=VARCHAR},
+      scale_level = #{scaleLevel,jdbcType=VARCHAR}
+    where campaign_type = #{campaignType,jdbcType=BIGINT}
+  </update>
+</mapper>

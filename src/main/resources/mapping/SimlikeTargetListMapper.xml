@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.juzuan.advertiser.rpts.mapper.CrowdListMapper" >
-  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.CrowdList" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.SimlikeTargetListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.SimlikeTargetList" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
-    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
     <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
+    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
     <result column="target_id" property="targetId" jdbcType="BIGINT" />
     <result column="crowd_name" property="crowdName" jdbcType="VARCHAR" />
     <result column="crowd_type" property="crowdType" jdbcType="BIGINT" />
@@ -25,36 +25,31 @@
     <result column="cat_name" property="catName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, taobao_user_id, adgroup_id, campaign_id, target_id, crowd_name, crowd_type, crowd_value, 
+    id, taobao_user_id, campaign_id, adgroup_id, target_id, crowd_name, crowd_type, crowd_value, 
     gmt_create, gmt_modified, adzone_id, sub_crowd_name, sub_crowd_value, price, cat_id_list, 
     shop_scale_id_list, min_per_sale, max_per_sale, shop_preference_value, cat_id, cat_name
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from taobao_zs_crowd_target_list
+    from taobao_zs_simlike_target_list
     where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAllCrowd" resultMap="BaseResultMap"  >
-    select
-    <include refid="Base_Column_List" />
-    from taobao_zs_crowd_target_list
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from taobao_zs_crowd_target_list
+    delete from taobao_zs_simlike_target_list
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CrowdList" >
-    insert into taobao_zs_crowd_target_list (id, taobao_user_id, adgroup_id,
-      campaign_id, target_id, crowd_name, 
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.SimlikeTargetList" >
+    insert into taobao_zs_simlike_target_list (id, taobao_user_id, campaign_id, 
+      adgroup_id, target_id, crowd_name, 
       crowd_type, crowd_value, gmt_create, 
       gmt_modified, adzone_id, sub_crowd_name, 
       sub_crowd_value, price, cat_id_list, 
       shop_scale_id_list, min_per_sale, max_per_sale, 
       shop_preference_value, cat_id, cat_name
       )
-    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{adgroupId,jdbcType=BIGINT}, 
-      #{campaignId,jdbcType=BIGINT}, #{targetId,jdbcType=BIGINT}, #{crowdName,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{adgroupId,jdbcType=BIGINT}, #{targetId,jdbcType=BIGINT}, #{crowdName,jdbcType=VARCHAR}, 
       #{crowdType,jdbcType=BIGINT}, #{crowdValue,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
       #{gmtModified,jdbcType=TIMESTAMP}, #{adzoneId,jdbcType=BIGINT}, #{subCrowdName,jdbcType=VARCHAR}, 
       #{subCrowdValue,jdbcType=VARCHAR}, #{price,jdbcType=BIGINT}, #{catIdList,jdbcType=VARCHAR}, 
@@ -62,8 +57,8 @@
       #{shopPreferenceValue,jdbcType=VARCHAR}, #{catId,jdbcType=BIGINT}, #{catName,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.CrowdList" >
-    insert into taobao_zs_crowd_target_list
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.SimlikeTargetList" >
+    insert into taobao_zs_simlike_target_list
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -71,11 +66,11 @@
       <if test="taobaoUserId != null" >
         taobao_user_id,
       </if>
-      <if test="adgroupId != null" >
-        adgroup_id,
-      </if>
       <if test="campaignId != null" >
         campaign_id,
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id,
       </if>
       <if test="targetId != null" >
         target_id,
@@ -136,11 +131,11 @@
       <if test="taobaoUserId != null" >
         #{taobaoUserId,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupId != null" >
-        #{adgroupId,jdbcType=BIGINT},
-      </if>
       <if test="campaignId != null" >
         #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        #{adgroupId,jdbcType=BIGINT},
       </if>
       <if test="targetId != null" >
         #{targetId,jdbcType=BIGINT},
@@ -195,17 +190,17 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.CrowdList" >
-    update taobao_zs_crowd_target_list
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.SimlikeTargetList" >
+    update taobao_zs_simlike_target_list
     <set >
       <if test="taobaoUserId != null" >
         taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupId != null" >
-        adgroup_id = #{adgroupId,jdbcType=BIGINT},
-      </if>
       <if test="campaignId != null" >
         campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
       </if>
       <if test="targetId != null" >
         target_id = #{targetId,jdbcType=BIGINT},
@@ -261,11 +256,11 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.CrowdList" >
-    update taobao_zs_crowd_target_list
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.SimlikeTargetList" >
+    update taobao_zs_simlike_target_list
     set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
-      adgroup_id = #{adgroupId,jdbcType=BIGINT},
       campaign_id = #{campaignId,jdbcType=BIGINT},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
       target_id = #{targetId,jdbcType=BIGINT},
       crowd_name = #{crowdName,jdbcType=VARCHAR},
       crowd_type = #{crowdType,jdbcType=BIGINT},
