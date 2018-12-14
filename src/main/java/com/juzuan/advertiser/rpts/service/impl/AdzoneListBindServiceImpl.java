@@ -48,52 +48,54 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
             try {
                 rsp = client.execute(req, sessionKey);
             } catch (ApiException e) {
-               
+               e.printStackTrace();
             }
             System.out.println("正在打印输出  "+rsp.getBody());
             JSONObject one= JSON.parseObject(rsp.getBody());
             JSONObject onee=one.getJSONObject("zuanshi_banner_adgroup_adzone_findpage_response");
-            JSONObject two=JSON.parseObject(onee.toString());
-            JSONObject twoo=two.getJSONObject("result");
-            JSONObject thre=JSON.parseObject(twoo.toString());
-            JSONObject three=thre.getJSONObject("adzones");
-         if (three==null){
-             System.out.println("没有绑定的广告位");
-         }
-         else{
-             JSONArray fou=three.getJSONArray("adzone_bid_d_t_o");
-             for (Object ob:fou.toArray()){
-                 AdzoneListBind adzoneListBind=new AdzoneListBind();
-                 JSONObject adzones=JSON.parseObject(ob.toString());
-                 System.out.println("正在输出绑定的广告位"+ob.toString());
-                 adzoneListBind.setAdgroupId(adg);
-                 adzoneListBind.setCampaignId(cam);
-                 adzoneListBind.setTaobaoUserId(useId);
-                 adzoneListBind.setAdzoneId(adzones.getLong("adzone_id"));
-                 adzoneListBind.setAdzoneName(adzones.getString("adzone_name"));
-                 JSONObject adzoneSizeList=adzones.getJSONObject("adzone_size_list");
-                 String string=adzoneSizeList.getString("string");
-                 System.out.println("尺寸  "+string);
-                 String stringg=string.substring(1,string.length()-1).replaceAll("\"","");
-                 adzoneListBind.setAdzoneSizeList(stringg);
-                 JSONObject allowAdFormatList=adzones.getJSONObject("allow_ad_format_list");
-                 String num=allowAdFormatList.getString("number").substring(1,allowAdFormatList.getString("number").length()-1);
-                 adzoneListBind.setAllowAdFormatList(num);
-                 adzoneListBind.setAllowAdvType(adzones.getLong("allow_adv_type"));
-                 adzoneListBind.setMediaType(adzones.getLong("media_type"));
-                 adzoneListBind.setAdzoneLevel(adzones.getLong("adzone_level"));
-                 JSONObject matrixPriceList=adzones.getJSONObject("matrix_price_list");
-                 JSONArray matrixPriceDTO=matrixPriceList.getJSONArray("matrix_price_d_t_o");
-                 for (Object bb:matrixPriceDTO.toArray()){
-                     JSONObject bbb=JSON.parseObject(bb.toString());
-                     adzoneListBind.setCrowdId(bbb.getLong("crowd_id"));
-                     adzoneListBind.setCrowdType(bbb.getLong("crowd_type"));
-                     adzoneListBind.setPrice(bbb.getLong("price"));
-                 }
-                 adzoneListBindMapper.insert(adzoneListBind);
-             }
-
-         }
+            if (onee == null){
+                continue;
+            } else {
+                JSONObject two = JSON.parseObject(onee.toString());
+                JSONObject twoo = two.getJSONObject("result");
+                JSONObject thre = JSON.parseObject(twoo.toString());
+                JSONObject three = thre.getJSONObject("adzones");
+                if (three == null) {
+                    System.out.println("没有绑定的广告位");
+                } else {
+                    JSONArray fou = three.getJSONArray("adzone_bid_d_t_o");
+                    for (Object ob : fou.toArray()) {
+                        AdzoneListBind adzoneListBind = new AdzoneListBind();
+                        JSONObject adzones = JSON.parseObject(ob.toString());
+                        System.out.println("正在输出绑定的广告位" + ob.toString());
+                        adzoneListBind.setAdgroupId(adg);
+                        adzoneListBind.setCampaignId(cam);
+                        adzoneListBind.setTaobaoUserId(useId);
+                        adzoneListBind.setAdzoneId(adzones.getLong("adzone_id"));
+                        adzoneListBind.setAdzoneName(adzones.getString("adzone_name"));
+                        JSONObject adzoneSizeList = adzones.getJSONObject("adzone_size_list");
+                        String string = adzoneSizeList.getString("string");
+                        System.out.println("尺寸  " + string);
+                        String stringg = string.substring(1, string.length() - 1).replaceAll("\"", "");
+                        adzoneListBind.setAdzoneSizeList(stringg);
+                        JSONObject allowAdFormatList = adzones.getJSONObject("allow_ad_format_list");
+                        String num = allowAdFormatList.getString("number").substring(1, allowAdFormatList.getString("number").length() - 1);
+                        adzoneListBind.setAllowAdFormatList(num);
+                        adzoneListBind.setAllowAdvType(adzones.getLong("allow_adv_type"));
+                        adzoneListBind.setMediaType(adzones.getLong("media_type"));
+                        adzoneListBind.setAdzoneLevel(adzones.getLong("adzone_level"));
+                        JSONObject matrixPriceList = adzones.getJSONObject("matrix_price_list");
+                        JSONArray matrixPriceDTO = matrixPriceList.getJSONArray("matrix_price_d_t_o");
+                        for (Object bb : matrixPriceDTO.toArray()) {
+                            JSONObject bbb = JSON.parseObject(bb.toString());
+                            adzoneListBind.setCrowdId(bbb.getLong("crowd_id"));
+                            adzoneListBind.setCrowdType(bbb.getLong("crowd_type"));
+                            adzoneListBind.setPrice(bbb.getLong("price"));
+                        }
+                        adzoneListBindMapper.insert(adzoneListBind);
+                    }
+                }
+            }
         }
         return "";
     }

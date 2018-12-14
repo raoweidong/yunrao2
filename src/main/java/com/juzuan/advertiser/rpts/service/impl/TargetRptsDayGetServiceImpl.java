@@ -94,16 +94,47 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
                     trd.setAdPv(trd.getAdPv()==null?"0":trd.getAdPv());
                     trd.setCtr(trd.getCtr()==null?"0":trd.getCtr());
 
-                    trd.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(trd.getCartNum()==null?"0":trd.getCartNum()) / Double.parseDouble(trd.getCharge()==null?"0":trd.getCharge())));
-                    trd.setCommodityCollectionRate(String.valueOf(Double.parseDouble(trd.getInshopItemColNum()) / Double.parseDouble(trd.getClick())));
                     Double collectionAndBuy = Double.parseDouble(trd.getDirShopColNum()) + Double.parseDouble(trd.getInshopItemColNum()) + Double.parseDouble(trd.getCartNum());
-                    trd.setTotalCollectionPlusCost(String.valueOf(Double.parseDouble(trd.getCharge()) / collectionAndBuy));
-                    trd.setTotalCollectionRate(String.valueOf(Double.parseDouble(trd.getClick()) / collectionAndBuy));
-                    trd.setCommodityCollectionCost(String.valueOf(Double.parseDouble(trd.getCharge()) / Double.parseDouble(trd.getInshopItemColNum())));
-                    trd.setCommodityPlusCost(String.valueOf(Double.parseDouble(trd.getCharge()) + Double.parseDouble(trd.getCartNum())));
-                    trd.setAverageUvValue(String.valueOf(Double.parseDouble(trd.getAlipayInshopAmt()) / Double.parseDouble(trd.getUv())));
-                    trd.setOrderAverageAmount(String.valueOf(Double.parseDouble(trd.getAlipayInshopAmt()) / Double.parseDouble(trd.getAlipayInShopNum())));
-                    trd.setAverageCostOfOrder(String.valueOf(Double.parseDouble(trd.getCharge()) / Double.parseDouble(trd.getAlipayInShopNum())));
+                    if (collectionAndBuy ==0){
+                        trd.setTotalCollectionPlusCost("0");
+                        trd.setTotalCollectionRate("0");
+                    }else {
+                        trd.setTotalCollectionPlusCost(trd.getCharge()==null?"0":String.valueOf(Double.parseDouble(trd.getCharge()) / collectionAndBuy));
+                        trd.setTotalCollectionRate(trd.getClick()==null?"0":String.valueOf(Double.parseDouble(trd.getClick()) / collectionAndBuy));
+                    }
+                    if (Double.parseDouble(trd.getCharge()) ==0){
+                        trd.setCommodityPurchaseRate("0");
+                        trd.setTotalCollectionPlusCost("0");
+                    }else {
+                        trd.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(trd.getCartNum()) / Double.parseDouble(trd.getCharge())));
+
+                    }
+                    if (Double.parseDouble(trd.getClick())==0){
+                        trd.setCommodityCollectionRate("0");
+                        trd.setTotalCollectionRate("0");
+                    }else {
+                        trd.setCommodityCollectionRate(String.valueOf(Double.parseDouble(trd.getInshopItemColNum()) / Double.parseDouble(trd.getClick())));
+
+                    }
+                    if (Double.parseDouble(trd.getInshopItemColNum())==0){
+                        trd.setCommodityCollectionCost("0");
+                    }else {
+                        trd.setCommodityCollectionCost(String.valueOf(Double.parseDouble(trd.getCharge()) / Double.parseDouble(trd.getInshopItemColNum())));
+                    }
+                    trd.setCommodityPlusCost(String.valueOf(Double.parseDouble(trd.getCharge()==null?"0":trd.getCharge()) + Double.parseDouble(trd.getCartNum()==null?"0":trd.getCartNum())));
+                    if(Double.parseDouble(trd.getUv())==0){
+                        trd.setAverageUvValue("0");
+                    }else {
+                        trd.setAverageUvValue(String.valueOf(Double.parseDouble(trd.getAlipayInshopAmt()) / Double.parseDouble(trd.getUv())));
+                    }
+                    if (Double.parseDouble(trd.getAlipayInShopNum())==0) {
+                        trd.setOrderAverageAmount("0");
+                        trd.setAverageCostOfOrder("0");
+                    }else {
+                        trd.setOrderAverageAmount(String.valueOf(Double.parseDouble(trd.getAlipayInshopAmt()) / Double.parseDouble(trd.getAlipayInShopNum())));
+                        trd.setAverageCostOfOrder(String.valueOf(Double.parseDouble(trd.getCharge()) / Double.parseDouble(trd.getAlipayInShopNum())));
+                    }
+
 
                     targetRptsDayGetMapper.insert(trd);
                 }

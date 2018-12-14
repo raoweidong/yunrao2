@@ -34,6 +34,8 @@ public class AdzoneListServiceImpl implements AdzoneListService {
            String sessionKey=taobaoAuthorizeUser.getAccessToken();
            TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
            ZuanshiBannerAdzoneFindpageRequest req = new ZuanshiBannerAdzoneFindpageRequest();
+           req.setPageSize(50L);
+           req.setPageNum(4L);
            ZuanshiBannerAdzoneFindpageResponse rsp = null;
            try {
                rsp = client.execute(req, sessionKey);
@@ -49,42 +51,44 @@ public class AdzoneListServiceImpl implements AdzoneListService {
            JSONObject three=thre.getJSONObject("adzones");
            JSONArray four=three.getJSONArray("adzone_d_t_o");
            AdzoneList adzoneList=new AdzoneList();
-           for (Object ob:four.toArray()){
-               System.out.println("  资源位数组  "+ob.toString());
-               JSONObject oo=JSON.parseObject(ob.toString());
-               adzoneList.setAdzoneId(oo.getLong("adzone_id"));
-               System.out.println("  资源位id  "+adzoneList.getAdzoneId());
-               adzoneList.setAdzoneName(oo.getString("adzone_name"));
-               //adzoneList.setAdzoneSizeList(oo.getString("adzone_size_list"));
-               //资源位尺寸的获取
-               JSONObject sizeList=oo.getJSONObject("adzone_size_list");
-               JSONArray string=sizeList.getJSONArray("string");
-               System.out.println("  尺寸数据  "+string.toString());
-               String str=string.toString().substring(1,string.toString().length()-1);
-               System.out.println("  去掉中括号 "+str);
-               String strr = str.replaceAll("\"", "");
+           if (four ==null){
+               continue;
+           }else {
+               for (Object ob : four.toArray()) {
+                   //System.out.println("  资源位数组  " + ob.toString());
+                   JSONObject oo = JSON.parseObject(ob.toString());
+                   adzoneList.setAdzoneId(oo.getLong("adzone_id"));
+                   //System.out.println("  资源位id  " + adzoneList.getAdzoneId());
+                   adzoneList.setAdzoneName(oo.getString("adzone_name"));
+                   //adzoneList.setAdzoneSizeList(oo.getString("adzone_size_list"));
+                   //资源位尺寸的获取
+                   JSONObject sizeList = oo.getJSONObject("adzone_size_list");
+                   JSONArray string = sizeList.getJSONArray("string");
+                   //System.out.println("  尺寸数据  " + string.toString());
+                   String str = string.toString().substring(1, string.toString().length() - 1);
+                   //System.out.println("  去掉中括号 " + str);
+                   String strr = str.replaceAll("\"", "");
 
-               System.out.println("haahh "+strr);
-               adzoneList.setAdzoneSizeList(strr);
-               JSONObject format=oo.getJSONObject("allow_ad_format_list");
-               String formatList=format.getString("number");
-               String num=formatList.substring(1,formatList.length()-1);
-               adzoneList.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
-               adzoneList.setAllowAdFormatList(num);
-               adzoneList.setAllowAdvType(oo.getLong("allow_adv_type"));
-               adzoneList.setAdzoneLevel(oo.getLong("adzone_level"));
-               adzoneList.setMediaType(oo.getLong("media_type"));
-               adzoneList.setTpv(oo.getLong("tpv"));
-               adzoneList.setCtr(oo.getString("ctr"));
-               adzoneList.setFirstTime(oo.getDate("first_time"));
-               adzoneList.setRcmdScore(oo.getLong("rcmd_score"));
-               adzoneList.setBidScore(oo.getLong("bid_score"));
-               adzoneList.setCpmScore(oo.getLong("cpm_score"));
-               adzoneList.setCpcScore(oo.getLong("cpc_score"));
-               adzoneListMapper.insert(adzoneList);
-
+                   //System.out.println("haahh " + strr);
+                   adzoneList.setAdzoneSizeList(strr);
+                   JSONObject format = oo.getJSONObject("allow_ad_format_list");
+                   String formatList = format.getString("number");
+                   String num = formatList.substring(1, formatList.length() - 1);
+                   adzoneList.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
+                   adzoneList.setAllowAdFormatList(num);
+                   adzoneList.setAllowAdvType(oo.getLong("allow_adv_type"));
+                   adzoneList.setAdzoneLevel(oo.getLong("adzone_level"));
+                   adzoneList.setMediaType(oo.getLong("media_type"));
+                   adzoneList.setTpv(oo.getLong("tpv"));
+                   adzoneList.setCtr(oo.getString("ctr"));
+                   adzoneList.setFirstTime(oo.getDate("first_time"));
+                   adzoneList.setRcmdScore(oo.getLong("rcmd_score"));
+                   adzoneList.setBidScore(oo.getLong("bid_score"));
+                   adzoneList.setCpmScore(oo.getLong("cpm_score"));
+                   adzoneList.setCpcScore(oo.getLong("cpc_score"));
+                   adzoneListMapper.insert(adzoneList);
+               }
            }
-
     }
         return "";
    }

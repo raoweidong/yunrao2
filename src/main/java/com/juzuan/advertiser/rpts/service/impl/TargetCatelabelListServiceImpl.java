@@ -32,7 +32,7 @@ public class TargetCatelabelListServiceImpl implements TargetCatelabelListServic
     private CampaignListMapper campaignListMapper;
     @Autowired
     private TargetCatelabelListMapper targetCatelabelListMapper;
-   // @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String TargetCatelabeList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau : taobaoAuthorizeUsers) {
@@ -63,9 +63,7 @@ public class TargetCatelabelListServiceImpl implements TargetCatelabelListServic
                     targetCatelabelListMapper.insert(tcl);
                 }
             }
-
         }
-
         return "";
     }
 }

@@ -65,6 +65,7 @@ public class RelationshopListServiceImpl implements RelationshopListService {
             } else {
                 List<RelationshopList> relationshopLists = JSONObject.parseArray(relation.toString(),RelationshopList.class);
                 for (RelationshopList rl: relationshopLists) {
+                    rl.setTaobaoUserId(cl.getTaobaoUserId());
                     relationshopListMapper.insert(rl);
                 }
             }

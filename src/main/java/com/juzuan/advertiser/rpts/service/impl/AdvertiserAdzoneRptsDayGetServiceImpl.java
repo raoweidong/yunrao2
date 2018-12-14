@@ -11,7 +11,6 @@ import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.ZuanshiAdvertiserAdzoneRptsDayGetRequest;
 import com.taobao.api.response.ZuanshiAdvertiserAdzoneRptsDayGetResponse;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -37,7 +36,7 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
     private AdvertiserAdzoneRptsDayGetMapper advertiserAdzoneRptsDayGetMapper;
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+   //@Scheduled(cron = "*/5 * * * * ?")
     public String getAdzone(){
 
           List<AdzoneListBind> adzoneListBindd=adzoneListBindMapper.selectAllAdzoneListBind();
@@ -162,11 +161,11 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
 
                        }
                        advertiserAdzoneRptsDayGet.setTaobaoUserId(ad.getTaobaoUserId());
-                     /*  Map<String,Object> data=new HashMap<>();
+                       Map<String,Object> data=new HashMap<>();
                        data.put("currIndex",0);
                        data.put("pageSize",10);
-                      List<AdvertiserAdzoneRptsDayGet> advertiserAdzoneRptsDayGets=advertiserAdzoneRptsDayGetMapper.queryAdzoneRptsDayGetsBySql(data);*/
-                       //advertiserAdzoneRptsDayGetMapper.insert(advertiserAdzoneRptsDayGet);
+                      List<AdvertiserAdzoneRptsDayGet> advertiserAdzoneRptsDayGets=advertiserAdzoneRptsDayGetMapper.queryAdzoneRptsDayGetsBySql(data);
+                       advertiserAdzoneRptsDayGetMapper.insert(advertiserAdzoneRptsDayGet);
 
                    }
                    System.out.println("hah");
