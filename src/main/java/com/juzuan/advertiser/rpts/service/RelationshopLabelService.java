@@ -1,4 +1,4 @@
 package com.juzuan.advertiser.rpts.service;
 
-public interface CampaignDetailsService {
+public interface RelationshopLabelService {
 }
