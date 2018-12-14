@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.RelationshopLabelMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.RelationshopLabel" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="behavior_value" property="behaviorValue" jdbcType="VARCHAR" />
+    <result column="behavior_name" property="behaviorName" jdbcType="VARCHAR" />
+    <result column="time_window_value" property="timeWindowValue" jdbcType="VARCHAR" />
+    <result column="time_window_name" property="timeWindowName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, behavior_value, behavior_name, time_window_value, time_window_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_zs_relationshop_packge_target_label
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_zs_relationshop_packge_target_label
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.RelationshopLabel" >
+    insert into taobao_zs_relationshop_packge_target_label (id, taobao_user_id, behavior_value, 
+      behavior_name, time_window_value, time_window_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{behaviorValue,jdbcType=VARCHAR}, 
+      #{behaviorName,jdbcType=VARCHAR}, #{timeWindowValue,jdbcType=VARCHAR}, #{timeWindowName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.RelationshopLabel" >
+    insert into taobao_zs_relationshop_packge_target_label
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="behaviorValue != null" >
+        behavior_value,
+      </if>
+      <if test="behaviorName != null" >
+        behavior_name,
+      </if>
+      <if test="timeWindowValue != null" >
+        time_window_value,
+      </if>
+      <if test="timeWindowName != null" >
+        time_window_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="behaviorValue != null" >
+        #{behaviorValue,jdbcType=VARCHAR},
+      </if>
+      <if test="behaviorName != null" >
+        #{behaviorName,jdbcType=VARCHAR},
+      </if>
+      <if test="timeWindowValue != null" >
+        #{timeWindowValue,jdbcType=VARCHAR},
+      </if>
+      <if test="timeWindowName != null" >
+        #{timeWindowName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.RelationshopLabel" >
+    update taobao_zs_relationshop_packge_target_label
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="behaviorValue != null" >
+        behavior_value = #{behaviorValue,jdbcType=VARCHAR},
+      </if>
+      <if test="behaviorName != null" >
+        behavior_name = #{behaviorName,jdbcType=VARCHAR},
+      </if>
+      <if test="timeWindowValue != null" >
+        time_window_value = #{timeWindowValue,jdbcType=VARCHAR},
+      </if>
+      <if test="timeWindowName != null" >
+        time_window_name = #{timeWindowName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.RelationshopLabel" >
+    update taobao_zs_relationshop_packge_target_label
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      behavior_value = #{behaviorValue,jdbcType=VARCHAR},
+      behavior_name = #{behaviorName,jdbcType=VARCHAR},
+      time_window_value = #{timeWindowValue,jdbcType=VARCHAR},
+      time_window_name = #{timeWindowName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

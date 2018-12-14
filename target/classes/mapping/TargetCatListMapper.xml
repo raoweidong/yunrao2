@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.TargetCatListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.TargetCatList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="cat_id" property="catId" jdbcType="VARCHAR" />
+    <result column="cat_name" property="catName" jdbcType="VARCHAR" />
+    <result column="option_value" property="optionValue" jdbcType="VARCHAR" />
+    <result column="option_name" property="optionName" jdbcType="VARCHAR" />
+    <result column="campaign_type" property="campaignType" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, cat_id, cat_name, option_value, option_name, campaign_type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_zs_cat_target_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_zs_cat_target_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.TargetCatList" >
+    insert into taobao_zs_cat_target_list (id, taobao_user_id, cat_id,
+      cat_name, option_value, option_name, 
+      campaign_type)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{catId,jdbcType=VARCHAR}, 
+      #{catName,jdbcType=VARCHAR}, #{optionValue,jdbcType=VARCHAR}, #{optionName,jdbcType=VARCHAR}, 
+      #{campaignType,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatList" >
+    insert into taobao_zs_cat_target_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="catId != null" >
+        cat_id,
+      </if>
+      <if test="catName != null" >
+        cat_name,
+      </if>
+      <if test="optionValue != null" >
+        option_value,
+      </if>
+      <if test="optionName != null" >
+        option_name,
+      </if>
+      <if test="campaignType != null" >
+        campaign_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null" >
+        #{catId,jdbcType=VARCHAR},
+      </if>
+      <if test="catName != null" >
+        #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="optionValue != null" >
+        #{optionValue,jdbcType=VARCHAR},
+      </if>
+      <if test="optionName != null" >
+        #{optionName,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignType != null" >
+        #{campaignType,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.TargetCatList" >
+    update taobao_zs_cat_target_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null" >
+        cat_id = #{catId,jdbcType=VARCHAR},
+      </if>
+      <if test="catName != null" >
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="optionValue != null" >
+        option_value = #{optionValue,jdbcType=VARCHAR},
+      </if>
+      <if test="optionName != null" >
+        option_name = #{optionName,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignType != null" >
+        campaign_type = #{campaignType,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.TargetCatList" >
+    update taobao_zs_cat_target_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=VARCHAR},
+      cat_name = #{catName,jdbcType=VARCHAR},
+      option_value = #{optionValue,jdbcType=VARCHAR},
+      option_name = #{optionName,jdbcType=VARCHAR},
+      campaign_type = #{campaignType,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

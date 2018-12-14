@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.RelationshopConditionMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.RelationshopCondition" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="cate_id" property="cateId" jdbcType="VARCHAR" />
+    <result column="cate_name" property="cateName" jdbcType="VARCHAR" />
+    <result column="shop_scale_id" property="shopScaleId" jdbcType="VARCHAR" />
+    <result column="shop_scale_name" property="shopScaleName" jdbcType="VARCHAR" />
+    <result column="max_per_sale" property="maxPerSale" jdbcType="BIGINT" />
+    <result column="min_per_sale" property="minPerSale" jdbcType="BIGINT" />
+    <result column="shop_preference_value" property="shopPreferenceValue" jdbcType="VARCHAR" />
+    <result column="shop_preference_name" property="shopPreferenceName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, cate_id, cate_name, shop_scale_id, shop_scale_name, max_per_sale, 
+    min_per_sale, shop_preference_value, shop_preference_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_zs_relationshop_packge_target_condition
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectDistinct" resultMap="BaseResultMap"  >
+    select distinct taobao_user_id,cate_id
+    from taobao_zs_relationshop_packge_target_condition
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_zs_relationshop_packge_target_condition
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.RelationshopCondition" >
+    insert into taobao_zs_relationshop_packge_target_condition (id, taobao_user_id, cate_id, 
+      cate_name, shop_scale_id, shop_scale_name, 
+      max_per_sale, min_per_sale, shop_preference_value, 
+      shop_preference_name)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{cateId,jdbcType=VARCHAR}, 
+      #{cateName,jdbcType=VARCHAR}, #{shopScaleId,jdbcType=VARCHAR}, #{shopScaleName,jdbcType=VARCHAR}, 
+      #{maxPerSale,jdbcType=BIGINT}, #{minPerSale,jdbcType=BIGINT}, #{shopPreferenceValue,jdbcType=VARCHAR}, 
+      #{shopPreferenceName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.RelationshopCondition" >
+    insert into taobao_zs_relationshop_packge_target_condition
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="cateId != null" >
+        cate_id,
+      </if>
+      <if test="cateName != null" >
+        cate_name,
+      </if>
+      <if test="shopScaleId != null" >
+        shop_scale_id,
+      </if>
+      <if test="shopScaleName != null" >
+        shop_scale_name,
+      </if>
+      <if test="maxPerSale != null" >
+        max_per_sale,
+      </if>
+      <if test="minPerSale != null" >
+        min_per_sale,
+      </if>
+      <if test="shopPreferenceValue != null" >
+        shop_preference_value,
+      </if>
+      <if test="shopPreferenceName != null" >
+        shop_preference_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null" >
+        #{cateId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateName != null" >
+        #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleId != null" >
+        #{shopScaleId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleName != null" >
+        #{shopScaleName,jdbcType=VARCHAR},
+      </if>
+      <if test="maxPerSale != null" >
+        #{maxPerSale,jdbcType=BIGINT},
+      </if>
+      <if test="minPerSale != null" >
+        #{minPerSale,jdbcType=BIGINT},
+      </if>
+      <if test="shopPreferenceValue != null" >
+        #{shopPreferenceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPreferenceName != null" >
+        #{shopPreferenceName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.RelationshopCondition" >
+    update taobao_zs_relationshop_packge_target_condition
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null" >
+        cate_id = #{cateId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateName != null" >
+        cate_name = #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleId != null" >
+        shop_scale_id = #{shopScaleId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleName != null" >
+        shop_scale_name = #{shopScaleName,jdbcType=VARCHAR},
+      </if>
+      <if test="maxPerSale != null" >
+        max_per_sale = #{maxPerSale,jdbcType=BIGINT},
+      </if>
+      <if test="minPerSale != null" >
+        min_per_sale = #{minPerSale,jdbcType=BIGINT},
+      </if>
+      <if test="shopPreferenceValue != null" >
+        shop_preference_value = #{shopPreferenceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPreferenceName != null" >
+        shop_preference_name = #{shopPreferenceName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.RelationshopCondition" >
+    update taobao_zs_relationshop_packge_target_condition
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      cate_id = #{cateId,jdbcType=VARCHAR},
+      cate_name = #{cateName,jdbcType=VARCHAR},
+      shop_scale_id = #{shopScaleId,jdbcType=VARCHAR},
+      shop_scale_name = #{shopScaleName,jdbcType=VARCHAR},
+      max_per_sale = #{maxPerSale,jdbcType=BIGINT},
+      min_per_sale = #{minPerSale,jdbcType=BIGINT},
+      shop_preference_value = #{shopPreferenceValue,jdbcType=VARCHAR},
+      shop_preference_name = #{shopPreferenceName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

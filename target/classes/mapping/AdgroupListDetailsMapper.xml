@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AdgroupListDetailsMapper">
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="taobao_user_id" jdbcType="VARCHAR" property="taobaoUserId" />
+    <result column="campaign_id" jdbcType="BIGINT" property="campaignId" />
+    <result column="adgroup_id" jdbcType="BIGINT" property="adgroupId" />
+    <result column="adgroup_name" jdbcType="VARCHAR" property="adgroupName" />
+    <result column="online_status" jdbcType="BIGINT" property="onlineStatus" />
+    <result column="intelligent_bid" jdbcType="INTEGER" property="intelligentBid" />
+    <result column="adboard_filter" jdbcType="INTEGER" property="adboardFilter" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, taobao_user_id, campaign_id, adgroup_id, adgroup_name, online_status, intelligent_bid, 
+    adboard_filter
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from adgroup_list_details
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from adgroup_list_details
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
+    insert into adgroup_list_details (id, taobao_user_id, campaign_id, 
+      adgroup_id, adgroup_name, online_status, 
+      intelligent_bid, adboard_filter)
+    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{adgroupId,jdbcType=BIGINT}, #{adgroupName,jdbcType=VARCHAR}, #{onlineStatus,jdbcType=BIGINT}, 
+      #{intelligentBid,jdbcType=INTEGER}, #{adboardFilter,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
+    insert into adgroup_list_details
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="taobaoUserId != null">
+        taobao_user_id,
+      </if>
+      <if test="campaignId != null">
+        campaign_id,
+      </if>
+      <if test="adgroupId != null">
+        adgroup_id,
+      </if>
+      <if test="adgroupName != null">
+        adgroup_name,
+      </if>
+      <if test="onlineStatus != null">
+        online_status,
+      </if>
+      <if test="intelligentBid != null">
+        intelligent_bid,
+      </if>
+      <if test="adboardFilter != null">
+        adboard_filter,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taobaoUserId != null">
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null">
+        #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null">
+        #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupName != null">
+        #{adgroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null">
+        #{onlineStatus,jdbcType=BIGINT},
+      </if>
+      <if test="intelligentBid != null">
+        #{intelligentBid,jdbcType=INTEGER},
+      </if>
+      <if test="adboardFilter != null">
+        #{adboardFilter,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
+    update adgroup_list_details
+    <set>
+      <if test="taobaoUserId != null">
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null">
+        campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null">
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupName != null">
+        adgroup_name = #{adgroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null">
+        online_status = #{onlineStatus,jdbcType=BIGINT},
+      </if>
+      <if test="intelligentBid != null">
+        intelligent_bid = #{intelligentBid,jdbcType=INTEGER},
+      </if>
+      <if test="adboardFilter != null">
+        adboard_filter = #{adboardFilter,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
+    update adgroup_list_details
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      adgroup_name = #{adgroupName,jdbcType=VARCHAR},
+      online_status = #{onlineStatus,jdbcType=BIGINT},
+      intelligent_bid = #{intelligentBid,jdbcType=INTEGER},
+      adboard_filter = #{adboardFilter,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
