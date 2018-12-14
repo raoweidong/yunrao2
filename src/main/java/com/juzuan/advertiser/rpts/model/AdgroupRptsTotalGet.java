@@ -1,23 +1,17 @@
 package com.juzuan.advertiser.rpts.model;
 
-import java.util.Date;
-
-public class AdvertiserAccountRptsDayGet {
-    private Long id;
+public class AdgroupRptsTotalGet {
+    private Integer id;
 
     private String taobaoUserId;
 
-    private String charge;
+    private Long campaignId;
 
-    private String click;
+    private String campaignName;
 
-    private String adPv;
+    private Long adgroupId;
 
-    private String ecpm;
-
-    private String ctr;
-
-    private String ecpc;
+    private String adgroupName;
 
     private String cvr;
 
@@ -43,6 +37,18 @@ public class AdvertiserAccountRptsDayGet {
 
     private String uv;
 
+    private String ecpm;
+
+    private String ecpc;
+
+    private String ctr;
+
+    private String charge;
+
+    private String click;
+
+    private String adPv;
+
     private String roi;
 
     private String commodityPurchaseRate;
@@ -63,13 +69,11 @@ public class AdvertiserAccountRptsDayGet {
 
     private String averageUvValue;
 
-    private Date logDate;
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -81,52 +85,36 @@ public class AdvertiserAccountRptsDayGet {
         this.taobaoUserId = taobaoUserId == null ? null : taobaoUserId.trim();
     }
 
-    public String getCharge() {
-        return charge;
+    public Long getCampaignId() {
+        return campaignId;
     }
 
-    public void setCharge(String charge) {
-        this.charge = charge == null ? null : charge.trim();
+    public void setCampaignId(Long campaignId) {
+        this.campaignId = campaignId;
     }
 
-    public String getClick() {
-        return click;
+    public String getCampaignName() {
+        return campaignName;
     }
 
-    public void setClick(String click) {
-        this.click = click == null ? null : click.trim();
+    public void setCampaignName(String campaignName) {
+        this.campaignName = campaignName == null ? null : campaignName.trim();
     }
 
-    public String getAdPv() {
-        return adPv;
+    public Long getAdgroupId() {
+        return adgroupId;
     }
 
-    public void setAdPv(String adPv) {
-        this.adPv = adPv == null ? null : adPv.trim();
+    public void setAdgroupId(Long adgroupId) {
+        this.adgroupId = adgroupId;
     }
 
-    public String getEcpm() {
-        return ecpm;
+    public String getAdgroupName() {
+        return adgroupName;
     }
 
-    public void setEcpm(String ecpm) {
-        this.ecpm = ecpm == null ? null : ecpm.trim();
-    }
-
-    public String getCtr() {
-        return ctr;
-    }
-
-    public void setCtr(String ctr) {
-        this.ctr = ctr == null ? null : ctr.trim();
-    }
-
-    public String getEcpc() {
-        return ecpc;
-    }
-
-    public void setEcpc(String ecpc) {
-        this.ecpc = ecpc == null ? null : ecpc.trim();
+    public void setAdgroupName(String adgroupName) {
+        this.adgroupName = adgroupName == null ? null : adgroupName.trim();
     }
 
     public String getCvr() {
@@ -225,6 +213,54 @@ public class AdvertiserAccountRptsDayGet {
         this.uv = uv == null ? null : uv.trim();
     }
 
+    public String getEcpm() {
+        return ecpm;
+    }
+
+    public void setEcpm(String ecpm) {
+        this.ecpm = ecpm == null ? null : ecpm.trim();
+    }
+
+    public String getEcpc() {
+        return ecpc;
+    }
+
+    public void setEcpc(String ecpc) {
+        this.ecpc = ecpc == null ? null : ecpc.trim();
+    }
+
+    public String getCtr() {
+        return ctr;
+    }
+
+    public void setCtr(String ctr) {
+        this.ctr = ctr == null ? null : ctr.trim();
+    }
+
+    public String getCharge() {
+        return charge;
+    }
+
+    public void setCharge(String charge) {
+        this.charge = charge == null ? null : charge.trim();
+    }
+
+    public String getClick() {
+        return click;
+    }
+
+    public void setClick(String click) {
+        this.click = click == null ? null : click.trim();
+    }
+
+    public String getAdPv() {
+        return adPv;
+    }
+
+    public void setAdPv(String adPv) {
+        this.adPv = adPv == null ? null : adPv.trim();
+    }
+
     public String getRoi() {
         return roi;
     }
@@ -303,13 +339,5 @@ public class AdvertiserAccountRptsDayGet {
 
     public void setAverageUvValue(String averageUvValue) {
         this.averageUvValue = averageUvValue == null ? null : averageUvValue.trim();
-    }
-
-    public Date getLogDate() {
-        return logDate;
-    }
-
-    public void setLogDate(Date logDate) {
-        this.logDate = logDate;
     }
 }

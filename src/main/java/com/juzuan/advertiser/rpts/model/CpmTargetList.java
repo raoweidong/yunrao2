@@ -1,13 +1,13 @@
 package com.juzuan.advertiser.rpts.model;
 
-public class RelationshopList {
+public class CpmTargetList {
     private Integer id;
 
     private String taobaoUserId;
 
-    private String packageId;
+    private String targetType;
 
-    private String packageName;
+    private String targetName;
 
     public Integer getId() {
         return id;
@@ -25,19 +25,19 @@ public class RelationshopList {
         this.taobaoUserId = taobaoUserId == null ? null : taobaoUserId.trim();
     }
 
-    public String getPackageId() {
-        return packageId;
+    public String getTargetType() {
+        return targetType;
     }
 
-    public void setPackageId(String packageId) {
-        this.packageId = packageId == null ? null : packageId.trim();
+    public void setTargetType(String targetType) {
+        this.targetType = targetType == null ? null : targetType.trim();
     }
 
-    public String getPackageName() {
-        return packageName;
+    public String getTargetName() {
+        return targetName;
     }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName == null ? null : packageName.trim();
+    public void setTargetName(String targetName) {
+        this.targetName = targetName == null ? null : targetName.trim();
     }
 }

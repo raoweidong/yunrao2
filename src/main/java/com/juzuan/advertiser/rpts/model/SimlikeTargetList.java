@@ -2,14 +2,14 @@ package com.juzuan.advertiser.rpts.model;
 
 import java.util.Date;
 
-public class CrowdList {
+public class SimlikeTargetList {
     private Integer id;
 
     private String taobaoUserId;
 
-    private Long adgroupId;
-
     private Long campaignId;
+
+    private Long adgroupId;
 
     private Long targetId;
 
@@ -61,20 +61,20 @@ public class CrowdList {
         this.taobaoUserId = taobaoUserId == null ? null : taobaoUserId.trim();
     }
 
-    public Long getAdgroupId() {
-        return adgroupId;
-    }
-
-    public void setAdgroupId(Long adgroupId) {
-        this.adgroupId = adgroupId;
-    }
-
     public Long getCampaignId() {
         return campaignId;
     }
 
     public void setCampaignId(Long campaignId) {
         this.campaignId = campaignId;
+    }
+
+    public Long getAdgroupId() {
+        return adgroupId;
+    }
+
+    public void setAdgroupId(Long adgroupId) {
+        this.adgroupId = adgroupId;
     }
 
     public Long getTargetId() {

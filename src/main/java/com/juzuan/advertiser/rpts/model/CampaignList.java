@@ -31,6 +31,8 @@ public class CampaignList {
 
     private String marketingdemand;
 
+    private Integer campaignSource;
+
     public Long getId() {
         return id;
     }
@@ -141,5 +143,13 @@ public class CampaignList {
 
     public void setMarketingdemand(String marketingdemand) {
         this.marketingdemand = marketingdemand == null ? null : marketingdemand.trim();
+    }
+
+    public Integer getCampaignSource() {
+        return campaignSource;
+    }
+
+    public void setCampaignSource(Integer campaignSource) {
+        this.campaignSource = campaignSource;
     }
 }
