@@ -4,7 +4,6 @@ import com.juzuan.advertiser.rpts.model.AdgroupList;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-
 @Mapper
 public interface AdgroupListMapper {
     int deleteByPrimaryKey(Long id);
@@ -18,5 +17,6 @@ public interface AdgroupListMapper {
     int updateByPrimaryKeySelective(AdgroupList record);
 
     int updateByPrimaryKey(AdgroupList record);
+
     List<AdgroupList> selectAllAdgroup();
 }
