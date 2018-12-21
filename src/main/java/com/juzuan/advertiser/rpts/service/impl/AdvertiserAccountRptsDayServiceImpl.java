@@ -28,15 +28,15 @@ public class AdvertiserAccountRptsDayServiceImpl {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private AdvertiserAccountRptsDayGetMapper advertiserAccountRptsDayGetMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    @Scheduled(cron = "*/5 * * * * ?")
     public void parseAndSaveAccountDays(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
             String sessionKey=taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiAdvertiserAccountRptsDayGetRequest req = new ZuanshiAdvertiserAccountRptsDayGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime("2018-09-20");
+            req.setEndTime("2018-12-20");
             req.setEffect(7L);
             //req.setCampaignModel(1L);
             req.setEffectType("click");
