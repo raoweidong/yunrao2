@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 单元详情列表
+ */
 @Service
 public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService {
     private static String appkey="25139411";
@@ -33,8 +36,9 @@ public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService 
     @Autowired
     private AdgroupListMapper adgroupListMapper;
 
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "0 35 * * * ? ")
     public String AdgroupListDetails () throws ApiException {
+        adgroupListDetailsMapper.deleteALL();
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList ad: cam) {
             String userId = ad.getTaobaoUserId();
@@ -64,7 +68,7 @@ public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService 
                 adgroupListDetail.setOnlineStatus(0L);
                 adgroupListDetail.setIntelligentBid(0);
                 adgroupListDetail.setAdboardFilter(0);
-                adgroupListDetailsMapper.insert(adgroupListDetail);
+                //adgroupListDetailsMapper.insert(adgroupListDetail);
                 continue;
             }else {
                 Object sixObject = fivObject.getJSONObject("adgroup");

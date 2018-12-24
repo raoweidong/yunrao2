@@ -44,8 +44,8 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
             String sessionKey=taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiAdvertiserCampaignRptsDayGetRequest req = new ZuanshiAdvertiserCampaignRptsDayGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime("2018-11-28");
+            req.setEndTime("2018-12-20");
             req.setCampaignId(id);
             req.setEffect(7L);
             req.setCampaignModel(1L);

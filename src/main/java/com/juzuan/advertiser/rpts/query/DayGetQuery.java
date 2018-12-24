@@ -23,4 +23,7 @@ public class DayGetQuery {
     public void setLogDate(Date logDate) {
         this.logDate = logDate;
     }
+
+    public void setLogDate(String logDate) {
+    }
 }

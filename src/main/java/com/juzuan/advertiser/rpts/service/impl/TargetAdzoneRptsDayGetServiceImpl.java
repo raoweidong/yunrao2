@@ -51,8 +51,8 @@ public class TargetAdzoneRptsDayGetServiceImpl implements TargetAdzoneRptsDayGet
             req.setTargetId(cl.getTargetId());
             req.setEffectType("click");
             req.setEffect(7L);
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime("2018-11-28");
+            req.setEndTime("2018-12-20");
             ZuanshiAdvertiserTargetAdzoneRptsDayGetResponse rsp = null;
             try {
                 rsp = client.execute(req,sessionKey);

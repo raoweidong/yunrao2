@@ -29,6 +29,8 @@ public class CampaignDetails {
 
     private String areaIdList;
 
+    private Integer campaignSource;
+
     public Long getId() {
         return id;
     }
@@ -131,5 +133,13 @@ public class CampaignDetails {
 
     public void setAreaIdList(String areaIdList) {
         this.areaIdList = areaIdList == null ? null : areaIdList.trim();
+    }
+
+    public Integer getCampaignSource() {
+        return campaignSource;
+    }
+
+    public void setCampaignSource(Integer campaignSource) {
+        this.campaignSource = campaignSource;
     }
 }

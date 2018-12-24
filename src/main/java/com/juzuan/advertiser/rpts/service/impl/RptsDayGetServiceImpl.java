@@ -100,13 +100,6 @@ public class RptsDayGetServiceImpl implements RptsDayGetService {
                 advertiserAccountRptsDayGetMapper.insert(item);//遍历对象数组并保存
             }else{
                 System.out.println("该记录已存在,");
-              /*  System.out.println(selectAll().toString());
-                List<AdvertiserAccountRptsDayGet>A=selectAll();
-
-                for (AdvertiserAccountRptsDayGet AA:A){
-                    System.out.println(AA.getInshopItemColNum());
-                }*/
-
             }
         }
         return json;

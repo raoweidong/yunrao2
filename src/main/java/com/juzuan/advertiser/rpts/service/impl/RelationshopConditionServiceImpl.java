@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/**
+ * 智钻获取店铺型定向店铺包条件
+ */
 @Service
 public class RelationshopConditionServiceImpl implements RelationshopConditionService {
     private static String appkey="25139411";
@@ -49,9 +52,9 @@ public class RelationshopConditionServiceImpl implements RelationshopConditionSe
             JSONObject result = twoObject.getJSONObject("result");
             JSONObject thrObject = JSON.parseObject(result.toString());
             JSONObject condition = thrObject.getJSONObject("shop_package_query_condition");
-
             RelationshopCondition rc = new RelationshopCondition();
             JSONObject object = JSON.parseObject(condition.toString());
+            //将三个并列的数组嵌套循环遍历
             JSONObject preferenceList = object.getJSONObject("shop_preference_list");
             JSONArray preference = preferenceList.getJSONArray("shop_preference_d_t_o");
             System.out.println(preference);
@@ -68,8 +71,8 @@ public class RelationshopConditionServiceImpl implements RelationshopConditionSe
                     rc.setCateName("0");
                     rc.setShopScaleId("0");
                     rc.setShopScaleName("0");
-                    rc.setMaxPerSale(0L);
-                    rc.setMinPerSale(0L);
+                    rc.setMaxPerSale(object.getLong("max_per_sale")==null?0L:object.getLong("max_per_sale"));
+                    rc.setMinPerSale(object.getLong("min_per_sale")==null?0L:object.getLong("min_per_sale"));
                     relationshopConditionMapper.insert(rc);
                 }else {
                     JSONArray category = catList.getJSONArray("category_d_t_o");
@@ -77,15 +80,24 @@ public class RelationshopConditionServiceImpl implements RelationshopConditionSe
                         JSONObject two = JSON.parseObject(ob.toString());
                         JSONObject shopScale = object.getJSONObject("shop_scale_list");
                         if (shopScale == null){
-                            continue;
+                            rc = new RelationshopCondition();
+                            rc.setTaobaoUserId(tau.getTaobaoUserId());
+                            rc.setMaxPerSale(object.getLong("max_per_sale")==null?0L:object.getLong("max_per_sale"));
+                            rc.setMinPerSale(object.getLong("min_per_sale")==null?0L:object.getLong("min_per_sale"));
+                            rc.setShopPreferenceName(one.getString("shop_preference_name"));
+                            rc.setShopPreferenceValue(one.getString("shop_preference_value"));
+                            rc.setCateId(two.getString("cate_id"));
+                            rc.setCateName(two.getString("cate_name"));
+                            rc.setShopScaleId("0");
+                            rc.setShopScaleName("0");
                         }else {
                             JSONArray scale = shopScale.getJSONArray("shop_scale_d_t_o");
                             for (Object obj:scale.toArray()) {
                                 JSONObject three = JSON.parseObject(obj.toString());
                                 rc = new RelationshopCondition();
                                 rc.setTaobaoUserId(tau.getTaobaoUserId());
-                                rc.setMaxPerSale(object.getLong("max_per_sale"));
-                                rc.setMinPerSale(object.getLong("min_per_sale"));
+                                rc.setMaxPerSale(object.getLong("max_per_sale")==null?0L:object.getLong("max_per_sale"));
+                                rc.setMinPerSale(object.getLong("min_per_sale")==null?0L:object.getLong("min_per_sale"));
                                 rc.setShopPreferenceName(one.getString("shop_preference_name"));
                                 rc.setShopPreferenceValue(one.getString("shop_preference_value"));
                                 rc.setCateId(two.getString("cate_id"));
@@ -99,37 +111,8 @@ public class RelationshopConditionServiceImpl implements RelationshopConditionSe
                     }
                 }
             }
-
-
-
-           /* List<Object> list01 = new ArrayList<>(preferenceList.getJSONArray("shop_preference_d_t_o"));
-            if (catList ==null){
-                continue;
-            }else {
-                List<Object> list = new ArrayList<>(catList.getJSONArray("category_d_t_o"));
-                if (preferenceList == null){
-                    continue;
-                }else {
-                    list.add("\"scale_list\":{\"shop_scale_d_t_o\":" + shopScale.getJSONArray("shop_scale_d_t_o")+"}");
-                    //list.addAll(shopScale.getJSONArray("shop_scale_d_t_o"));
-                }
-                list01.add("\"category_list\":{\"category_d_t_o\":" + list+"}");
-                //list01.addAll(list);
-            }
-            String datas ="{\"shop_list\":{\"list\":"+list01.toString()+"}}";
-            JSONArray data = JSONArray.fromObject(list01);
-            System.out.println(data);
-*/
-/*            JSONObject two = JSON.parseObject(datas);
-            System.out.println(two);
-            JSONArray one = two.getJSONArray("list");
-            for (Object o: one.toArray()) {
-                System.out.println(o.toString());
-
-            }*/
         }
 
         return "";
-
     }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 public interface AdgroupListMapper {
     int deleteByPrimaryKey(Long id);
 
+    int deleteBySource(Integer adgroupSource);
+
     int insert(AdgroupList record);
 
     int insertSelective(AdgroupList record);

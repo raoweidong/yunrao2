@@ -67,7 +67,7 @@ public class AdvertiserCampaignRptsDayGet {
 
     private String averageUvValue;
 
-    private String logDate;
+    private Date logDate;
 
     public Integer getId() {
         return id;
@@ -325,11 +325,11 @@ public class AdvertiserCampaignRptsDayGet {
         this.averageUvValue = averageUvValue == null ? null : averageUvValue.trim();
     }
 
-    public String getLogDate() {
+    public Date getLogDate() {
         return logDate;
     }
 
-    public void setLogDate(String logDate) {
+    public void setLogDate(Date logDate) {
         this.logDate = logDate;
     }
 }

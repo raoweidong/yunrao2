@@ -7,7 +7,11 @@ import org.apache.ibatis.annotations.Mapper;
 public interface CampaignDetailsMapper {
     int deleteByPrimaryKey(Long id);
 
+    int deleteBySource(Long campaignSource);
+
     int insert(CampaignDetails record);
+
+    int insertOrUpdate(CampaignDetails record);
 
     int insertSelective(CampaignDetails record);
 

@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 30003
 
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/mytest?useUnicode=true&characterEncoding=GBK
+    url: jdbc:mysql://121.199.77.52:30001/juzuanapp?useUnicode=true&characterEncoding=GBK
     username: root
-    password: sql123
+    password: juzuan6666
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver

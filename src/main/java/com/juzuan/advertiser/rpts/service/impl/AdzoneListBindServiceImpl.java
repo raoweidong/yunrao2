@@ -18,8 +18,11 @@ import com.taobao.api.response.ZuanshiBannerAdgroupAdzoneFindpageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
+/**
+ * 推广单元的广告位绑定列表
+ */
 @Service
 public class AdzoneListBindServiceImpl implements AdzoneListBindService {
     private static String appkey="25139411";
@@ -31,8 +34,10 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
+    //定时更新：每天2:15
     //@Scheduled(cron = "*/5 * * * * ?")
     public String getBannerAdgroupAdzone(){
+
         List<AdgroupList> adgroupLists=adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adgroupList:adgroupLists){
             Long cam=adgroupList.getCampaignId();
@@ -67,7 +72,6 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
                     for (Object ob : fou.toArray()) {
                         AdzoneListBind adzoneListBind = new AdzoneListBind();
                         JSONObject adzones = JSON.parseObject(ob.toString());
-                        System.out.println("正在输出绑定的广告位" + ob.toString());
                         adzoneListBind.setAdgroupId(adg);
                         adzoneListBind.setCampaignId(cam);
                         adzoneListBind.setTaobaoUserId(useId);
@@ -75,7 +79,7 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
                         adzoneListBind.setAdzoneName(adzones.getString("adzone_name"));
                         JSONObject adzoneSizeList = adzones.getJSONObject("adzone_size_list");
                         String string = adzoneSizeList.getString("string");
-                        System.out.println("尺寸  " + string);
+                        //System.out.println("尺寸  " + string);
                         String stringg = string.substring(1, string.length() - 1).replaceAll("\"", "");
                         adzoneListBind.setAdzoneSizeList(stringg);
                         JSONObject allowAdFormatList = adzones.getJSONObject("allow_ad_format_list");

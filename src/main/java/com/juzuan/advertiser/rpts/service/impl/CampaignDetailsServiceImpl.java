@@ -21,6 +21,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+/**
+ * 计划详情列表
+ */
 @Service
 public class CampaignDetailsServiceImpl implements CampaignDetailsService {
     private static String appkey="25139411";
@@ -32,16 +36,16 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private CampaignDetailsMapper campaignDetailsMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每天2:05
+    //@Scheduled(cron = "0 5 2 * * ? ")
     public String getCampaignDetail(){
-
+        campaignDetailsMapper.deleteBySource(0L);
         List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();
         for (CampaignList campaignList:campaignLists){
             String UserId=campaignList.getTaobaoUserId();
             TaobaoAuthorizeUser taobaoAuthorizeUser =taobaoAuthorizeUserMapper.slectByUserId(UserId);
             String sessionKey=taobaoAuthorizeUser.getAccessToken();
             Long id=campaignList.getCampaignId();
-
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiBannerCampaignGetRequest req = new ZuanshiBannerCampaignGetRequest();
             req.setId(id);
@@ -72,7 +76,8 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
                 campaignDetails.setTaobaoUserId(campaignList.getTaobaoUserId());
                 campaignDetails.setWorkdays(campaignList.getWorkdays());
                 campaignDetails.setWeekEnds(campaignList.getWeekEnds());
-                campaignDetailsMapper.insert(campaignDetails);
+
+                campaignDetailsMapper.insertOrUpdate(campaignDetails);
                 continue;
             }
             else {
@@ -93,7 +98,8 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
                 campaignDetails.setStartTime(campaignList.getStartTime());
                 campaignDetails.setOnlineStatus(campaignList.getOnlineStatus());
                 campaignDetails.setSpeedType(campaignList.getSpeedType());
-                campaignDetailsMapper.insert(campaignDetails);
+
+                campaignDetailsMapper.insertOrUpdate(campaignDetails);
             }
 
         }

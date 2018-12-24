@@ -34,13 +34,17 @@
     <include refid="Base_Column_List" />
     from campaign_list
   </select>
-  <select id="selectDistinct" resultMap="BaseResultMap"  >
+  <select id="selectDistinct"    >
     select distinct taobao_user_id, campaign_type
     from campaign_list
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from campaign_list
     where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteBySource" parameterType="java.lang.Long" >
+    delete from campaign_list
+    where campaign_source = #{campaignSource,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
     insert into campaign_list (id, taobao_user_id, campaign_id, 
@@ -55,6 +59,22 @@
       #{speedType,jdbcType=INTEGER}, #{workdays,jdbcType=VARCHAR}, #{weekEnds,jdbcType=VARCHAR}, 
       #{lifeCycle,jdbcType=VARCHAR}, #{marketingdemand,jdbcType=VARCHAR}, #{campaignSource,jdbcType=INTEGER}
       )
+  </insert>
+  <insert id="insertOrUpdate" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
+    insert into campaign_list (id, taobao_user_id, campaign_id,
+      campaign_name, campaign_type, start_time,
+      end_time, day_budget, online_status,
+      speed_type, workdays, week_ends,
+      life_cycle, marketingdemand, campaign_source
+      )
+    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT},
+      #{campaignName,jdbcType=VARCHAR}, #{campaignType,jdbcType=INTEGER}, #{startTime,jdbcType=DATE},
+      #{endTime,jdbcType=DATE}, #{dayBudget,jdbcType=DOUBLE}, #{onlineStatus,jdbcType=INTEGER},
+      #{speedType,jdbcType=INTEGER}, #{workdays,jdbcType=VARCHAR}, #{weekEnds,jdbcType=VARCHAR},
+      #{lifeCycle,jdbcType=VARCHAR}, #{marketingdemand,jdbcType=VARCHAR}, #{campaignSource,jdbcType=INTEGER}
+      )
+    on  DUPLICATE key update taobao_user_id=taobao_user_id+#{taobaoUserId,jdbcType=VARCHAR} and
+    campaign_id=campaign_id+#{campaignId,jdbcType=BIGINT}
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
     insert into campaign_list

@@ -1,19 +1,21 @@
 package com.juzuan.advertiser.rpts.model;
 
+import java.util.Date;
+
 public class AdvertiserAdzoneRptsDayGet {
-    private Long id;
+    private Integer id;
 
     private String taobaoUserId;
 
-    private String campaignId;
+    private Long campaignId;
 
     private String campaignName;
 
-    private String adgroupId;
+    private Long adgroupId;
 
     private String adgroupName;
 
-    private String adzoneId;
+    private Long adzoneId;
 
     private String adzoneName;
 
@@ -73,13 +75,13 @@ public class AdvertiserAdzoneRptsDayGet {
 
     private String averageUvValue;
 
-    private String logDate;
+    private Date logDate;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -91,12 +93,12 @@ public class AdvertiserAdzoneRptsDayGet {
         this.taobaoUserId = taobaoUserId == null ? null : taobaoUserId.trim();
     }
 
-    public String getCampaignId() {
+    public Long getCampaignId() {
         return campaignId;
     }
 
-    public void setCampaignId(String campaignId) {
-        this.campaignId = campaignId == null ? null : campaignId.trim();
+    public void setCampaignId(Long campaignId) {
+        this.campaignId = campaignId;
     }
 
     public String getCampaignName() {
@@ -107,12 +109,12 @@ public class AdvertiserAdzoneRptsDayGet {
         this.campaignName = campaignName == null ? null : campaignName.trim();
     }
 
-    public String getAdgroupId() {
+    public Long getAdgroupId() {
         return adgroupId;
     }
 
-    public void setAdgroupId(String adgroupId) {
-        this.adgroupId = adgroupId == null ? null : adgroupId.trim();
+    public void setAdgroupId(Long adgroupId) {
+        this.adgroupId = adgroupId;
     }
 
     public String getAdgroupName() {
@@ -123,12 +125,12 @@ public class AdvertiserAdzoneRptsDayGet {
         this.adgroupName = adgroupName == null ? null : adgroupName.trim();
     }
 
-    public String getAdzoneId() {
+    public Long getAdzoneId() {
         return adzoneId;
     }
 
-    public void setAdzoneId(String adzoneId) {
-        this.adzoneId = adzoneId == null ? null : adzoneId.trim();
+    public void setAdzoneId(Long adzoneId) {
+        this.adzoneId = adzoneId;
     }
 
     public String getAdzoneName() {
@@ -363,11 +365,11 @@ public class AdvertiserAdzoneRptsDayGet {
         this.averageUvValue = averageUvValue == null ? null : averageUvValue.trim();
     }
 
-    public String getLogDate() {
+    public Date getLogDate() {
         return logDate;
     }
 
-    public void setLogDate(String logDate) {
-        this.logDate = logDate == null ? null : logDate.trim();
+    public void setLogDate(Date logDate) {
+        this.logDate = logDate;
     }
 }

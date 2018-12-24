@@ -30,7 +30,7 @@ public class CreativeListServiceimpl implements CreativeListService {
     @Autowired
     private CreativeListMapper creativeListMapper;
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String CreativeList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {

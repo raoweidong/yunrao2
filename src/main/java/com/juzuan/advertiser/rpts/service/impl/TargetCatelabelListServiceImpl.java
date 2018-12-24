@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 获取群体定向标签列表
+ */
 @Service
 public class TargetCatelabelListServiceImpl implements TargetCatelabelListService {
     private static String appkey="25139411";

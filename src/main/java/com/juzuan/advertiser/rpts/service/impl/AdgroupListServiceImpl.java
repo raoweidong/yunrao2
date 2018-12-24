@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 单元列表
+ */
 @Service
 public class AdgroupListServiceImpl implements AdgroupListService {
     private static String appkey="25139411";
@@ -33,8 +36,9 @@ public class AdgroupListServiceImpl implements AdgroupListService {
     @Autowired
     private CampaignListMapper campaignListMapper;
 
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "0 0 3 * * ?")
     public String AdgroupList(){
+        adgroupListMapper.deleteBySource(0);
        List<CampaignList> cammmm=campaignListMapper.selectAllCampaign();
        for (CampaignList caa:cammmm){
            String userId=caa.getTaobaoUserId();

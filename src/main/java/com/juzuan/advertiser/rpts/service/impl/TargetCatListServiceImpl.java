@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 高级兴趣点-类目查询
+ */
 @Service
 public class TargetCatListServiceImpl implements TargetCatListService {
     private static String appkey="25139411";

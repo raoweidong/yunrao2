@@ -428,8 +428,6 @@ public class CrowdListServiceImpl implements CrowdListService {
                                 cl.setShopScaleIdList(shopId);
                             }
                             //crowdListMapper.insert(cl);
-
-
                         }
                     }
                 }

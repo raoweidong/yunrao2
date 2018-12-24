@@ -28,10 +28,10 @@ public class CampaignListServiceImpl implements CampaignListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private  CampaignListMapper campaignListMapper;
-
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每天2:00
+    //@Scheduled(cron = "0 0 2 * * ? ")
     public String campaignList(){
-
+        campaignListMapper.deleteBySource(0L);
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);

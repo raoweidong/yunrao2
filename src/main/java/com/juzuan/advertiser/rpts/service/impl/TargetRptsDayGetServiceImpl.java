@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 钻展定向数据分日列表
+ */
 @Service
 public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
     private static String appkey="25139411";
@@ -42,8 +45,8 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
             String sessionKey = taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);
             ZuanshiAdvertiserTargetRptsDayGetRequest req = new ZuanshiAdvertiserTargetRptsDayGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime("2018-09-20");
+            req.setEndTime("2018-12-20");
             req.setCampaignId(cro.getCampaignId());
             req.setAdgroupId(cro.getAdgroupId());
             req.setTargetId(cro.getTargetId());
