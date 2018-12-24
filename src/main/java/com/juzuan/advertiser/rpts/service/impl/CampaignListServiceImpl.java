@@ -28,103 +28,79 @@ public class CampaignListServiceImpl implements CampaignListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private  CampaignListMapper campaignListMapper;
-
-   // @Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
+    //定时更新：每天2:00
+    //@Scheduled(cron = "0 0 2 * * ? ")
     public String campaignList(){
+        campaignListMapper.deleteBySource(0L);
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
-           /* TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.selectByPrimaryKey(1L);
-            String sessionKey=taobaoAuthorizeUser.getAccessToken();*/
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiBannerCampaignFindRequest req = new ZuanshiBannerCampaignFindRequest();
+            req.setPageSize(50L);
             ZuanshiBannerCampaignFindResponse rsp = null;
-            req.setPageSize(100L);
             try {
                 rsp = client.execute(req, taobaoAuthorizeUser.getAccessToken());
             } catch (ApiException e) {
                 e.printStackTrace();
             }
             System.out.println(rsp.getBody());
-            parseCampaign(rsp.getBody(),taobaoAuthorizeUser);
-        }
+            JSONObject onObject= JSON.parseObject(rsp.getBody());
+            JSONObject oneObject=onObject.getJSONObject("zuanshi_banner_campaign_find_response");
 
-      /*  TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.selectByPrimaryKey(1L);
-        String sessionKey=taobaoAuthorizeUser.getAccessToken();
-        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
-        ZuanshiBannerCampaignFindRequest req = new ZuanshiBannerCampaignFindRequest();
-        ZuanshiBannerCampaignFindResponse rsp = null;
-        try {
-            rsp = client.execute(req, sessionKey);
-        } catch (ApiException e) {
-            e.printStackTrace();
+            JSONObject twObject=JSON.parseObject(oneObject.toString());
+            JSONObject twoObject=twObject.getJSONObject("result");
+
+            JSONObject threObject=JSON.parseObject(twoObject.toString());
+            JSONObject threeObject=threObject.getJSONObject("campaigns");
+
+            JSONObject fouObject=JSONObject.parseObject(threeObject.toString());
+            JSONArray fourObject=fouObject.getJSONArray("campaign");
+            for (Object ob:fourObject.toArray()){
+                CampaignList campaignList=new CampaignList();
+                //System.out.println("遍历打印计划  "+ob.toString());
+                JSONObject obb=JSONObject.parseObject(ob.toString());
+
+                JSONObject propertie=obb.getJSONObject("properties");
+                //System.out.println("最后  "+propertie.toString());
+                campaignList.setMarketingdemand(propertie.getString("marketingdemand")==null?"0":propertie.getString("marketingdemand"));//计划类型：-1：自定义，1：日常托管，2：日常推荐，3：拉新托管，4：拉新推荐',
+                //System.out.println( "得到的计划id "+ obb.getInteger("id"));
+                Long campId=obb.getLong("id");
+                campaignList.setCampaignId(campId);//计划id
+                campaignList.setCampaignName(obb.getString("name"));//计划名
+                campaignList.setStartTime(obb.getDate("start_time"));//开始时间
+                campaignList.setEndTime(obb.getDate("end_time"));//结束时间
+                campaignList.setDayBudget(obb.getDouble("day_budget"));//日预算
+                campaignList.setOnlineStatus(obb.getInteger("online_status"));//计划状态
+                campaignList.setSpeedType(obb.getInteger("speed_type"));//投放方式
+                campaignList.setLifeCycle(obb.getString("life_cycle"));//计划编辑形式
+                campaignList.setCampaignType(obb.getInteger("type"));//计划类型
+
+                JSONObject propert=obb.getJSONObject("properties");
+                JSONObject bannerTime=obb.getJSONObject("banner_time");
+                JSONObject workdayOb=JSONObject.parseObject(bannerTime.toString());
+                //第一个boolean
+                JSONObject workdayObj=workdayOb.getJSONObject("workdays");
+                JSONObject booleaObject=JSONObject.parseObject(workdayObj.toString());
+                JSONArray booleaObb=booleaObject.getJSONArray("boolean");
+                String works=booleaObb.toString().substring(1,121);
+                campaignList.setWorkdays(works);//添加workdays数据
+                //weekEnds
+                JSONObject weekEnds=workdayOb.getJSONObject("week_ends");
+                JSONObject tB=JSONObject.parseObject(weekEnds.toString());
+                JSONArray twoBoolean=tB.getJSONArray("boolean");
+                String weekEn=twoBoolean.toString().substring(1,121);
+                campaignList.setWeekEnds(weekEn);//添加weekends数据
+                campaignList.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
+                campaignList.setCampaignSource(0);
+                campaignListMapper.insert(campaignList);
+
+            }
         }
-        System.out.println(rsp.getBody());
-        parseCampaign(rsp.getBody());*/
         return "";
     }
 
     public void parseCampaign(String json,TaobaoAuthorizeUser taobao){
-        JSONObject onObject= JSON.parseObject(json);
-        JSONObject oneObject=onObject.getJSONObject("zuanshi_banner_campaign_find_response");
-        System.out.println(oneObject.toString());
 
-        JSONObject twObject=JSON.parseObject(oneObject.toString());
-        JSONObject twoObject=twObject.getJSONObject("result");
-        System.out.println(twoObject.toString());
-
-        JSONObject threObject=JSON.parseObject(twoObject.toString());
-        JSONObject threeObject=threObject.getJSONObject("campaigns");
-
-        JSONObject fouObject=JSONObject.parseObject(threeObject.toString());
-        JSONArray fourObject=fouObject.getJSONArray("campaign");
-       // TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.selectByPrimaryKey(1L);//haha
-        for (Object ob:fourObject.toArray()){
-           // TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.selectByPrimaryKey(1L);
-            //String sessionKey=taobaoAuthorizeUser.getAccessToken();
-            CampaignList campaignList=new CampaignList();
-            System.out.println("遍历打印计划  "+ob.toString());
-            JSONObject obb=JSONObject.parseObject(ob.toString());
-
-            JSONObject propertie=obb.getJSONObject("properties");
-            System.out.println("最后  "+propertie.toString());
-            campaignList.setMarketingdemand(propertie.getString("marketingdemand")==null?"0":propertie.getString("marketingdemand"));//计划类型：-1：自定义，1：日常托管，2：日常推荐，3：拉新托管，4：拉新推荐',
-            System.out.println( "得到的计划id "+ obb.getInteger("id"));
-            Long campId=obb.getLong("id");
-            campaignList.setCampaignId(campId);//计划id
-            campaignList.setCampaignName(obb.getString("name"));//计划名
-            campaignList.setStartTime(obb.getDate("start_time"));//开始时间
-            campaignList.setEndTime(obb.getDate("end_time"));//结束时间
-            campaignList.setDayBudget(obb.getDouble("day_budget"));//日预算
-            campaignList.setOnlineStatus(obb.getInteger("online_status"));//计划状态
-            campaignList.setSpeedType(obb.getInteger("speed_type"));//投放方式
-            campaignList.setLifeCycle(obb.getString("life_cycle"));//计划编辑形式
-            campaignList.setCampaignType(obb.getInteger("type"));//计划类型
-
-            JSONObject propert=obb.getJSONObject("properties");
-            JSONObject bannerTime=obb.getJSONObject("banner_time");
-            JSONObject workdayOb=JSONObject.parseObject(bannerTime.toString());
-            //第一个boolean
-            JSONObject workdayObj=workdayOb.getJSONObject("workdays");
-           JSONObject booleaObject=JSONObject.parseObject(workdayObj.toString());
-           JSONArray booleaObb=booleaObject.getJSONArray("boolean");
-            String works=booleaObb.toString().substring(1,121);
-            campaignList.setWorkdays(works);//添加workdays数据
-            //weekEnds
-            JSONObject weekEnds=workdayOb.getJSONObject("week_ends");
-            JSONObject tB=JSONObject.parseObject(weekEnds.toString());
-            JSONArray twoBoolean=tB.getJSONArray("boolean");
-            String weekEn=twoBoolean.toString().substring(1,121);
-            campaignList.setWeekEnds(weekEn);//添加weekends数据
-            campaignList.setTaobaoUserId(taobao.getTaobaoUserId());
-            //______________________________________________
-            System.out.println("接受的第一个数据 "+campaignList.getCampaignId());
-           campaignListMapper.insert(campaignList);
-           /* List<CampaignList> campp=selectAllCampaign();
-            for (CampaignList camm:campp){
-                System.out.println(camm.getCampaignName());
-            }*/
-
-        }
 
     }
 

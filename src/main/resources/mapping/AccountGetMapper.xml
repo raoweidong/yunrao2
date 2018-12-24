@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AccountGetMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AccountGet" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="banlance" property="banlance" jdbcType="VARCHAR" />
+    <result column="grant_balance" property="grantBalance" jdbcType="VARCHAR" />
+    <result column="cash_balance" property="cashBalance" jdbcType="VARCHAR" />
+    <result column="available_balance" property="availableBalance" jdbcType="VARCHAR" />
+    <result column="credit_balance" property="creditBalance" jdbcType="VARCHAR" />
+    <result column="red_packet" property="redPacket" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, banlance, grant_balance, cash_balance, available_balance, credit_balance, 
+    red_packet
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_account_get
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_account_get
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AccountGet" >
+    insert into taobao_account_get (id, taobao_user_id, banlance, 
+      grant_balance, cash_balance, available_balance, 
+      credit_balance, red_packet)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{banlance,jdbcType=VARCHAR}, 
+      #{grantBalance,jdbcType=VARCHAR}, #{cashBalance,jdbcType=VARCHAR}, #{availableBalance,jdbcType=VARCHAR}, 
+      #{creditBalance,jdbcType=VARCHAR}, #{redPacket,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AccountGet" >
+    insert into taobao_account_get
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="banlance != null" >
+        banlance,
+      </if>
+      <if test="grantBalance != null" >
+        grant_balance,
+      </if>
+      <if test="cashBalance != null" >
+        cash_balance,
+      </if>
+      <if test="availableBalance != null" >
+        available_balance,
+      </if>
+      <if test="creditBalance != null" >
+        credit_balance,
+      </if>
+      <if test="redPacket != null" >
+        red_packet,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="banlance != null" >
+        #{banlance,jdbcType=VARCHAR},
+      </if>
+      <if test="grantBalance != null" >
+        #{grantBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="cashBalance != null" >
+        #{cashBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="availableBalance != null" >
+        #{availableBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="creditBalance != null" >
+        #{creditBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="redPacket != null" >
+        #{redPacket,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AccountGet" >
+    update taobao_account_get
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="banlance != null" >
+        banlance = #{banlance,jdbcType=VARCHAR},
+      </if>
+      <if test="grantBalance != null" >
+        grant_balance = #{grantBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="cashBalance != null" >
+        cash_balance = #{cashBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="availableBalance != null" >
+        available_balance = #{availableBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="creditBalance != null" >
+        credit_balance = #{creditBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="redPacket != null" >
+        red_packet = #{redPacket,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AccountGet" >
+    update taobao_account_get
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      banlance = #{banlance,jdbcType=VARCHAR},
+      grant_balance = #{grantBalance,jdbcType=VARCHAR},
+      cash_balance = #{cashBalance,jdbcType=VARCHAR},
+      available_balance = #{availableBalance,jdbcType=VARCHAR},
+      credit_balance = #{creditBalance,jdbcType=VARCHAR},
+      red_packet = #{redPacket,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

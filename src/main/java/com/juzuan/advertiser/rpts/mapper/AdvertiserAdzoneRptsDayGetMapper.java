@@ -20,6 +20,4 @@ public interface AdvertiserAdzoneRptsDayGetMapper {
 
     int updateByPrimaryKey(AdvertiserAdzoneRptsDayGet record);
     List<AdvertiserAdzoneRptsDayGet> queryAdzoneRptsDayGetsBySql(Map<String,Object> data);
-    List<AdvertiserAdzoneRptsDayGet> finPage(int startIndex,int pageSize);
-    int countByNull();
 }

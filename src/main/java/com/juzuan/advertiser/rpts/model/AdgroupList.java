@@ -13,6 +13,8 @@ public class AdgroupList {
 
     private Long onlineStatus;
 
+    private Integer adgroupSource;
+
     public Long getId() {
         return id;
     }
@@ -59,5 +61,13 @@ public class AdgroupList {
 
     public void setOnlineStatus(Long onlineStatus) {
         this.onlineStatus = onlineStatus;
+    }
+
+    public Integer getAdgroupSource() {
+        return adgroupSource;
+    }
+
+    public void setAdgroupSource(Integer adgroupSource) {
+        this.adgroupSource = adgroupSource;
     }
 }

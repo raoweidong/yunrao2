@@ -44,8 +44,8 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
             String sessionKey=taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiAdvertiserCampaignRptsDayGetRequest req = new ZuanshiAdvertiserCampaignRptsDayGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime("2018-11-28");
+            req.setEndTime("2018-12-20");
             req.setCampaignId(id);
             req.setEffect(7L);
             req.setCampaignModel(1L);
@@ -184,23 +184,26 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
                         advertiserCampaignRptsDayGet.setAverageUvValue(String.valueOf(Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInshopAmt())/Double.parseDouble(advertiserCampaignRptsDayGet.getUv())));//平均访客价值 (average_uv_value) = 成交订单金额/访客
 
                     }
-                    if (Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInshopAmt())==0){
+                    if (Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInShopNum())==0){
                         advertiserCampaignRptsDayGet.setOrderAverageAmount("0");
+                        advertiserCampaignRptsDayGet.setAverageCostOfOrder("0");
+
                     }
                     else {
+                        advertiserCampaignRptsDayGet.setAverageCostOfOrder(String.valueOf(Double.parseDouble(advertiserCampaignRptsDayGet.getCharge())/Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInShopNum())));//订单平均成本(average_cost_of_order)订单平均成本 = 消耗/成交订单量
+
                         advertiserCampaignRptsDayGet.setOrderAverageAmount(String.valueOf(Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInshopAmt())/Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInShopNum())));//订单平均金额(order_average_amount)订单平均金额 = 成交订单金额/成交订单量
                     }
-                    if (Double.parseDouble(advertiserCampaignRptsDayGet.getCharge())==0){
+                   /* if (Double.parseDouble(advertiserCampaignRptsDayGet.getCharge())==0){
                         advertiserCampaignRptsDayGet.setAverageCostOfOrder("0");
                     }
                     else {
                         advertiserCampaignRptsDayGet.setAverageCostOfOrder(String.valueOf(Double.parseDouble(advertiserCampaignRptsDayGet.getCharge())/Double.parseDouble(advertiserCampaignRptsDayGet.getAlipayInShopNum())));//订单平均成本(average_cost_of_order)订单平均成本 = 消耗/成交订单量
 
-                    }
+                    }*/
 
                 advertiserCampaignRptsDayGetMapper.insert(advertiserCampaignRptsDayGet);
 
-                    System.out.println("呵呵呵");
                 }
             } else {
 

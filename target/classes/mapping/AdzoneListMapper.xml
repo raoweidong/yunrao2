@@ -40,7 +40,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
-    insert into adzone_list (id, taobao_user_id, adzone_id, 
+    insert ignore into adzone_list (id, taobao_user_id, adzone_id,
       adzone_name, adzone_size_list, allow_ad_format_list, 
       allow_adv_type, adzone_level, media_type, 
       tpv, ctr, first_time, 

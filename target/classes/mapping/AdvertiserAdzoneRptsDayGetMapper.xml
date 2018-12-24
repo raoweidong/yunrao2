@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.juzuan.advertiser.rpts.mapper.AdvertiserAdzoneRptsDayGetMapper" >
   <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet" >
-    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
-    <result column="campaign_id" property="campaignId" jdbcType="VARCHAR" />
+    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
     <result column="campaign_name" property="campaignName" jdbcType="VARCHAR" />
-    <result column="adgroup_id" property="adgroupId" jdbcType="VARCHAR" />
+    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
     <result column="adgroup_name" property="adgroupName" jdbcType="VARCHAR" />
-    <result column="adzone_id" property="adzoneId" jdbcType="VARCHAR" />
+    <result column="adzone_id" property="adzoneId" jdbcType="BIGINT" />
     <result column="adzone_name" property="adzoneName" jdbcType="VARCHAR" />
     <result column="cvr" property="cvr" jdbcType="VARCHAR" />
     <result column="alipay_inshop_amt" property="alipayInshopAmt" jdbcType="VARCHAR" />
@@ -38,7 +38,7 @@
     <result column="average_cost_of_order" property="averageCostOfOrder" jdbcType="VARCHAR" />
     <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
     <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
-    <result column="log_date" property="logDate" jdbcType="VARCHAR" />
+    <result column="log_date" property="logDate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, taobao_user_id, campaign_id, campaign_name, adgroup_id, adgroup_name, adzone_id, 
@@ -49,22 +49,21 @@
     total_collection_plus_cost, average_cost_of_order, order_average_amount, average_uv_value, 
     log_date
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from advertiser_adzone_rpts_day_get
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="queryAdzoneRptsDayGetsBySql" resultMap="BaseResultMap" parameterType="java.util.Map" >
     select
     <include refid="Base_Column_List" />
     from advertiser_adzone_rpts_day_get
-   limit #{currIndex}, #{pageSize}
+    limit #{currIndex}, #{pageSize}
   </select>
-
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from advertiser_adzone_rpts_day_get
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet" >
     insert into advertiser_adzone_rpts_day_get (id, taobao_user_id, campaign_id, 
@@ -81,9 +80,9 @@
       total_collection_plus_cost, average_cost_of_order, 
       order_average_amount, average_uv_value, log_date
       )
-    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=VARCHAR}, 
-      #{campaignName,jdbcType=VARCHAR}, #{adgroupId,jdbcType=VARCHAR}, #{adgroupName,jdbcType=VARCHAR}, 
-      #{adzoneId,jdbcType=VARCHAR}, #{adzoneName,jdbcType=VARCHAR}, #{cvr,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{campaignName,jdbcType=VARCHAR}, #{adgroupId,jdbcType=BIGINT}, #{adgroupName,jdbcType=VARCHAR}, 
+      #{adzoneId,jdbcType=BIGINT}, #{adzoneName,jdbcType=VARCHAR}, #{cvr,jdbcType=VARCHAR}, 
       #{alipayInshopAmt,jdbcType=VARCHAR}, #{alipayInShopNum,jdbcType=VARCHAR}, #{gmvInshopAmt,jdbcType=VARCHAR}, 
       #{gmvInshopNum,jdbcType=VARCHAR}, #{cartNum,jdbcType=VARCHAR}, #{dirShopColNum,jdbcType=VARCHAR}, 
       #{inshopItemColNum,jdbcType=VARCHAR}, #{avgAccessPageNum,jdbcType=VARCHAR}, #{avgAccessTime,jdbcType=VARCHAR}, 
@@ -93,7 +92,7 @@
       #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
       #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
       #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
-      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=VARCHAR}
+      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet" >
@@ -213,25 +212,25 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=BIGINT},
+        #{id,jdbcType=INTEGER},
       </if>
       <if test="taobaoUserId != null" >
         #{taobaoUserId,jdbcType=VARCHAR},
       </if>
       <if test="campaignId != null" >
-        #{campaignId,jdbcType=VARCHAR},
+        #{campaignId,jdbcType=BIGINT},
       </if>
       <if test="campaignName != null" >
         #{campaignName,jdbcType=VARCHAR},
       </if>
       <if test="adgroupId != null" >
-        #{adgroupId,jdbcType=VARCHAR},
+        #{adgroupId,jdbcType=BIGINT},
       </if>
       <if test="adgroupName != null" >
         #{adgroupName,jdbcType=VARCHAR},
       </if>
       <if test="adzoneId != null" >
-        #{adzoneId,jdbcType=VARCHAR},
+        #{adzoneId,jdbcType=BIGINT},
       </if>
       <if test="adzoneName != null" >
         #{adzoneName,jdbcType=VARCHAR},
@@ -321,7 +320,7 @@
         #{averageUvValue,jdbcType=VARCHAR},
       </if>
       <if test="logDate != null" >
-        #{logDate,jdbcType=VARCHAR},
+        #{logDate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -332,19 +331,19 @@
         taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
       </if>
       <if test="campaignId != null" >
-        campaign_id = #{campaignId,jdbcType=VARCHAR},
+        campaign_id = #{campaignId,jdbcType=BIGINT},
       </if>
       <if test="campaignName != null" >
         campaign_name = #{campaignName,jdbcType=VARCHAR},
       </if>
       <if test="adgroupId != null" >
-        adgroup_id = #{adgroupId,jdbcType=VARCHAR},
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
       </if>
       <if test="adgroupName != null" >
         adgroup_name = #{adgroupName,jdbcType=VARCHAR},
       </if>
       <if test="adzoneId != null" >
-        adzone_id = #{adzoneId,jdbcType=VARCHAR},
+        adzone_id = #{adzoneId,jdbcType=BIGINT},
       </if>
       <if test="adzoneName != null" >
         adzone_name = #{adzoneName,jdbcType=VARCHAR},
@@ -434,19 +433,19 @@
         average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
       </if>
       <if test="logDate != null" >
-        log_date = #{logDate,jdbcType=VARCHAR},
+        log_date = #{logDate,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet" >
     update advertiser_adzone_rpts_day_get
     set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
-      campaign_id = #{campaignId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
       campaign_name = #{campaignName,jdbcType=VARCHAR},
-      adgroup_id = #{adgroupId,jdbcType=VARCHAR},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
       adgroup_name = #{adgroupName,jdbcType=VARCHAR},
-      adzone_id = #{adzoneId,jdbcType=VARCHAR},
+      adzone_id = #{adzoneId,jdbcType=BIGINT},
       adzone_name = #{adzoneName,jdbcType=VARCHAR},
       cvr = #{cvr,jdbcType=VARCHAR},
       alipay_inshop_amt = #{alipayInshopAmt,jdbcType=VARCHAR},
@@ -476,7 +475,7 @@
       average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
       order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
       average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
-      log_date = #{logDate,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
+      log_date = #{logDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

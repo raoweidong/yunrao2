@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.MainstoreTargetListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.MainstoreTargetList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
+    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
+    <result column="target_id" property="targetId" jdbcType="BIGINT" />
+    <result column="crowd_name" property="crowdName" jdbcType="VARCHAR" />
+    <result column="crowd_type" property="crowdType" jdbcType="BIGINT" />
+    <result column="crowd_value" property="crowdValue" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="adzone_id" property="adzoneId" jdbcType="BIGINT" />
+    <result column="sub_crowd_name" property="subCrowdName" jdbcType="VARCHAR" />
+    <result column="sub_crowd_value" property="subCrowdValue" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="BIGINT" />
+    <result column="cat_id_list" property="catIdList" jdbcType="VARCHAR" />
+    <result column="shop_scale_id_list" property="shopScaleIdList" jdbcType="VARCHAR" />
+    <result column="min_per_sale" property="minPerSale" jdbcType="VARCHAR" />
+    <result column="max_per_sale" property="maxPerSale" jdbcType="VARCHAR" />
+    <result column="shop_preference_value" property="shopPreferenceValue" jdbcType="VARCHAR" />
+    <result column="cat_id" property="catId" jdbcType="BIGINT" />
+    <result column="cat_name" property="catName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, campaign_id, adgroup_id, target_id, crowd_name, crowd_type, crowd_value, 
+    gmt_create, gmt_modified, adzone_id, sub_crowd_name, sub_crowd_value, price, cat_id_list, 
+    shop_scale_id_list, min_per_sale, max_per_sale, shop_preference_value, cat_id, cat_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_zs_mainstore_target_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_zs_mainstore_target_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.MainstoreTargetList" >
+    insert into taobao_zs_mainstore_target_list (id, taobao_user_id, campaign_id, 
+      adgroup_id, target_id, crowd_name, 
+      crowd_type, crowd_value, gmt_create, 
+      gmt_modified, adzone_id, sub_crowd_name, 
+      sub_crowd_value, price, cat_id_list, 
+      shop_scale_id_list, min_per_sale, max_per_sale, 
+      shop_preference_value, cat_id, cat_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
+      #{adgroupId,jdbcType=BIGINT}, #{targetId,jdbcType=BIGINT}, #{crowdName,jdbcType=VARCHAR}, 
+      #{crowdType,jdbcType=BIGINT}, #{crowdValue,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP}, #{adzoneId,jdbcType=BIGINT}, #{subCrowdName,jdbcType=VARCHAR}, 
+      #{subCrowdValue,jdbcType=VARCHAR}, #{price,jdbcType=BIGINT}, #{catIdList,jdbcType=VARCHAR}, 
+      #{shopScaleIdList,jdbcType=VARCHAR}, #{minPerSale,jdbcType=VARCHAR}, #{maxPerSale,jdbcType=VARCHAR}, 
+      #{shopPreferenceValue,jdbcType=VARCHAR}, #{catId,jdbcType=BIGINT}, #{catName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.MainstoreTargetList" >
+    insert into taobao_zs_mainstore_target_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="campaignId != null" >
+        campaign_id,
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id,
+      </if>
+      <if test="targetId != null" >
+        target_id,
+      </if>
+      <if test="crowdName != null" >
+        crowd_name,
+      </if>
+      <if test="crowdType != null" >
+        crowd_type,
+      </if>
+      <if test="crowdValue != null" >
+        crowd_value,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id,
+      </if>
+      <if test="subCrowdName != null" >
+        sub_crowd_name,
+      </if>
+      <if test="subCrowdValue != null" >
+        sub_crowd_value,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="catIdList != null" >
+        cat_id_list,
+      </if>
+      <if test="shopScaleIdList != null" >
+        shop_scale_id_list,
+      </if>
+      <if test="minPerSale != null" >
+        min_per_sale,
+      </if>
+      <if test="maxPerSale != null" >
+        max_per_sale,
+      </if>
+      <if test="shopPreferenceValue != null" >
+        shop_preference_value,
+      </if>
+      <if test="catId != null" >
+        cat_id,
+      </if>
+      <if test="catName != null" >
+        cat_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="targetId != null" >
+        #{targetId,jdbcType=BIGINT},
+      </if>
+      <if test="crowdName != null" >
+        #{crowdName,jdbcType=VARCHAR},
+      </if>
+      <if test="crowdType != null" >
+        #{crowdType,jdbcType=BIGINT},
+      </if>
+      <if test="crowdValue != null" >
+        #{crowdValue,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="adzoneId != null" >
+        #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="subCrowdName != null" >
+        #{subCrowdName,jdbcType=VARCHAR},
+      </if>
+      <if test="subCrowdValue != null" >
+        #{subCrowdValue,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=BIGINT},
+      </if>
+      <if test="catIdList != null" >
+        #{catIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleIdList != null" >
+        #{shopScaleIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="minPerSale != null" >
+        #{minPerSale,jdbcType=VARCHAR},
+      </if>
+      <if test="maxPerSale != null" >
+        #{maxPerSale,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPreferenceValue != null" >
+        #{shopPreferenceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null" >
+        #{catId,jdbcType=BIGINT},
+      </if>
+      <if test="catName != null" >
+        #{catName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.MainstoreTargetList" >
+    update taobao_zs_mainstore_target_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="campaignId != null" >
+        campaign_id = #{campaignId,jdbcType=BIGINT},
+      </if>
+      <if test="adgroupId != null" >
+        adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      </if>
+      <if test="targetId != null" >
+        target_id = #{targetId,jdbcType=BIGINT},
+      </if>
+      <if test="crowdName != null" >
+        crowd_name = #{crowdName,jdbcType=VARCHAR},
+      </if>
+      <if test="crowdType != null" >
+        crowd_type = #{crowdType,jdbcType=BIGINT},
+      </if>
+      <if test="crowdValue != null" >
+        crowd_value = #{crowdValue,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="adzoneId != null" >
+        adzone_id = #{adzoneId,jdbcType=BIGINT},
+      </if>
+      <if test="subCrowdName != null" >
+        sub_crowd_name = #{subCrowdName,jdbcType=VARCHAR},
+      </if>
+      <if test="subCrowdValue != null" >
+        sub_crowd_value = #{subCrowdValue,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=BIGINT},
+      </if>
+      <if test="catIdList != null" >
+        cat_id_list = #{catIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="shopScaleIdList != null" >
+        shop_scale_id_list = #{shopScaleIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="minPerSale != null" >
+        min_per_sale = #{minPerSale,jdbcType=VARCHAR},
+      </if>
+      <if test="maxPerSale != null" >
+        max_per_sale = #{maxPerSale,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPreferenceValue != null" >
+        shop_preference_value = #{shopPreferenceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null" >
+        cat_id = #{catId,jdbcType=BIGINT},
+      </if>
+      <if test="catName != null" >
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.MainstoreTargetList" >
+    update taobao_zs_mainstore_target_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      campaign_id = #{campaignId,jdbcType=BIGINT},
+      adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      target_id = #{targetId,jdbcType=BIGINT},
+      crowd_name = #{crowdName,jdbcType=VARCHAR},
+      crowd_type = #{crowdType,jdbcType=BIGINT},
+      crowd_value = #{crowdValue,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      adzone_id = #{adzoneId,jdbcType=BIGINT},
+      sub_crowd_name = #{subCrowdName,jdbcType=VARCHAR},
+      sub_crowd_value = #{subCrowdValue,jdbcType=VARCHAR},
+      price = #{price,jdbcType=BIGINT},
+      cat_id_list = #{catIdList,jdbcType=VARCHAR},
+      shop_scale_id_list = #{shopScaleIdList,jdbcType=VARCHAR},
+      min_per_sale = #{minPerSale,jdbcType=VARCHAR},
+      max_per_sale = #{maxPerSale,jdbcType=VARCHAR},
+      shop_preference_value = #{shopPreferenceValue,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=BIGINT},
+      cat_name = #{catName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 钻展推广单元数据分日列表详
+ */
 @Service
 public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
     private static String appkey = "25139411";
@@ -43,7 +46,7 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiAdvertiserAdgroupRptsDayGetRequest req = new ZuanshiAdvertiserAdgroupRptsDayGetRequest();
             req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setEndTime("2018-12-20");
             req.setCampaignId(ad.getCampaignId());
             req.setAdgroupId(ad.getAdgroupId());
             req.setEffect(7L);
@@ -89,18 +92,44 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
                     ard.setEcpm(ard.getEcpm()==null?"0":ard.getEcpm());
                     ard.setAdPv(ard.getAdPv()==null?"0":ard.getAdPv());
                     ard.setCtr(ard.getCtr()==null?"0":ard.getCtr());
-
-                    ard.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(ard.getCartNum()==null?"0":ard.getCartNum()) / Double.parseDouble(ard.getCharge()==null?"0":ard.getCharge())));
-                    ard.setCommodityCollectionRate(String.valueOf(Double.parseDouble(ard.getInshopItemColNum()) / Double.parseDouble(ard.getClick())));
                     Double collectionAndBuy = Double.parseDouble(ard.getDirShopColNum()) + Double.parseDouble(ard.getInshopItemColNum()) + Double.parseDouble(ard.getCartNum());
-                    ard.setTotalCollectionPlusCost(String.valueOf(Double.parseDouble(ard.getCharge()) / collectionAndBuy));
-                    ard.setTotalCollectionRate(String.valueOf(Double.parseDouble(ard.getClick()) / collectionAndBuy));
-                    ard.setCommodityCollectionCost(String.valueOf(Double.parseDouble(ard.getCharge()) / Double.parseDouble(ard.getInshopItemColNum())));
-                    ard.setCommodityPlusCost(String.valueOf(Double.parseDouble(ard.getCharge()) + Double.parseDouble(ard.getCartNum())));
-                    ard.setAverageUvValue(String.valueOf(Double.parseDouble(ard.getAlipayInshopAmt()) / Double.parseDouble(ard.getUv())));
-                    ard.setOrderAverageAmount(String.valueOf(Double.parseDouble(ard.getAlipayInshopAmt()) / Double.parseDouble(ard.getAlipayInShopNum())));
-                    ard.setAverageCostOfOrder(String.valueOf(Double.parseDouble(ard.getCharge()) / Double.parseDouble(ard.getAlipayInShopNum())));
-
+                    if (collectionAndBuy ==0){
+                        ard.setTotalCollectionPlusCost("0");
+                        ard.setTotalCollectionRate("0");
+                    }else {
+                        ard.setTotalCollectionPlusCost(ard.getCharge()==null?"0":String.valueOf(Double.parseDouble(ard.getCharge()) / collectionAndBuy));
+                        ard.setTotalCollectionRate(ard.getClick()==null?"0":String.valueOf(Double.parseDouble(ard.getClick()) / collectionAndBuy));
+                    }
+                    if (Double.parseDouble(ard.getCharge()) ==0){
+                        ard.setCommodityPurchaseRate("0");
+                        ard.setTotalCollectionPlusCost("0");
+                    }else {
+                        ard.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(ard.getCartNum()) / Double.parseDouble(ard.getCharge())));
+                    }
+                    if (Double.parseDouble(ard.getClick())==0){
+                        ard.setCommodityCollectionRate("0");
+                        ard.setTotalCollectionRate("0");
+                    }else {
+                        ard.setCommodityCollectionRate(String.valueOf(Double.parseDouble(ard.getInshopItemColNum()) / Double.parseDouble(ard.getClick())));
+                    }
+                    if (Double.parseDouble(ard.getInshopItemColNum())==0){
+                        ard.setCommodityCollectionCost("0");
+                    }else {
+                        ard.setCommodityCollectionCost(String.valueOf(Double.parseDouble(ard.getCharge()) / Double.parseDouble(ard.getInshopItemColNum())));
+                    }
+                    ard.setCommodityPlusCost(String.valueOf(Double.parseDouble(ard.getCharge()==null?"0":ard.getCharge()) + Double.parseDouble(ard.getCartNum()==null?"0":ard.getCartNum())));
+                    if(Double.parseDouble(ard.getUv())==0){
+                        ard.setAverageUvValue("0");
+                    }else {
+                        ard.setAverageUvValue(String.valueOf(Double.parseDouble(ard.getAlipayInshopAmt()) / Double.parseDouble(ard.getUv())));
+                    }
+                    if (Double.parseDouble(ard.getAlipayInShopNum())==0) {
+                        ard.setOrderAverageAmount("0");
+                        ard.setAverageCostOfOrder("0");
+                    }else {
+                        ard.setOrderAverageAmount(String.valueOf(Double.parseDouble(ard.getAlipayInshopAmt()) / Double.parseDouble(ard.getAlipayInShopNum())));
+                        ard.setAverageCostOfOrder(String.valueOf(Double.parseDouble(ard.getCharge()) / Double.parseDouble(ard.getAlipayInShopNum())));
+                    }
                     adgroupRptsDayGetMapper.insert(ard);
                 }
             }

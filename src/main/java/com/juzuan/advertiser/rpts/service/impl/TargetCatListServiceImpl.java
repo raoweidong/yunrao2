@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 高级兴趣点-类目查询
+ */
 @Service
 public class TargetCatListServiceImpl implements TargetCatListService {
     private static String appkey="25139411";
@@ -69,10 +72,10 @@ public class TargetCatListServiceImpl implements TargetCatListService {
                 for (TargetCatList tcl: targetCatLists) {
                     tcl.setCampaignType(Long.valueOf(cl.getCampaignType()));
                     //将数组数据插入表
+                    tcl.setTaobaoUserId(cl.getTaobaoUserId());
                     targetCatListMapper.insert(tcl);
                 }
             }
-
         }
         return "";
     }

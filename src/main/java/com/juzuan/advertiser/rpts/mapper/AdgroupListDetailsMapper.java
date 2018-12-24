@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface AdgroupListDetailsMapper {
     int deleteByPrimaryKey(Long id);
 
+    int deleteALL();
+
     int insert(AdgroupListDetails record);
 
     int insertSelective(AdgroupListDetails record);

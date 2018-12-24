@@ -49,7 +49,7 @@ public class SeniorinterestListServiceImpl implements SeniorinterestListService 
             } catch(ApiException e){
                 e.printStackTrace();
             }
-            System.out.println("目型定向高级兴趣点集合 : "+rsp.getBody());
+            System.out.println("类目型定向高级兴趣点集合 : "+rsp.getBody());
             //解析json
             JSONObject oneObject = JSON.parseObject(rsp.getBody());
             JSONObject seniorint = oneObject.getJSONObject("zuanshi_banner_seniorinterest_find_response");
@@ -65,10 +65,10 @@ public class SeniorinterestListServiceImpl implements SeniorinterestListService 
             } else {
                 List<SeniorinterestList> seniorinterestLists = JSONObject.parseArray(seniorDto.toString(),SeniorinterestList.class);
                 for (SeniorinterestList sl : seniorinterestLists) {
+                    sl.setTaobaoUserId(cl.getTaobaoUserId());
                     seniorinterestListMapper.insert(sl);
                 }
             }
-
         }
         return "";
     }

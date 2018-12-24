@@ -1,6 +1,10 @@
 package com.juzuan.advertiser.rpts.model;
 
 public class SeniorinterestList {
+    private Integer id;
+
+    private String taobaoUserId;
+
     private String catId;
 
     private String catName;
@@ -8,6 +12,22 @@ public class SeniorinterestList {
     private String interestId;
 
     private String interestName;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTaobaoUserId() {
+        return taobaoUserId;
+    }
+
+    public void setTaobaoUserId(String taobaoUserId) {
+        this.taobaoUserId = taobaoUserId == null ? null : taobaoUserId.trim();
+    }
 
     public String getCatId() {
         return catId;

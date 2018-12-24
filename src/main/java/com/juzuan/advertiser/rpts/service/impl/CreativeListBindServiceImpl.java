@@ -44,6 +44,7 @@ public class CreativeListBindServiceImpl implements CreativeListBindService {
             ZuanshiBannerCreativeFindBindRequest req = new ZuanshiBannerCreativeFindBindRequest();
             req.setCampaignId(al.getCampaignId());
             req.setAdgroupId(al.getAdgroupId());
+            req.setPageSize(500L);
             ZuanshiBannerCreativeFindBindResponse rsp = null;
             try{
                 rsp = client.execute(req,sessionKey);
@@ -74,7 +75,7 @@ public class CreativeListBindServiceImpl implements CreativeListBindService {
                     clb.setCampaignId(al.getCampaignId());
                     clb.setAdgroupId(al.getAdgroupId());
                     clb.setCreativeId(ctv.getLong("id"));
-                    clb.setCreativeName(ctv.getString("creative_name")==null?"0":ctv.getString("creative_name"));
+                    clb.setCreativeName(ctv.getString("name"));
                     clb.setAuditStatus(ctv.getInteger("audit_status"));
                     clb.setCatId(ctv.getString("cat_id"));
                     clb.setCatName(ctv.getString("cat_name"));

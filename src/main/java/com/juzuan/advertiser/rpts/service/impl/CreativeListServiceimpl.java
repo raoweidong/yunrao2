@@ -44,7 +44,6 @@ public class CreativeListServiceimpl implements CreativeListService {
                     e.printStackTrace();
                 }
                 System.out.println("创意列表JSON : "+rsp.getBody());
-
                 JSONObject one = JSON.parseObject(rsp.getBody());
                 //"zuanshi_banner_creative_find_response"
                 JSONObject cfr = one.getJSONObject("zuanshi_banner_creative_find_response");
@@ -72,7 +71,7 @@ public class CreativeListServiceimpl implements CreativeListService {
                         cl.setClickUrl(aa.getString("click_url")==null?"0":aa.getString("click_url"));
                         cl.setCreativeLevel(aa.getInteger("creative_level"));
                         JSONObject bb=aa.getJSONObject("creative_size");
-                        String size = bb.getString("height")+"*"+ bb.getString("width");
+                        String size = bb.getString("width")+"x"+bb.getString("height");
                         cl.setCreativeSize(size);
                         cl.setExpireTime(aa.getString("expire_time")==null?"0":aa.getString("expire_time"));
                         cl.setFormat(aa.getInteger("format"));

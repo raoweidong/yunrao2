@@ -23,15 +23,15 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from campaign_details
+    from campaign_list_details
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from campaign_details
+    delete from campaign_list_details
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CampaignDetails" >
-    insert into campaign_details (id, taobao_user_id, campaign_id, 
+    insert into campaign_list_details (id, taobao_user_id, campaign_id,
       campaign_name, campaign_type, start_time, 
       end_time, day_budget, online_status, 
       speed_type, workdays, week_ends, 
@@ -43,7 +43,7 @@
       #{areaIdList,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.CampaignDetails" >
-    insert into campaign_details
+    insert into campaign_list_details
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -128,7 +128,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.CampaignDetails" >
-    update campaign_details
+    update campaign_list_details
     <set >
       <if test="taobaoUserId != null" >
         taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
@@ -170,7 +170,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.CampaignDetails" >
-    update campaign_details
+    update campaign_list_details
     set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
       campaign_id = #{campaignId,jdbcType=BIGINT},
       campaign_name = #{campaignName,jdbcType=VARCHAR},

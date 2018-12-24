@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.juzuan.advertiser.rpts.mapper.AdvertiserAdzoneRptsTotalGetMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
-import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet;
 import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsTotalGet;
 import com.juzuan.advertiser.rpts.model.AdzoneRptsDay;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
@@ -16,12 +15,9 @@ import com.taobao.api.request.ZuanshiAdvertiserAdzoneRptsTotalGetRequest;
 import com.taobao.api.response.ZuanshiAdvertiserAdzoneRptsTotalGetResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class AdvertiserAdzoneRptsTotalGetServiceImpl {

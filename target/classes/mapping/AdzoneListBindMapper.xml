@@ -25,20 +25,20 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from adzone_list_bind
+    from adgroup_adzone_find
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAllAdzoneListBind" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
     <include refid="Base_Column_List" />
-    from adzone_list_bind
+    from adgroup_adzone_find
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from adzone_list_bind
+    delete from adgroup_adzone_find
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
-    insert into adzone_list_bind (id, taobao_user_id, campaign_id, 
+    insert into adgroup_adzone_find (id, taobao_user_id, campaign_id,
       adgroup_id, adzone_id, adzone_name, 
       adzone_size_list, allow_ad_format_list, allow_adv_type, 
       media_type, adzone_level, crowd_id, 
@@ -50,7 +50,7 @@
       #{crowdType,jdbcType=BIGINT}, #{price,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
-    insert into adzone_list_bind
+    insert into adgroup_adzone_find
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -141,7 +141,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
-    update adzone_list_bind
+    update adgroup_adzone_find
     <set >
       <if test="taobaoUserId != null" >
         taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
@@ -186,7 +186,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
-    update adzone_list_bind
+    update adgroup_adzone_find
     set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
       campaign_id = #{campaignId,jdbcType=BIGINT},
       adgroup_id = #{adgroupId,jdbcType=BIGINT},

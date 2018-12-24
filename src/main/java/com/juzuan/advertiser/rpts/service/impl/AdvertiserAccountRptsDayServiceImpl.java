@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.juzuan.advertiser.rpts.mapper.AdvertiserAccountRptsDayGetMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsDayGet;
+import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsTotalGet;
 import com.juzuan.advertiser.rpts.model.AdzoneRptsDay;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
 import com.taobao.api.ApiException;
@@ -18,7 +19,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+
+/**
+ * 钻展广告主账户数据分日列表查询
+ */
 @Service
 public class AdvertiserAccountRptsDayServiceImpl {
     private static String appkey="25139411";
@@ -28,15 +35,25 @@ public class AdvertiserAccountRptsDayServiceImpl {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private AdvertiserAccountRptsDayGetMapper advertiserAccountRptsDayGetMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "0 0 3 * * ? ")
     public void parseAndSaveAccountDays(){
+        //时间格式化
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        //获取系统当前时间
+        String time= sdf.format(new java.util.Date());
+        System.out.println(time);
+        //获取系统前一天时间
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,-1);
+        String yestime = sdf.format(calendar.getTime());
+        System.out.println(yestime);
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
             String sessionKey=taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
             ZuanshiAdvertiserAccountRptsDayGetRequest req = new ZuanshiAdvertiserAccountRptsDayGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
+            req.setStartTime(yestime);
+            req.setEndTime(time);
             req.setEffect(7L);
             //req.setCampaignModel(1L);
             req.setEffectType("click");
@@ -46,7 +63,7 @@ public class AdvertiserAccountRptsDayServiceImpl {
             } catch (ApiException e) {
                 e.printStackTrace();
             }
-            System.out.println(rsp.getBody());
+            System.out.println("钻展广告主账户数据分日列表查询"+rsp.getBody());
 
             JSONObject one= JSON.parseObject(rsp.getBody());
             JSONObject onee=one.getJSONObject("zuanshi_advertiser_account_rpts_day_get_response");
@@ -56,16 +73,9 @@ public class AdvertiserAccountRptsDayServiceImpl {
                 System.out.println("空");
             }else{  JSONObject thre=JSON.parseObject(twoo.toString());
                 JSONArray three=thre.getJSONArray("data");
-
-                List<AdzoneRptsDay> adzoneRptsDayss=JSONObject.parseArray(three.toString(),AdzoneRptsDay.class);
-                for (AdzoneRptsDay adzoneRptsDay:adzoneRptsDayss){
-                    adzoneRptsDay.setAdgroupName(adzoneRptsDay.getAdzoneName()==null?"0":adzoneRptsDay.getAdzoneName());
-                    adzoneRptsDay.setCampaignId(adzoneRptsDay.getCampaignId()==null?"0":adzoneRptsDay.getCampaignId());
-                    adzoneRptsDay.setAdgroupId(adzoneRptsDay.getAdgroupId()==null?"0":adzoneRptsDay.getAdgroupId());
-                    adzoneRptsDay.setAdzoneId(adzoneRptsDay.getAdzoneId()==null?"0":adzoneRptsDay.getAdzoneId());
-                    adzoneRptsDay.setAdgroupName(adzoneRptsDay.getAdzoneName()==null?"0":adzoneRptsDay.getAdzoneName());
-                    adzoneRptsDay.setCampaignName(adzoneRptsDay.getCampaignName()==null?"0":adzoneRptsDay.getCampaignName());
-                    adzoneRptsDay.setCvr(adzoneRptsDay.getCvr()==null?"0":adzoneRptsDay.getCvr());
+                List<AdvertiserAccountRptsDayGet> adzoneRptsDayss=JSONObject.parseArray(three.toString(),AdvertiserAccountRptsDayGet.class);
+                for (AdvertiserAccountRptsDayGet adzoneRptsDay:adzoneRptsDayss){
+                      adzoneRptsDay.setCvr(adzoneRptsDay.getCvr()==null?"0":adzoneRptsDay.getCvr());
                     adzoneRptsDay.setAlipayInShopNum(adzoneRptsDay.getAlipayInShopNum()==null?"0":adzoneRptsDay.getAlipayInShopNum());
                     adzoneRptsDay.setAlipayInshopAmt(adzoneRptsDay.getAlipayInshopAmt()==null?"0":adzoneRptsDay.getAlipayInshopAmt());
                     adzoneRptsDay.setGmvInshopAmt(adzoneRptsDay.getGmvInshopAmt()==null?"0":adzoneRptsDay.getGmvInshopAmt());
@@ -84,13 +94,10 @@ public class AdvertiserAccountRptsDayServiceImpl {
                     adzoneRptsDay.setClick(adzoneRptsDay.getClick()==null?"0":adzoneRptsDay.getClick());
                     adzoneRptsDay.setAdPv(adzoneRptsDay.getAdPv()==null?"0":adzoneRptsDay.getAdPv());
                     adzoneRptsDay.setRoi(adzoneRptsDay.getRoi()==null?"0":adzoneRptsDay.getRoi());
-                    adzoneRptsDay.setLogDate(adzoneRptsDay.getLogDate()==null?"2018-00-00":adzoneRptsDay.getLogDate());
+
                     //创表中对象
                     AdvertiserAccountRptsDayGet advertiserAccountRptsDayGet=new AdvertiserAccountRptsDayGet();
-
                     BeanUtils.copyProperties(adzoneRptsDay,advertiserAccountRptsDayGet);
-
-
                     if (Double.parseDouble(advertiserAccountRptsDayGet.getClick())==0){
                         advertiserAccountRptsDayGet.setCommodityPurchaseRate("0");//点击量为零
                         advertiserAccountRptsDayGet.setCommodityCollectionRate("0");
@@ -141,10 +148,6 @@ public class AdvertiserAccountRptsDayServiceImpl {
 
                     }
                     advertiserAccountRptsDayGet.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
-                     /*  Map<String,Object> data=new HashMap<>();
-                       data.put("currIndex",0);
-                       data.put("pageSize",10);
-                      List<AdvertiserAdzoneRptsDayGet> advertiserAdzoneRptsDayGets=advertiserAdzoneRptsDayGetMapper.queryAdzoneRptsDayGetsBySql(data);*/
                     advertiserAccountRptsDayGetMapper.insert(advertiserAccountRptsDayGet);
 
                 }

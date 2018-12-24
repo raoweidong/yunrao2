@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 获取群体定向标签列表
+ */
 @Service
 public class TargetCatelabelListServiceImpl implements TargetCatelabelListService {
     private static String appkey="25139411";
@@ -32,7 +35,7 @@ public class TargetCatelabelListServiceImpl implements TargetCatelabelListServic
     private CampaignListMapper campaignListMapper;
     @Autowired
     private TargetCatelabelListMapper targetCatelabelListMapper;
-   // @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String TargetCatelabeList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau : taobaoAuthorizeUsers) {
@@ -63,9 +66,7 @@ public class TargetCatelabelListServiceImpl implements TargetCatelabelListServic
                     targetCatelabelListMapper.insert(tcl);
                 }
             }
-
         }
-
         return "";
     }
 }

@@ -5,13 +5,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface RelationshopListMapper {
-    int deleteByPrimaryKey(String packageId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(RelationshopList record);
 
     int insertSelective(RelationshopList record);
 
-    RelationshopList selectByPrimaryKey(String packageId);
+    RelationshopList selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(RelationshopList record);
 

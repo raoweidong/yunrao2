@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.ShopItemListMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.ShopItemList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
+    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="item_landing_page" property="itemLandingPage" jdbcType="VARCHAR" />
+    <result column="item_pic_url" property="itemPicUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taobao_user_id, item_id, item_name, item_landing_page, item_pic_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taobao_shop_item_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from taobao_shop_item_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.ShopItemList" >
+    insert into taobao_shop_item_list (id, taobao_user_id, item_id, 
+      item_name, item_landing_page, item_pic_url
+      )
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{itemId,jdbcType=BIGINT}, 
+      #{itemName,jdbcType=VARCHAR}, #{itemLandingPage,jdbcType=VARCHAR}, #{itemPicUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.ShopItemList" >
+    insert into taobao_shop_item_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taobaoUserId != null" >
+        taobao_user_id,
+      </if>
+      <if test="itemId != null" >
+        item_id,
+      </if>
+      <if test="itemName != null" >
+        item_name,
+      </if>
+      <if test="itemLandingPage != null" >
+        item_landing_page,
+      </if>
+      <if test="itemPicUrl != null" >
+        item_pic_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoUserId != null" >
+        #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null" >
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="itemName != null" >
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemLandingPage != null" >
+        #{itemLandingPage,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPicUrl != null" >
+        #{itemPicUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.ShopItemList" >
+    update taobao_shop_item_list
+    <set >
+      <if test="taobaoUserId != null" >
+        taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null" >
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="itemName != null" >
+        item_name = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemLandingPage != null" >
+        item_landing_page = #{itemLandingPage,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPicUrl != null" >
+        item_pic_url = #{itemPicUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.ShopItemList" >
+    update taobao_shop_item_list
+    set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
+      item_id = #{itemId,jdbcType=BIGINT},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      item_landing_page = #{itemLandingPage,jdbcType=VARCHAR},
+      item_pic_url = #{itemPicUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

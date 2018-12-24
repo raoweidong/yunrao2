@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 单元列表
+ */
 @Service
 public class AdgroupListServiceImpl implements AdgroupListService {
     private static String appkey="25139411";
@@ -33,8 +36,9 @@ public class AdgroupListServiceImpl implements AdgroupListService {
     @Autowired
     private CampaignListMapper campaignListMapper;
 
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "0 0 3 * * ?")
     public String AdgroupList(){
+        adgroupListMapper.deleteBySource(0);
        List<CampaignList> cammmm=campaignListMapper.selectAllCampaign();
        for (CampaignList caa:cammmm){
            String userId=caa.getTaobaoUserId();
@@ -51,59 +55,40 @@ public class AdgroupListServiceImpl implements AdgroupListService {
            System.out.println("单元列表  "+rsp.getBody());
 
            JSONObject oneObject= JSON.parseObject(rsp.getBody());
-           System.out.println(oneObject.toString());
+           //System.out.println(oneObject.toString());
            Object twoObject=oneObject.getJSONObject("zuanshi_banner_adgroup_find_response");
-           System.out.println(twoObject.toString());
+           //System.out.println(twoObject.toString());
            JSONObject threeObject=JSON.parseObject(twoObject.toString());
            Object fourObject=threeObject.getJSONObject("result");
-           System.out.println(fourObject.toString());
-           JSONObject fiveObject=JSON.parseObject(fourObject.toString());
-           Object sixObject=fiveObject.getJSONObject("adgroups");
-           System.out.println(sixObject.toString());
-           JSONObject sevenObject=JSONObject.parseObject(sixObject.toString());
-           JSONArray eightObject=sevenObject.getJSONArray("adgroup");
-           if (eightObject==null){
+           //System.out.println(fourObject.toString());
+           JSONObject fiveObject = JSON.parseObject(fourObject.toString());
+           Object sixObject = fiveObject.getJSONObject("adgroups");
+           if(sixObject == null){
                continue;
-           }else{
-               for (Object ob:eightObject.toArray()){
-                   System.out.println("遍历单元列表数组  "+ob.toString());
-               }
-               List<AdgroupList> adgroupList=JSONObject.parseArray(eightObject.toString(), AdgroupList.class);
-               //遍历对象数组
-               for (AdgroupList ad:adgroupList){
-                   //ad.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
-                   ad.setTaobaoUserId(caa.getTaobaoUserId());
-                   adgroupListMapper.insertSelective(ad);
+           }else {
+               //System.out.println(sixObject.toString());
+               JSONObject sevenObject = JSONObject.parseObject(sixObject.toString());
+               JSONArray eightObject = sevenObject.getJSONArray("adgroup");
+               if (eightObject == null) {
+                   continue;
+               } else {
+                   List<AdgroupList> adgroupList = JSONObject.parseArray(eightObject.toString(), AdgroupList.class);
+                   //遍历对象数组
+                   for (AdgroupList ad : adgroupList) {
+                       //ad.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
+                       ad.setTaobaoUserId(caa.getTaobaoUserId());
+                       ad.setAdgroupSource(0);
+                       adgroupListMapper.insertSelective(ad);
+                   }
                }
            }
-
        }
        return "";
     }
 
     @Override
     public void parseAndsaveAdgroupList(String json){
-        JSONObject oneObject= JSON.parseObject(json);
-        System.out.println(oneObject.toString());
-        Object twoObject=oneObject.getJSONObject("zuanshi_banner_adgroup_find_response");
-        System.out.println(twoObject.toString());
-        JSONObject threeObject=JSON.parseObject(twoObject.toString());
-        Object fourObject=threeObject.getJSONObject("result");
-        System.out.println(fourObject.toString());
-        JSONObject fiveObject=JSON.parseObject(fourObject.toString());
-        Object sixObject=fiveObject.getJSONObject("adgroups");
-        System.out.println(sixObject.toString());
-        JSONObject sevenObject=JSONObject.parseObject(sixObject.toString());
-        JSONArray eightObject=sevenObject.getJSONArray("adgroup");
 
-        for (Object ob:eightObject.toArray()){
-            System.out.println("遍历单元列表数组  "+ob.toString());
-        }
-        List<AdgroupList> adgroupList=JSONObject.parseArray(eightObject.toString(), AdgroupList.class);
-        //遍历对象数组
-        for (AdgroupList ad:adgroupList){
-            adgroupListMapper.insertSelective(ad);
-        }
     }
 
 }

@@ -9,7 +9,11 @@ import java.util.List;
 public interface CampaignListMapper {
     int deleteByPrimaryKey(Long id);
 
+    int deleteBySource(Long campaignSource);
+
     int insert(CampaignList record);
+
+    int insertOrUpdate(CampaignList record);
 
     int insertSelective(CampaignList record);
 
@@ -20,6 +24,6 @@ public interface CampaignListMapper {
     int updateByPrimaryKey(CampaignList record);
 
     List<CampaignList> selectAllCampaign();
-    List<CampaignList> selectDistinct();
 
+    List<CampaignList> selectDistinct();
 }

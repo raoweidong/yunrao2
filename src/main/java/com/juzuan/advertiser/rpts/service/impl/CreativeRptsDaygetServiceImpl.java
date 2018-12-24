@@ -17,6 +17,7 @@ import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.ZuanshiAdvertiserCreativeRptsDayGetRequest;
 import com.taobao.api.response.ZuanshiAdvertiserCreativeRptsDayGetResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -95,25 +96,46 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
                     item.setEcpm(item.getEcpm() == null ? "0" : item.getEcpm());
                     item.setAdPv(item.getAdPv() == null ? "0" : item.getAdPv());
                     item.setCtr(item.getCtr() == null ? "0" : item.getCtr());
-                    //加购率=添加购物车量/点击量
-                    item.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(item.getCartNum()) / Double.parseDouble(item.getCharge())));
-                    //收藏率=收藏宝贝量/点击量
-                    item.setCommodityCollectionRate(String.valueOf(Double.parseDouble(item.getInshopItemColNum()) / Double.parseDouble(item.getClick())));
-                    //总收藏加购成本=消耗/（收藏宝贝量+收藏店铺量+添加购物车量 )
                     Double collectionAndBuy = Double.parseDouble(item.getDirShopColNum()) + Double.parseDouble(item.getInshopItemColNum()) + Double.parseDouble(item.getCartNum());
-                    item.setTotalCollectionPlusCost(String.valueOf(Double.parseDouble(item.getCharge()) / collectionAndBuy));
-                    //总收藏加购率=（收藏宝贝量+收藏店铺量+添加购物车量）/点击量
-                    item.setTotalCollectionRate(String.valueOf(Double.parseDouble(item.getClick()) / collectionAndBuy));
-                    //收藏成本=消耗/收藏宝贝量
-                    item.setCommodityCollectionCost(String.valueOf(Double.parseDouble(item.getCharge()) / Double.parseDouble(item.getInshopItemColNum())));
-                    //加购成本=消耗/添加购物车量
-                    item.setCommodityPlusCost(String.valueOf(Double.parseDouble(item.getCharge()) + Double.parseDouble(item.getCartNum())));
-                    //平均访客价值 (average_uv_value) = 成交订单金额/访客
-                    item.setAverageUvValue(String.valueOf(Double.parseDouble(item.getAlipayInshopAmt()) / Double.parseDouble(item.getUv())));
-                    //订单平均金额(order_average_amount)订单平均金额 = 成交订单金额/成交订单量
-                    item.setOrderAverageAmount(String.valueOf(Double.parseDouble(item.getAlipayInshopAmt()) / Double.parseDouble(item.getAlipayInShopNum())));
-                    //订单平均成本(average_cost_of_order)订单平均成本 = 消耗/成交订单量
-                    item.setAverageCostOfOrder(String.valueOf(Double.parseDouble(item.getCharge()) / Double.parseDouble(item.getAlipayInShopNum())));
+                    if (collectionAndBuy ==0){
+                        item.setTotalCollectionPlusCost("0");
+                        item.setTotalCollectionRate("0");
+                    }else {
+                        item.setTotalCollectionPlusCost(item.getCharge()==null?"0":String.valueOf(Double.parseDouble(item.getCharge()) / collectionAndBuy));
+                        item.setTotalCollectionRate(item.getClick()==null?"0":String.valueOf(Double.parseDouble(item.getClick()) / collectionAndBuy));
+                    }
+                    if (Double.parseDouble(item.getCharge()) ==0){
+                        item.setCommodityPurchaseRate("0");
+                        item.setTotalCollectionPlusCost("0");
+                    }else {
+                        item.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(item.getCartNum()) / Double.parseDouble(item.getCharge())));
+
+                    }
+                    if (Double.parseDouble(item.getClick())==0){
+                        item.setCommodityCollectionRate("0");
+                        item.setTotalCollectionRate("0");
+                    }else {
+                        item.setCommodityCollectionRate(String.valueOf(Double.parseDouble(item.getInshopItemColNum()) / Double.parseDouble(item.getClick())));
+
+                    }
+                    if (Double.parseDouble(item.getInshopItemColNum())==0){
+                        item.setCommodityCollectionCost("0");
+                    }else {
+                        item.setCommodityCollectionCost(String.valueOf(Double.parseDouble(item.getCharge()) / Double.parseDouble(item.getInshopItemColNum())));
+                    }
+                    item.setCommodityPlusCost(String.valueOf(Double.parseDouble(item.getCharge()==null?"0":item.getCharge()) + Double.parseDouble(item.getCartNum()==null?"0":item.getCartNum())));
+                    if(Double.parseDouble(item.getUv())==0){
+                        item.setAverageUvValue("0");
+                    }else {
+                        item.setAverageUvValue(String.valueOf(Double.parseDouble(item.getAlipayInshopAmt()) / Double.parseDouble(item.getUv())));
+                    }
+                    if (Double.parseDouble(item.getAlipayInShopNum())==0) {
+                        item.setOrderAverageAmount("0");
+                        item.setAverageCostOfOrder("0");
+                    }else {
+                        item.setOrderAverageAmount(String.valueOf(Double.parseDouble(item.getAlipayInshopAmt()) / Double.parseDouble(item.getAlipayInShopNum())));
+                        item.setAverageCostOfOrder(String.valueOf(Double.parseDouble(item.getCharge()) / Double.parseDouble(item.getAlipayInShopNum())));
+                    }
                     creativeRptsDaygetMapper.insert(item);
                 }
             }
