@@ -55,11 +55,14 @@
     from advertiser_adzone_rpts_day_get
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="countByNull"  resultType="int">
+  select count(1) from advertiser_adzone_rpts_day_get
+  </select>
   <select id="queryAdzoneRptsDayGetsBySql" resultMap="BaseResultMap" parameterType="java.util.Map" >
     select
     <include refid="Base_Column_List" />
     from advertiser_adzone_rpts_day_get
-   limit #{currIndex}, #{pageSize}
+   limit #{startIndex}, #{pageSize}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >

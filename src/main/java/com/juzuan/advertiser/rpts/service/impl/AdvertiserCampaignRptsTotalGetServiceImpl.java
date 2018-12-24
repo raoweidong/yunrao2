@@ -7,6 +7,7 @@ import com.juzuan.advertiser.rpts.mapper.AdvertiserCampaignRptsTotalGetMapper;
 import com.juzuan.advertiser.rpts.mapper.CampaignListMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.*;
+import com.juzuan.advertiser.rpts.service.AdvertiserCampaignRptsTotalGetService;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class AdvertiserCampaignRptsTotalGetServiceImpl {
+public class AdvertiserCampaignRptsTotalGetServiceImpl implements AdvertiserCampaignRptsTotalGetService {
     private static String appkey="25139411";
     private static String url ="https://eco.taobao.com/router/rest";
     private static String secret="ccd188d30d3731df6d176ba8a2151765";
@@ -30,6 +31,7 @@ public class AdvertiserCampaignRptsTotalGetServiceImpl {
     @Autowired
     private AdvertiserCampaignRptsTotalGetMapper advertiserCampaignRptsTotalGetMapper;
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String parseCampaign(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         //List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();

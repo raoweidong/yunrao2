@@ -1,5 +1,7 @@
 package com.juzuan.advertiser.rpts.model;
 
+import java.util.Date;
+
 public class AdzoneRptsDay {
     private String adzoneName;
     private String campaignId;
@@ -26,7 +28,7 @@ public class AdzoneRptsDay {
     private String click;
     private String adPv;
     private String roi;
-    private String logDate;
+   private String logDate;
 
     public String getAdzoneName() {
         return adzoneName;

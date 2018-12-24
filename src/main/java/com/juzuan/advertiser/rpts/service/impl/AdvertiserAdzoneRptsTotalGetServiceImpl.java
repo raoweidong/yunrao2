@@ -9,6 +9,7 @@ import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsDayGet;
 import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsTotalGet;
 import com.juzuan.advertiser.rpts.model.AdzoneRptsDay;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
+import com.juzuan.advertiser.rpts.service.AdvertiserAdzoneRptsTotalGetService;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class AdvertiserAdzoneRptsTotalGetServiceImpl {
+public class AdvertiserAdzoneRptsTotalGetServiceImpl implements AdvertiserAdzoneRptsTotalGetService {
     private static String appkey="25139411";
     private static String url ="https://eco.taobao.com/router/rest";
     private static String secret="ccd188d30d3731df6d176ba8a2151765";
@@ -33,6 +34,7 @@ public class AdvertiserAdzoneRptsTotalGetServiceImpl {
     @Autowired
     private AdvertiserAdzoneRptsTotalGetMapper advertiserAdzoneRptsTotalGetMapper;
     //@Scheduled(cron ="*/5 * * * * ?")
+    @Override
     public void parseAndSaveAdzoneTotal(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser user:taobaoAuthorizeUsers){

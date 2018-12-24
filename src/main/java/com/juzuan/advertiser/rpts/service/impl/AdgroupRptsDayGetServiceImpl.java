@@ -35,7 +35,8 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
     private AdgroupRptsDayGetMapper adgroupRptsDayGetMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
-    public String AdgroupRptsDayGet() throws ApiException {
+    @Override
+    public String AdgroupRptsDayGet()  {
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList ad : cam) {
             TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(ad.getTaobaoUserId());
@@ -49,7 +50,12 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
             req.setEffect(7L);
             req.setCampaignModel(1L);
             req.setEffectType("impression");
-            ZuanshiAdvertiserAdgroupRptsDayGetResponse rsp = client.execute(req, sessionKey);
+            ZuanshiAdvertiserAdgroupRptsDayGetResponse rsp = null;
+            try {
+                rsp = client.execute(req, sessionKey);
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
             System.out.println("钻展推广单元数据分日列表详情 : " + rsp.getBody());
             //解析外层json
             JSONObject oneObject = JSON.parseObject(rsp.getBody());

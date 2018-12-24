@@ -36,6 +36,7 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
     @Autowired
     private AdvertiserCampaignRptsDayGetMapper advertiserCampaignRptsDayGetMapper;
     //@Scheduled( cron = "*/5 * * * * ?")
+    @Override
     public String getAdvertiserCampaignRptsDay(){
         List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();
         for (CampaignList campaignList:campaignLists){

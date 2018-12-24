@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService {
+public  class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService {
     private static String appkey="25139411";
     private static String url ="https://eco.taobao.com/router/rest";
     private static String secret="ccd188d30d3731df6d176ba8a2151765";
@@ -33,7 +33,8 @@ public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService 
     private AdgroupListMapper adgroupListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
-    public String AdgroupListDetails () throws ApiException {
+    @Override
+    public String AdgroupListDetails () {
 
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList ad: cam) {
@@ -43,7 +44,12 @@ public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService 
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);
             ZuanshiBannerAdgroupGetRequest req = new ZuanshiBannerAdgroupGetRequest();
             req.setId(ad.getAdgroupId());
-            ZuanshiBannerAdgroupGetResponse rsp = client.execute(req,sessionKey);
+            ZuanshiBannerAdgroupGetResponse rsp = null;
+            try {
+                rsp = client.execute(req,sessionKey);
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
             System.out.println("单元列表详情  :  "+rsp.getBody());
 
             AdgroupListDetails adgroupListDetail = new AdgroupListDetails();

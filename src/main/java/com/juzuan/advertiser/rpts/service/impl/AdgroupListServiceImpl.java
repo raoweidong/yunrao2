@@ -34,6 +34,7 @@ public class AdgroupListServiceImpl implements AdgroupListService {
     private CampaignListMapper campaignListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String AdgroupList(){
        List<CampaignList> cammmm=campaignListMapper.selectAllCampaign();
        for (CampaignList caa:cammmm){

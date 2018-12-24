@@ -1,7 +1,5 @@
 package com.juzuan.advertiser.rpts.model;
 
-import java.util.Date;
-
 public class AdvertiserAccountRptsDayGet {
     private Long id;
 
@@ -63,7 +61,7 @@ public class AdvertiserAccountRptsDayGet {
 
     private String averageUvValue;
 
-    private Date logDate;
+    private String logDate;
 
     public Long getId() {
         return id;
@@ -305,11 +303,11 @@ public class AdvertiserAccountRptsDayGet {
         this.averageUvValue = averageUvValue == null ? null : averageUvValue.trim();
     }
 
-    public Date getLogDate() {
+    public String getLogDate() {
         return logDate;
     }
 
-    public void setLogDate(Date logDate) {
-        this.logDate = logDate;
+    public void setLogDate(String logDate) {
+        this.logDate = logDate == null ? null : logDate.trim();
     }
 }

@@ -38,6 +38,7 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String getAdzone(){
 
           List<AdzoneListBind> adzoneListBindd=adzoneListBindMapper.selectAllAdzoneListBind();

@@ -8,6 +8,7 @@ import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsDayGet;
 import com.juzuan.advertiser.rpts.model.AdzoneRptsDay;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
+import com.juzuan.advertiser.rpts.service.AdvertiserAccountRptsDayService;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -20,7 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class AdvertiserAccountRptsDayServiceImpl {
+public class AdvertiserAccountRptsDayServiceImpl implements AdvertiserAccountRptsDayService {
     private static String appkey="25139411";
     private static String url ="https://eco.taobao.com/router/rest";
     private static String secret="ccd188d30d3731df6d176ba8a2151765";
@@ -28,7 +29,8 @@ public class AdvertiserAccountRptsDayServiceImpl {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private AdvertiserAccountRptsDayGetMapper advertiserAccountRptsDayGetMapper;
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public void parseAndSaveAccountDays(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
@@ -85,6 +87,7 @@ public class AdvertiserAccountRptsDayServiceImpl {
                     adzoneRptsDay.setAdPv(adzoneRptsDay.getAdPv()==null?"0":adzoneRptsDay.getAdPv());
                     adzoneRptsDay.setRoi(adzoneRptsDay.getRoi()==null?"0":adzoneRptsDay.getRoi());
                     adzoneRptsDay.setLogDate(adzoneRptsDay.getLogDate()==null?"2018-00-00":adzoneRptsDay.getLogDate());
+                    adzoneRptsDay.getLogDate();
                     //创表中对象
                     AdvertiserAccountRptsDayGet advertiserAccountRptsDayGet=new AdvertiserAccountRptsDayGet();
 

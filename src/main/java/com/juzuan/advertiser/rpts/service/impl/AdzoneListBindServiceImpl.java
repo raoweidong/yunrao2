@@ -32,6 +32,7 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String getBannerAdgroupAdzone(){
         List<AdgroupList> adgroupLists=adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adgroupList:adgroupLists){

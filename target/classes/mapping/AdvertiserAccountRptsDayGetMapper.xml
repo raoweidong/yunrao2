@@ -32,7 +32,7 @@
     <result column="average_cost_of_order" property="averageCostOfOrder" jdbcType="VARCHAR" />
     <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
     <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
-    <result column="log_date" property="logDate" jdbcType="TIMESTAMP" />
+    <result column="log_date" property="logDate" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, taobao_user_id, charge, click, ad_pv, ecpm, ctr, ecpc, cvr, alipay_inshop_amt, 
@@ -48,38 +48,12 @@
     from advertiser_account_rpts_day_get
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="selectByCartNum" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-    where cart_num>#{cartNum,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap"  >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-  </select>
-
-  <select id="selectByUserIdAndLogDate" resultMap="BaseResultMap" parameterType="com.juzuan.advertiser.rpts.query.DayGetQuery" >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-    <where>
-      <if test="userId != null">
-        and taobao_user_id = #{userId,jdbcType=VARCHAR}
-      </if>
-      <if test="logDate != null">
-        and log_date = #{logDate,jdbcType=TIMESTAMP}
-      </if>
-    </where>
-
-  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from advertiser_account_rpts_day_get
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsDayGet" >
-    insert into advertiser_account_rpts_day_get ( taobao_user_id, charge,
+    insert into advertiser_account_rpts_day_get (id, taobao_user_id, charge, 
       click, ad_pv, ecpm, 
       ctr, ecpc, cvr, alipay_inshop_amt, 
       alipay_in_shop_num, gmv_inshop_amt, gmv_inshop_num, 
@@ -91,7 +65,7 @@
       total_collection_plus_cost, average_cost_of_order, 
       order_average_amount, average_uv_value, log_date
       )
-    values ( #{taobaoUserId,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR},
+    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
       #{click,jdbcType=VARCHAR}, #{adPv,jdbcType=VARCHAR}, #{ecpm,jdbcType=VARCHAR}, 
       #{ctr,jdbcType=VARCHAR}, #{ecpc,jdbcType=VARCHAR}, #{cvr,jdbcType=VARCHAR}, #{alipayInshopAmt,jdbcType=VARCHAR}, 
       #{alipayInShopNum,jdbcType=VARCHAR}, #{gmvInshopAmt,jdbcType=VARCHAR}, #{gmvInshopNum,jdbcType=VARCHAR}, 
@@ -101,13 +75,15 @@
       #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
       #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
       #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
-      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP}
+      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsDayGet" >
     insert into advertiser_account_rpts_day_get
     <trim prefix="(" suffix=")" suffixOverrides="," >
-
+      <if test="id != null" >
+        id,
+      </if>
       <if test="taobaoUserId != null" >
         taobao_user_id,
       </if>
@@ -200,7 +176,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
       <if test="taobaoUserId != null" >
         #{taobaoUserId,jdbcType=VARCHAR},
       </if>
@@ -289,7 +267,7 @@
         #{averageUvValue,jdbcType=VARCHAR},
       </if>
       <if test="logDate != null" >
-        #{logDate,jdbcType=TIMESTAMP},
+        #{logDate,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -384,7 +362,7 @@
         average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
       </if>
       <if test="logDate != null" >
-        log_date = #{logDate,jdbcType=TIMESTAMP},
+        log_date = #{logDate,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -420,9 +398,7 @@
       average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
       order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
       average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
-      log_date = #{logDate,jdbcType=TIMESTAMP}
+      log_date = #{logDate,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-
 </mapper>
