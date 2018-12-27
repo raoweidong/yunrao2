@@ -30,8 +30,6 @@ public class SynchronizeTablesController {
             response.setMsg("非法参数");
         }
 
-
-
         return response;
     }
 
