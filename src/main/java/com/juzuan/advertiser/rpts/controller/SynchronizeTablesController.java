@@ -29,7 +29,7 @@ public class SynchronizeTablesController {
             response.setCode(1);
             response.setMsg("非法参数");
         }
-        System.out.println("hhhahahah");
+
 
 
         return response;
