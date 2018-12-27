@@ -2,66 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e90cc9f-75d0-4711-8251-b7ac86001c76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/taobao_sdk.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserCampaignRptsTotalGetMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/advertiser_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/advertiser_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/advertiser_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/advertiser_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e75455c2-06af-4b50-8d1d-d17663797607.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e75455c2-06af-4b50-8d1d-d17663797607.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsTotalGetMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/RequestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAccountRptsDayGetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsTotalGetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserCampaignRptsTotalGetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/RequestMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advertiser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/advertiser.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/AdvertiserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/AdvertiserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneRptsDayGetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AccountRptsTotalGetMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListDetailsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListDetailsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserAdzoneRptsDayGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserAdzoneRptsDayGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsDayGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsDayGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpcTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpcTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpmTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpmTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListBindMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListBindMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CrowdListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CrowdListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/DmpTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/DmpTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/IndependentshopTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/IndependentshopTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MainstoreTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MainstoreTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MylikeTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MylikeTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/SimlikeTargetListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/SimlikeTargetListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TargetCatListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TargetCatListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupRptsDayGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupRptsDayGet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CampaignDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CampaignDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/query/DayGetQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/query/DayGetQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AccountRptsTotalGetService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDaysServiceImpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsTotalGetServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpcTargetListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpcTargetListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpmTargetListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpmTargetListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListBindServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListBindServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListServiceimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CrowdListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CrowdListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/DmpTargetListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/DmpTargetListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopConditionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatelabelListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatelabelListServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AccountRptsTotalGetMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListDetailsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAccountRptsDayGetMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupRptsDayGetMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CpcTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CpcTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CpmTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CpmTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CreativeListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CreativeListBindMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CreativeListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CreativeListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CrowdListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CrowdListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/DmpTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/DmpTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/IndependentshopTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/IndependentshopTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/MainstoreTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/MainstoreTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/MylikeTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/MylikeTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/SimlikeTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/SimlikeTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TargetCatListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TargetCatListMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AccountRptsTotalGetMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAccountRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAccountRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdgroupListDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdgroupListDetailsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdgroupListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdgroupListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdgroupRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdgroupRptsDayGetMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdzoneListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdzoneListBindMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdzoneListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdzoneListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CampaignDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CampaignDetailsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapping/CampaignListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CampaignListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CpcTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CpcTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CpmTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CpmTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CreativeListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CreativeListBindMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CreativeListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CreativeListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CrowdListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CrowdListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/DmpTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/DmpTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/IndependentshopTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/IndependentshopTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/MainstoreTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/MainstoreTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/MylikeTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/MylikeTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/SimlikeTargetListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/SimlikeTargetListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/TargetCatListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/TargetCatListMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,61 +114,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="147" column="14" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1160">
+              <caret line="76" column="68" selection-start-line="76" selection-start-column="68" selection-end-line="76" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="56" column="40" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="56" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="41" selection-start-line="41" selection-end-line="50" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="76" column="57" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="76" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="22" />
+              <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -169,6 +200,9 @@
       <find>spring-boot-starter-tomcat</find>
       <find>spring-boot-starter</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -177,57 +211,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CreativeListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListBindMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CpcTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpcTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CreativeListBindMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CrowdListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CrowdListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/MainstoreTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MainstoreTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/SimlikeTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/SimlikeTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/IndependentshopTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/IndependentshopTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/MylikeTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MylikeTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListBindServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneRptsDay.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/BannerAdgroupAdzoneBind.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneRptsDayGetController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserCampaignRptsTotalGetMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsTotalGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsTotalGetMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CrowdListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListServiceimpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopConditionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatelabelListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/SeniorinterestListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CrowdListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CpmTargetListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpmTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/DmpTargetListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/DmpTargetListMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/DmpTargetListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/query/DayGetQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAccountRptsDayGetMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAccountRptsDayGetMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpcTargetListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpmTargetListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TargetCatListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TargetCatListMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/RequestMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/RequestMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupRptsDayGetMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdvertiserAdzoneRptsDayGetMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsDayGet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/ServletInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/AdvertiserApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/HellpWorldController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdgroupListDetailsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListDetailsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -266,8 +300,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="575" />
-    <option name="y" value="15" />
+    <option name="x" value="612" />
+    <option name="y" value="54" />
     <option name="width" value="1263" />
     <option name="height" value="1038" />
   </component>
@@ -455,7 +489,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545632458864" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545888087701" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -466,10 +500,10 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\yun\yunrao2-1\src\main\resources" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\yun\yunrao2-1\src\main\resources" />
     </key>
   </component>
@@ -641,8 +675,16 @@
       <workItem from="1545445863615" duration="1796000" />
       <workItem from="1545447697915" duration="1754000" />
       <workItem from="1545450192629" duration="16383000" />
-      <workItem from="1545613082711" duration="14737000" />
+      <workItem from="1545613082711" duration="76747000" />
     </task>
+    <task id="LOCAL-00001" summary="12-24">
+      <created>1545632506514</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545632506514</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -669,7 +711,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="515676000" />
+    <option name="totallyTimeSpent" value="577686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -682,7 +724,7 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Web" order="5" side_tool="true" weight="0.32995737" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="7" weight="0.23827292" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.23987207" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="2" />
@@ -692,7 +734,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.40195015" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.4727475" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.5216908" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.38820913" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -750,24 +792,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="12-24" />
+    <option name="LAST_COMMIT_MESSAGE" value="12-24" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java</url>
-          <line>196</line>
-          <properties />
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java</url>
-          <line>202</line>
-          <properties />
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java</url>
-          <line>84</line>
+          <line>101</line>
           <properties />
           <option name="timeStamp" value="185" />
         </line-breakpoint>
@@ -789,228 +823,299 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/IntelligenceListServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MylikeTargetListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CrowdListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/MylikeTargetListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpcTargetListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListBindServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
+          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeListServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CpmTargetListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CpmTargetListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/DmpTargetListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/DmpTargetListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/DmpTargetListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpcTargetListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CpmTargetListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatelabelListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TargetCatListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/TargetCatListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CreativeListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListDetailsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CrowdListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="292" column="51" selection-start-line="291" selection-start-column="52" selection-end-line="292" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/IntelligenceListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/IndustryshopListServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopConditionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopLabelServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RelationshopListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="25">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/RptsDayGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1925">
-          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+        <state relative-caret-position="-200">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/SeniorinterestListServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/ShopItemListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsTotalGetMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsTotalGetServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.10.RELEASE/spring-beans-4.3.10.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="587" selection-start-line="587" selection-end-line="587" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.6.RELEASE/spring-boot-1.5.6.RELEASE-sources.jar!/org/springframework/boot/web/support/SpringBootServletInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/mapping/AccountRptsTotalGetMapper.xml" />
-    <entry file="das://e75455c2-06af-4b50-8d1d-d17663797607/schema/juzuanapp/table/adgroup_list">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e75455c2-06af-4b50-8d1d-d17663797607/collation/armscii8_bin">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/ServletInitializer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AccountGetMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AccountGetServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TaobaoAuthorizeUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AccountGet.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AccountGetMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
-          <folding>
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="21" selection-start-line="21" selection-end-line="25" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/AdvertiserApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/RequestMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+        <state relative-caret-position="450">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/RequestMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdgroupRptsDayGetMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        <state relative-caret-position="75">
+          <caret line="3" column="88" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/HellpWorldController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#805#821#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="610">
+          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupRptsDayGetMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/SeniorinterestListService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+        <state relative-caret-position="125">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.10.RELEASE/spring-beans-4.3.10.RELEASE-sources.jar!/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="237" column="33" lean-forward="true" selection-start-line="237" selection-start-column="33" selection-end-line="237" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="39" selection-start-line="39" selection-end-line="48" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1021,133 +1126,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CategoryRptsTotalGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="36" />
+        <state relative-caret-position="150">
+          <caret line="37" column="66" lean-forward="true" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsDayGetServirceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="41" selection-start-line="41" selection-end-line="50" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsDayGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="410">
+          <caret line="56" column="40" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="56" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdgroupListDetailsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+        <state relative-caret-position="735">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="210">
+          <caret line="147" column="14" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdgroupListDetailsMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="1160">
+          <caret line="76" column="68" selection-start-line="76" selection-start-column="68" selection-end-line="76" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdgroupListMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AccountGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="155">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsDayGetServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+        <state relative-caret-position="426">
+          <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="76" column="57" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="76" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignListMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/CampaignDetailsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CampaignDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/CampaignDetailsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/mapper/AdzoneListBindMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

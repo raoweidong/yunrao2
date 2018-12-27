@@ -9,6 +9,8 @@ public interface CreativeListMapper {
 
     int insert(CreativeList record);
 
+    int deleteALL();
+
     int insertSelective(CreativeList record);
 
     CreativeList selectByPrimaryKey(Integer id);

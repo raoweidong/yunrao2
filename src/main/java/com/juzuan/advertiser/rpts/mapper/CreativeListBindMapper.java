@@ -9,6 +9,8 @@ import java.util.List;
 public interface CreativeListBindMapper {
     int deleteByPrimaryKey(Integer id);
 
+    int deleteAll();
+
     int insert(CreativeListBind record);
 
     int insertSelective(CreativeListBind record);

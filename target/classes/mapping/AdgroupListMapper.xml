@@ -28,6 +28,13 @@
     delete from adgroup_list
     where id = #{id,jdbcType=BIGINT}
   </delete>
+  <delete id="deleteBySource" parameterType="java.lang.Integer" >
+    delete from adgroup_list
+    where adgroup_source = #{campaignSource,jdbcType=INTEGER}
+  </delete>
+  <update id="deleteALL" >
+    truncate table adgroup_list
+  </update>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdgroupList" >
     insert into adgroup_list (id, taobao_user_id, campaign_id, 
       adgroup_id, adgroup_name, online_status, 

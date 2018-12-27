@@ -28,8 +28,10 @@ public class CpmTargetListServiceImpl implements CpmTargetListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private CpmTargetListMapper cpmTargetListMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天2:00
+    //@Scheduled(cron = "0 0 2 * * ?")
     public String CpmTargeList(){
+        cpmTargetListMapper.deleteALL();
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);

@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MainstoreTargetListMapper {
     int deleteByPrimaryKey(Integer id);
 
+    int deleteALL();
+
     int insert(MainstoreTargetList record);
 
     int insertSelective(MainstoreTargetList record);

@@ -40,6 +40,9 @@
     <include refid="Base_Column_List" />
     from taobao_zs_crowd_target_list
   </select>
+  <update id="deleteALL" >
+    truncate table taobao_zs_crowd_target_list
+  </update>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from taobao_zs_crowd_target_list
     where id = #{id,jdbcType=INTEGER}

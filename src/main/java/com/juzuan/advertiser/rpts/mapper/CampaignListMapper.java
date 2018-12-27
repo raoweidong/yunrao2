@@ -13,6 +13,8 @@ public interface CampaignListMapper {
 
     int insert(CampaignList record);
 
+    int deleteALL();
+
     int insertOrUpdate(CampaignList record);
 
     int insertSelective(CampaignList record);

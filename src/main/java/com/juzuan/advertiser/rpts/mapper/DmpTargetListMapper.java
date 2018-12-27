@@ -9,6 +9,8 @@ public interface DmpTargetListMapper {
 
     int insert(DmpTargetList record);
 
+    int deleteALL();
+
     int insertSelective(DmpTargetList record);
 
     DmpTargetList selectByPrimaryKey(Integer id);

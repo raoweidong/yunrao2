@@ -20,6 +20,9 @@
     delete from taobao_zs_cpm_target_list
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="deleteALL" >
+    truncate table taobao_zs_cpm_target_list
+  </update>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CpmTargetList" >
     insert into taobao_zs_cpm_target_list (id, taobao_user_id, target_type, 
       target_name)

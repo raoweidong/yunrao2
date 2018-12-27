@@ -9,6 +9,8 @@ public interface CpmTargetListMapper {
 
     int insert(CpmTargetList record);
 
+    int deleteALL();
+
     int insertSelective(CpmTargetList record);
 
     CpmTargetList selectByPrimaryKey(Integer id);

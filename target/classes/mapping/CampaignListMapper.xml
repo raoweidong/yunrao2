@@ -34,7 +34,7 @@
     <include refid="Base_Column_List" />
     from campaign_list
   </select>
-  <select id="selectDistinct"    >
+  <select id="selectDistinct"  resultMap="BaseResultMap"  >
     select distinct taobao_user_id, campaign_type
     from campaign_list
   </select>
@@ -46,6 +46,9 @@
     delete from campaign_list
     where campaign_source = #{campaignSource,jdbcType=INTEGER}
   </delete>
+  <update id="deleteALL" >
+    truncate table campaign_list
+  </update>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" >
     insert into campaign_list (id, taobao_user_id, campaign_id, 
       campaign_name, campaign_type, start_time, 

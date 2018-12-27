@@ -10,6 +10,8 @@ public interface AdgroupListMapper {
 
     int deleteBySource(Integer adgroupSource);
 
+    int deleteALL();
+
     int insert(AdgroupList record);
 
     int insertSelective(AdgroupList record);

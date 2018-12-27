@@ -31,8 +31,10 @@ public class DmpTargetListServiceImpl implements DmpTargetListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private DmpTargetListMapper dmpTargetListMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天2:00
+    @Scheduled(cron = "0 0 2 * * ?")
     public String DmpTargetList(){
+        dmpTargetListMapper.deleteALL();
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);

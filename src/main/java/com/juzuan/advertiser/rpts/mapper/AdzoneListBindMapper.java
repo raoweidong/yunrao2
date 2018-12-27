@@ -11,6 +11,8 @@ public interface AdzoneListBindMapper {
 
     int insert(AdzoneListBind record);
 
+    int deleteALL();
+
     int insertSelective(AdzoneListBind record);
 
     AdzoneListBind selectByPrimaryKey(Integer id);

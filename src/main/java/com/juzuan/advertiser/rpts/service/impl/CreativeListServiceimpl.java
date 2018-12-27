@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 创意列表
+ */
 @Service
 public class CreativeListServiceimpl implements CreativeListService {
     private static String appkey="25139411";
@@ -29,14 +32,15 @@ public class CreativeListServiceimpl implements CreativeListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private CreativeListMapper creativeListMapper;
-
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每天2:00
+    @Scheduled(cron = "0 0 2 * * ?")
     public String CreativeList(){
+        creativeListMapper.deleteALL();
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {
                 TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);
                 ZuanshiBannerCreativeFindRequest req = new ZuanshiBannerCreativeFindRequest();
-                req.setPageSize(100L);
+                req.setPageSize(1000L);
                 ZuanshiBannerCreativeFindResponse rsp = null;
                 try {
                     rsp = client.execute(req,tau.getAccessToken());

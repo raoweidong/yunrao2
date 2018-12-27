@@ -37,6 +37,9 @@
     <include refid="Base_Column_List" />
     from creative_list_bind
   </select>
+  <update id="deleteAll" >
+    truncate table creative_list_bind
+  </update>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from creative_list_bind
     where id = #{id,jdbcType=INTEGER}

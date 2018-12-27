@@ -35,6 +35,9 @@
     <include refid="Base_Column_List" />
     from adzone_list
   </select>
+  <update id="deleteALL" >
+    truncate table adzone_list
+  </update>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from adzone_list
     where id = #{id,jdbcType=INTEGER}
@@ -52,6 +55,21 @@
       #{tpv,jdbcType=BIGINT}, #{ctr,jdbcType=VARCHAR}, #{firstTime,jdbcType=TIMESTAMP}, 
       #{rcmdScore,jdbcType=BIGINT}, #{bidScore,jdbcType=BIGINT}, #{cpmScore,jdbcType=BIGINT}, 
       #{cpcScore,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertOrUpdate" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
+    insert into adzone_list (id, taobao_user_id, adzone_id,
+      adzone_name, adzone_size_list, allow_ad_format_list,
+      allow_adv_type, adzone_level, media_type,
+      tpv, ctr, first_time,
+      rcmd_score, bid_score, cpm_score,
+      cpc_score)
+    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{adzoneId,jdbcType=BIGINT},
+      #{adzoneName,jdbcType=VARCHAR}, #{adzoneSizeList,jdbcType=VARCHAR}, #{allowAdFormatList,jdbcType=VARCHAR},
+      #{allowAdvType,jdbcType=BIGINT}, #{adzoneLevel,jdbcType=BIGINT}, #{mediaType,jdbcType=BIGINT},
+      #{tpv,jdbcType=BIGINT}, #{ctr,jdbcType=VARCHAR}, #{firstTime,jdbcType=TIMESTAMP},
+      #{rcmdScore,jdbcType=BIGINT}, #{bidScore,jdbcType=BIGINT}, #{cpmScore,jdbcType=BIGINT},
+      #{cpcScore,jdbcType=BIGINT}) on  DUPLICATE key update taobao_user_id=taobao_user_id+#{taobaoUserId,jdbcType=VARCHAR}
+      and adzone_id=adzone_id+#{adzoneId,jdbcType=BIGINT}
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdzoneList" >
     insert into adzone_list

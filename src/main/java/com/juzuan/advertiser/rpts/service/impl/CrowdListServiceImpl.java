@@ -17,6 +17,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 全店计划定向人群
+ *
+ */
 @Service
 public class CrowdListServiceImpl implements CrowdListService {
     private static String appkey = "25139411";
@@ -37,8 +41,10 @@ public class CrowdListServiceImpl implements CrowdListService {
     private SimlikeTargetListMapper simlikeTargetListMapper;
     @Autowired
     private MainstoreTargetListMapper mainstoreTargetListMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天2:10
+    @Scheduled(cron = "0 10 2 * * ?")
     public String CrowdList() throws ApiException {
+        crowdListMapper.deleteALL();
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adl : cam) {
             TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(adl.getTaobaoUserId());
@@ -78,6 +84,7 @@ public class CrowdListServiceImpl implements CrowdListService {
 
                             //主营品牌人群
                             if (ob.getLong("crowd_type") == 128L){
+                                mainstoreTargetListMapper.deleteALL();
                                 MainstoreTargetList main = new MainstoreTargetList();
                                 main.setTaobaoUserId(adl.getTaobaoUserId());
                                 main.setCampaignId(ob.getLong("campaign_id"));
@@ -149,6 +156,7 @@ public class CrowdListServiceImpl implements CrowdListService {
 
                             //获取喜欢相似宝贝的人群
                             if (ob.getLong("crowd_type") == 702L || ob.getLong("crowd_type") == 131072L){
+                                simlikeTargetListMapper.deleteALL();
                                 SimlikeTargetList stl = new SimlikeTargetList();
                                 stl.setTaobaoUserId(adl.getTaobaoUserId());
                                 stl.setCampaignId(ob.getLong("campaign_id"));
@@ -215,11 +223,12 @@ public class CrowdListServiceImpl implements CrowdListService {
                                     String shopId = shopIdList.toString().substring(1, 3);
                                     stl.setShopScaleIdList(shopId);
                                 }
-                                //simlikeTargetListMapper.insert(stl);
+                                simlikeTargetListMapper.insert(stl);
                             }
 
                             //获取全店计划定向-自主店铺
                             if (ob.getLong("crowd_type") == 16L) {
+                                independentshopTargetListMapper.deleteALL();
                                 IndependentshopTargetList itl = new IndependentshopTargetList();
                                 itl.setTaobaoUserId(adl.getTaobaoUserId());
                                 itl.setCampaignId(ob.getLong("campaign_id"));
@@ -286,12 +295,13 @@ public class CrowdListServiceImpl implements CrowdListService {
                                     String shopId = shopIdList.toString().substring(1, 3);
                                     itl.setShopScaleIdList(shopId);
                                 }
-                                //independentshopTargetListMapper.insert(itl);
+                                independentshopTargetListMapper.insert(itl);
                             }
 
-                            //获取喜欢相似宝贝的人群
-                            //if (ob.getString("crowd_name").equals("喜欢相似宝贝的人群"))
+                            //获取喜欢我的宝贝的人群
+                            //if (ob.getString("crowd_name").equals("喜欢我的宝贝的人群"))
                             if (ob.getLong("crowd_type") == 262144L) {
+                                mylikeTargetListMapper.deleteALL();
                                 MylikeTargetList mtl = new MylikeTargetList();
                                 mtl.setTaobaoUserId(adl.getTaobaoUserId());
                                 mtl.setCampaignId(ob.getLong("campaign_id"));
@@ -356,7 +366,7 @@ public class CrowdListServiceImpl implements CrowdListService {
                                         String shopId = shopIdList.toString().substring(1, 3);
                                         mtl.setShopScaleIdList(shopId);
                                     }
-                                    //mylikeTargetListMapper.insert(mtl);
+                                    mylikeTargetListMapper.insert(mtl);
                                 }
                             }
 
@@ -427,7 +437,7 @@ public class CrowdListServiceImpl implements CrowdListService {
                                 String shopId = shopIdList.toString().substring(1, 3);
                                 cl.setShopScaleIdList(shopId);
                             }
-                            //crowdListMapper.insert(cl);
+                            crowdListMapper.insert(cl);
                         }
                     }
                 }

@@ -35,6 +35,9 @@
     from taobao_zs_simlike_target_list
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <update id="deleteALL" >
+    truncate table taobao_zs_simlike_target_list
+  </update>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from taobao_zs_simlike_target_list
     where id = #{id,jdbcType=INTEGER}

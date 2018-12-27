@@ -35,8 +35,8 @@ public class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService 
     private AdgroupListDetailsMapper adgroupListDetailsMapper;
     @Autowired
     private AdgroupListMapper adgroupListMapper;
-
-    //@Scheduled(cron = "0 35 * * * ? ")
+    //定时更新：每天2:15
+    @Scheduled(cron = "0 15 2 * * ? ")
     public String AdgroupListDetails () throws ApiException {
         adgroupListDetailsMapper.deleteALL();
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();

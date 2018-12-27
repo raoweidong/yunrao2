@@ -37,6 +37,9 @@
     delete from adgroup_adzone_find
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="deleteALL" >
+    truncate table adgroup_adzone_find
+  </update>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdzoneListBind" >
     insert into adgroup_adzone_find (id, taobao_user_id, campaign_id,
       adgroup_id, adzone_id, adzone_name, 

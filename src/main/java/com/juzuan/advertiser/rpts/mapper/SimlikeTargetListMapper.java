@@ -9,6 +9,8 @@ public interface SimlikeTargetListMapper {
 
     int insert(SimlikeTargetList record);
 
+    int deleteALL();
+
     int insertSelective(SimlikeTargetList record);
 
     SimlikeTargetList selectByPrimaryKey(Integer id);

@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 获取全店cpc计划可用定向列表
+ */
 @Service
 public class CpcTargetListServiceImpl implements CpcTargetListService {
     private static String appkey="25139411";
@@ -28,8 +31,10 @@ public class CpcTargetListServiceImpl implements CpcTargetListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private CpcTargetListMapper cpcTargetListMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天2:00
+    //@Scheduled(cron = "0 12 * * * ?")
     public String CpcTargeList(){
+        cpcTargetListMapper.deleteALL();
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers =taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);

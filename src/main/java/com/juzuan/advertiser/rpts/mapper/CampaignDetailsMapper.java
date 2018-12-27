@@ -3,6 +3,7 @@ package com.juzuan.advertiser.rpts.mapper;
 import com.juzuan.advertiser.rpts.model.CampaignDetails;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
 @Mapper
 public interface CampaignDetailsMapper {
     int deleteByPrimaryKey(Long id);
@@ -20,4 +21,8 @@ public interface CampaignDetailsMapper {
     int updateByPrimaryKeySelective(CampaignDetails record);
 
     int updateByPrimaryKey(CampaignDetails record);
+
+    List<CampaignDetails> selectAllCampaign();
+
+    List<CampaignDetails> selectDistinct();
 }

@@ -20,6 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,8 +39,11 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
     @Autowired
     private CampaignDetailsMapper campaignDetailsMapper;
     //定时更新：每天2:05
-    //@Scheduled(cron = "0 5 2 * * ? ")
+    @Scheduled(cron = "0 5 2 * * ? ")
     public String getCampaignDetail(){
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        //获取系统当前时间
+        String time= sdf.format(new Date());
         campaignDetailsMapper.deleteBySource(0L);
         List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();
         for (CampaignList campaignList:campaignLists){
@@ -63,6 +68,7 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
             JSONObject three=JSON.parseObject(twoo.toString());
             Object thre=three.getJSONObject("campaign");
             CampaignDetails campaignDetails=new CampaignDetails();
+            campaignDetails.setTaobaoUserId(campaignList.getTaobaoUserId());
             if (thre==null){
                 campaignDetails.setCampaignId(campaignList.getCampaignId());
                 campaignDetails.setCampaignName(campaignList.getCampaignName());
@@ -73,10 +79,9 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
                 campaignDetails.setOnlineStatus(campaignList.getOnlineStatus());
                 campaignDetails.setSpeedType(campaignList.getSpeedType());
                 campaignDetails.setAreaIdList("信息不详,无法定位");
-                campaignDetails.setTaobaoUserId(campaignList.getTaobaoUserId());
                 campaignDetails.setWorkdays(campaignList.getWorkdays());
                 campaignDetails.setWeekEnds(campaignList.getWeekEnds());
-
+                campaignDetails.setUpdateTime(time);
                 campaignDetailsMapper.insertOrUpdate(campaignDetails);
                 continue;
             }
@@ -87,7 +92,6 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
                 JSONArray numm=num.getJSONArray("number");;
                 String nu=numm.toString().substring(1,numm.toString().length()-1);
                 campaignDetails.setAreaIdList(nu);
-                campaignDetails.setTaobaoUserId(campaignList.getTaobaoUserId());
                 campaignDetails.setWorkdays(campaignList.getWorkdays());
                 campaignDetails.setWeekEnds(campaignList.getWeekEnds());
                 campaignDetails.setCampaignId(campaignList.getCampaignId());
@@ -98,7 +102,7 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
                 campaignDetails.setStartTime(campaignList.getStartTime());
                 campaignDetails.setOnlineStatus(campaignList.getOnlineStatus());
                 campaignDetails.setSpeedType(campaignList.getSpeedType());
-
+                campaignDetails.setUpdateTime(time);
                 campaignDetailsMapper.insertOrUpdate(campaignDetails);
             }
 

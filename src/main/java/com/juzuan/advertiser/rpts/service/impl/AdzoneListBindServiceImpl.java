@@ -35,9 +35,9 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
     @Autowired
     private AdzoneListBindMapper adzoneListBindMapper;
     //定时更新：每天2:15
-    //@Scheduled(cron = "*/5 * * * * ?")
+    @Scheduled(cron = "0 15 2 * * ?")
     public String getBannerAdgroupAdzone(){
-
+        adzoneListBindMapper.deleteALL();
         List<AdgroupList> adgroupLists=adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adgroupList:adgroupLists){
             Long cam=adgroupList.getCampaignId();

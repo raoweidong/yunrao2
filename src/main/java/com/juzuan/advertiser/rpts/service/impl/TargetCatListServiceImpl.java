@@ -36,9 +36,10 @@ public class TargetCatListServiceImpl implements TargetCatListService {
     private CampaignListMapper campaignListMapper;
     @Autowired
     private TargetCatListMapper targetCatListMapper;
-
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天2:05
+    //@Scheduled(cron = "0 5 2 * * ?")
     public String TargetCatList(){
+        targetCatListMapper.deleteALL();
         List<CampaignList> campaignLists = campaignListMapper.selectDistinct();
         for (CampaignList cl: campaignLists) {
             TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(cl.getTaobaoUserId());

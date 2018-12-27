@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 已绑定的创意
+ */
 @Service
 public class CreativeListBindServiceImpl implements CreativeListBindService {
     private static String appkey="25139411";
@@ -33,9 +36,10 @@ public class CreativeListBindServiceImpl implements CreativeListBindService {
     private AdgroupListMapper adgroupListMapper;
     @Autowired
     private CreativeListBindMapper creativeListBindMapper;
-
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每天2:10
+    @Scheduled(cron = "0 10 2 * * ? ")
     public String CreativeListBind(){
+        creativeListBindMapper.deleteAll();
         List<AdgroupList> adgroupLists = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList al: adgroupLists) {
             TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(al.getTaobaoUserId());
@@ -44,7 +48,7 @@ public class CreativeListBindServiceImpl implements CreativeListBindService {
             ZuanshiBannerCreativeFindBindRequest req = new ZuanshiBannerCreativeFindBindRequest();
             req.setCampaignId(al.getCampaignId());
             req.setAdgroupId(al.getAdgroupId());
-            req.setPageSize(500L);
+            req.setPageSize(1000L);
             ZuanshiBannerCreativeFindBindResponse rsp = null;
             try{
                 rsp = client.execute(req,sessionKey);

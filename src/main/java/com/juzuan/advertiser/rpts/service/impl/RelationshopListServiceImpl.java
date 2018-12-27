@@ -21,6 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 智钻获取店铺型定向店铺包列表
+ */
 @Service
 public class RelationshopListServiceImpl implements RelationshopListService {
     private static String appkey="25139411";

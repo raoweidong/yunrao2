@@ -31,6 +31,8 @@ public class CampaignDetails {
 
     private Integer campaignSource;
 
+    private String updateTime;
+
     public Long getId() {
         return id;
     }
@@ -141,5 +143,13 @@ public class CampaignDetails {
 
     public void setCampaignSource(Integer campaignSource) {
         this.campaignSource = campaignSource;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime == null ? null : updateTime.trim();
     }
 }

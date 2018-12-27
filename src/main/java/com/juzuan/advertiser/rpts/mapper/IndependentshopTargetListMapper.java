@@ -9,6 +9,8 @@ public interface IndependentshopTargetListMapper {
 
     int insert(IndependentshopTargetList record);
 
+    int deleteALL();
+
     int insertSelective(IndependentshopTargetList record);
 
     IndependentshopTargetList selectByPrimaryKey(Integer id);

@@ -25,6 +25,9 @@
     delete from adgroup_list_details
     where id = #{id,jdbcType=BIGINT}
   </delete>
+  <update id="deleteALL" >
+    truncate table adgroup_list_details
+  </update>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdgroupListDetails">
     insert into adgroup_list_details (id, taobao_user_id, campaign_id, 
       adgroup_id, adgroup_name, online_status, 

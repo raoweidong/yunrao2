@@ -9,6 +9,8 @@ public interface MylikeTargetListMapper {
 
     int insert(MylikeTargetList record);
 
+    int deleteALL();
+
     int insertSelective(MylikeTargetList record);
 
     MylikeTargetList selectByPrimaryKey(Integer id);

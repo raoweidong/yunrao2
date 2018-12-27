@@ -11,6 +11,8 @@ public interface CrowdListMapper {
 
     int insert(CrowdList record);
 
+    int deleteALL();
+
     int insertSelective(CrowdList record);
 
     CrowdList selectByPrimaryKey(Integer id);

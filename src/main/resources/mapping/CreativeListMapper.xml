@@ -30,6 +30,9 @@
     from creative_list
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <update id="deleteALL" >
+    truncate table creative_list
+  </update>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from creative_list
     where id = #{id,jdbcType=INTEGER}

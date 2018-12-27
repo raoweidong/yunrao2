@@ -9,6 +9,8 @@ public interface TargetCatListMapper {
 
     int insert(TargetCatList record);
 
+    int deleteALL();
+
     int insertSelective(TargetCatList record);
 
     TargetCatList selectByPrimaryKey(Integer id);
