@@ -30,7 +30,7 @@ public class SynchronizeTablesController {
             response.setMsg("非法参数");
         }
         System.out.println("hhhahahah");
-        System.out.println("jjjjjjjjjjjjjj");
+        System.out.println("jjjjjjjjjjj");
 
         return response;
     }
