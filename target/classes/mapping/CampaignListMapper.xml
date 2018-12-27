@@ -36,11 +36,24 @@
   select distinct taobao_user_id, campaign_type
   from campaign_list
   </select>
+    <delete id="deleteAll">
+        delete from campaign_list;
+    </delete>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from campaign_list
     where id = #{id,jdbcType=BIGINT}
   </delete>
+  <select id="selectByUserAndId" parameterType="com.juzuan.advertiser.rpts.query.UserAndId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+            FROM campaign_list WHERE taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR} AND campaign_id = #{campaignId,jdbcType=BIGINT}
+  </select>
+        <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from campaign_list where taobao_user_id = #{userId,jdbcType=VARCHAR}
+    </select>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.CampaignList" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
     insert into campaign_list (taobao_user_id, campaign_id,
       campaign_name, campaign_type, start_time, 

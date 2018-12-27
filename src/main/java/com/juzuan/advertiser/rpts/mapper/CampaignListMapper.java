@@ -1,6 +1,7 @@
 package com.juzuan.advertiser.rpts.mapper;
 
 import com.juzuan.advertiser.rpts.model.CampaignList;
+import com.juzuan.advertiser.rpts.query.UserAndId;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -21,5 +22,9 @@ public interface CampaignListMapper {
 
     List<CampaignList> selectAllCampaign();
     List<CampaignList> selectDistinct();
+    CampaignList selectByUserAndId(UserAndId twoCanShu);
+    void deleteAll();
+    List<CampaignList> selectByUserId(String userId);
+
 
 }

@@ -34,6 +34,7 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
     private CreativeListBindMapper creativeListBindMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String creativeRptsDayget(){
         List<CreativeListBind> creativeListBinds = creativeListBindMapper.selectAllCreativeBind();
         for (CreativeListBind clb: creativeListBinds) {

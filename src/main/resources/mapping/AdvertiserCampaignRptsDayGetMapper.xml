@@ -54,6 +54,9 @@
     delete from advertiser_campaign_rpts_day_get
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteAll">
+    delete from advertiser_campaign_rpts_day_get
+  </delete>
   <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserCampaignRptsDayGet" >
     insert into advertiser_campaign_rpts_day_get (id, taobao_user_id, campaign_id, 
       campaign_name, cvr, alipay_inshop_amt, 

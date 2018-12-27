@@ -31,6 +31,7 @@ public class CreativeListServiceimpl implements CreativeListService {
     private CreativeListMapper creativeListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String CreativeList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau: taobaoAuthorizeUsers) {

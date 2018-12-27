@@ -28,6 +28,7 @@ public class AdzoneListServiceImpl implements AdzoneListService {
     @Autowired
     private AdzoneListMapper adzoneListMapper;
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String getAdzoneList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
        for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){

@@ -35,6 +35,7 @@ public class TargetCatListServiceImpl implements TargetCatListService {
     private TargetCatListMapper targetCatListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String TargetCatList(){
         List<CampaignList> campaignLists = campaignListMapper.selectDistinct();
         for (CampaignList cl: campaignLists) {

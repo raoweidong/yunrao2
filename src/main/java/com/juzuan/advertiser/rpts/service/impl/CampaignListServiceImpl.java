@@ -6,7 +6,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.juzuan.advertiser.rpts.mapper.CampaignListMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.CampaignList;
+import com.juzuan.advertiser.rpts.model.Response;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
+import com.juzuan.advertiser.rpts.query.UserAndId;
 import com.juzuan.advertiser.rpts.service.CampaignListService;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
@@ -21,6 +23,7 @@ import java.util.List;
 
 @Service
 public class CampaignListServiceImpl implements CampaignListService {
+
     private static String appkey="25139411";
     private static String url ="https://eco.taobao.com/router/rest";
     private static String secret="ccd188d30d3731df6d176ba8a2151765";
@@ -28,8 +31,38 @@ public class CampaignListServiceImpl implements CampaignListService {
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
     private  CampaignListMapper campaignListMapper;
+    //前端同步计划数据
+    @Override
+    public Response requestCampaignList(String userId){
+        campaignListMapper.deleteAll();//删除之前的数据
+        TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.slectByUserId(userId);
+        String sessionKey=taobaoAuthorizeUser.getAccessToken();
+        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
+        ZuanshiBannerCampaignFindRequest req = new ZuanshiBannerCampaignFindRequest();
+        ZuanshiBannerCampaignFindResponse rsp = null;
+        try {
+            rsp = client.execute(req, sessionKey);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+        System.out.println(rsp.getBody());
+        //parseCampaign(rsp.getBody(),taobaoAuthorizeUser);//解析保存
+        String jieGuo=parseCampaign(rsp.getBody(),taobaoAuthorizeUser);
+        Response response=new Response();
+        if (jieGuo=="解析成功"){
+            response.setCode(0);
+            response.setMsg("成功");
+        }else{
+            response.setCode(1);
+            response.setMsg("不合法参数");
+        }
 
-   // @Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
+        return  response;
+    }
+
+   //定时任务
+   //@Scheduled(cron = "*/5 * * * * ?")// 0 0 8,14,16 * * ? 每天上午8点，下午2点，4点   */5 * * * * ?五秒钟运行一次.
+   @Override
     public String campaignList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
@@ -48,22 +81,10 @@ public class CampaignListServiceImpl implements CampaignListService {
             parseCampaign(rsp.getBody(),taobaoAuthorizeUser);
         }
 
-      /*  TaobaoAuthorizeUser taobaoAuthorizeUser=taobaoAuthorizeUserMapper.selectByPrimaryKey(1L);
-        String sessionKey=taobaoAuthorizeUser.getAccessToken();
-        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
-        ZuanshiBannerCampaignFindRequest req = new ZuanshiBannerCampaignFindRequest();
-        ZuanshiBannerCampaignFindResponse rsp = null;
-        try {
-            rsp = client.execute(req, sessionKey);
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
-        System.out.println(rsp.getBody());
-        parseCampaign(rsp.getBody());*/
         return "";
     }
 
-    public void parseCampaign(String json,TaobaoAuthorizeUser taobao){
+    public String parseCampaign(String json,TaobaoAuthorizeUser taobaoAuthorizeUser){
         JSONObject onObject= JSON.parseObject(json);
         JSONObject oneObject=onObject.getJSONObject("zuanshi_banner_campaign_find_response");
         System.out.println(oneObject.toString());
@@ -71,6 +92,7 @@ public class CampaignListServiceImpl implements CampaignListService {
         JSONObject twObject=JSON.parseObject(oneObject.toString());
         JSONObject twoObject=twObject.getJSONObject("result");
         System.out.println(twoObject.toString());
+
 
         JSONObject threObject=JSON.parseObject(twoObject.toString());
         JSONObject threeObject=threObject.getJSONObject("campaigns");
@@ -115,17 +137,25 @@ public class CampaignListServiceImpl implements CampaignListService {
             JSONArray twoBoolean=tB.getJSONArray("boolean");
             String weekEn=twoBoolean.toString().substring(1,121);
             campaignList.setWeekEnds(weekEn);//添加weekends数据
-            campaignList.setTaobaoUserId(taobao.getTaobaoUserId());
+            campaignList.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
             //______________________________________________
             System.out.println("接受的第一个数据 "+campaignList.getCampaignId());
-           campaignListMapper.insert(campaignList);
+            //先查询再插入 有重复的数据跳过
+            UserAndId lianGe=new UserAndId();
+            lianGe.setTaobaoUserId(campaignList.getTaobaoUserId());
+            lianGe.setCampaignId(campaignList.getCampaignId());
+            CampaignList campaignListt=campaignListMapper.selectByUserAndId(lianGe);
+            if (campaignListt==campaignList){
+                continue;  //有重复的数据跳过
+            }else{campaignListMapper.insert(campaignList);}
+           //campaignListMapper.insert(campaignList);
            /* List<CampaignList> campp=selectAllCampaign();
             for (CampaignList camm:campp){
                 System.out.println(camm.getCampaignName());
             }*/
 
         }
-
+    return "解析成功";
     }
 
     @Override

@@ -35,6 +35,7 @@ public class RelationshopListServiceImpl implements RelationshopListService {
     private CampaignListMapper campaignListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String Relationshop(){
         List<CampaignList> campaignLists = campaignListMapper.selectDistinct();
         for (CampaignList cl: campaignLists) {

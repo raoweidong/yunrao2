@@ -16,4 +16,5 @@ public interface AdvertiserCampaignRptsDayGetMapper {
     int updateByPrimaryKeySelective(AdvertiserCampaignRptsDayGet record);
 
     int updateByPrimaryKey(AdvertiserCampaignRptsDayGet record);
+    void deleteAll();
 }

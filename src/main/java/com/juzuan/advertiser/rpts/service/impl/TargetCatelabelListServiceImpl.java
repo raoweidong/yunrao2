@@ -33,6 +33,7 @@ public class TargetCatelabelListServiceImpl implements TargetCatelabelListServic
     @Autowired
     private TargetCatelabelListMapper targetCatelabelListMapper;
    // @Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String TargetCatelabeList(){
         List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
         for (TaobaoAuthorizeUser tau : taobaoAuthorizeUsers) {

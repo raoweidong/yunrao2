@@ -33,6 +33,7 @@ public class CampaignDetailsServiceImpl implements CampaignDetailsService {
     @Autowired
     private CampaignDetailsMapper campaignDetailsMapper;
    // @Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String getCampaignDetail(){
 
         List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();

@@ -35,6 +35,7 @@ public class SeniorinterestListServiceImpl implements SeniorinterestListService 
     private SeniorinterestListMapper seniorinterestListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String SeniorinterestList(){
         List<CampaignList> campaignLists = campaignListMapper.selectDistinct();
         for (CampaignList cl: campaignLists) {

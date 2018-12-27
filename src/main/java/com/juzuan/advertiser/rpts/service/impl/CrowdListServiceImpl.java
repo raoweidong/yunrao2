@@ -35,7 +35,7 @@ public class CrowdListServiceImpl implements CrowdListService {
     private AdgroupListMapper adgroupListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
-    public String CrowdList() throws ApiException {
+    public String CrowdList(){
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList adl: cam) {
             TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(adl.getTaobaoUserId());
@@ -44,7 +44,12 @@ public class CrowdListServiceImpl implements CrowdListService {
             ZuanshiBannerCrowdFindRequest req = new ZuanshiBannerCrowdFindRequest();
             req.setCampaignId(adl.getCampaignId());
             req.setAdgroupId(adl.getAdgroupId());
-            ZuanshiBannerCrowdFindResponse rsp = client.execute(req,sessionKey);
+            ZuanshiBannerCrowdFindResponse rsp = null;
+            try {
+                rsp = client.execute(req,sessionKey);
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
             System.out.println("全店计划定向人群 : "+rsp.getBody());
             //"zuanshi_banner_crowd_find_response"
             JSONObject zsObject = JSON.parseObject(rsp.getBody());

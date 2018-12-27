@@ -34,12 +34,12 @@ public  class AdgroupListDetailsServiceImpl implements AdgroupListDetailsService
 
     //@Scheduled(cron = "*/5 * * * * ?")
     @Override
-    public String AdgroupListDetails () {
+    public String AdgroupListDetails (String taobaoUserId) {
 
         List<AdgroupList> cam = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList ad: cam) {
             String userId = ad.getTaobaoUserId();
-            TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(userId);
+            TaobaoAuthorizeUser taobaoAuthorizeUser = taobaoAuthorizeUserMapper.slectByUserId(taobaoUserId);
             String sessionKey = taobaoAuthorizeUser.getAccessToken();
             TaobaoClient client = new DefaultTaobaoClient(url,appkey,secret);
             ZuanshiBannerAdgroupGetRequest req = new ZuanshiBannerAdgroupGetRequest();

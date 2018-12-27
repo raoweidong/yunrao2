@@ -35,6 +35,7 @@ public class CreativeListBindServiceImpl implements CreativeListBindService {
     private CreativeListBindMapper creativeListBindMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String CreativeListBind(){
         List<AdgroupList> adgroupLists = adgroupListMapper.selectAllAdgroup();
         for (AdgroupList al: adgroupLists) {

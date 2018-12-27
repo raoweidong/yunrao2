@@ -35,6 +35,7 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
     private CrowdListMapper crowdListMapper;
 
     //@Scheduled(cron = "*/5 * * * * ?")
+    @Override
     public String TargetRptsDayGet(){
         List<CrowdList> crowdLists = crowdListMapper.selectAllCrowd();
         for (CrowdList cro : crowdLists) {
