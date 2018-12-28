@@ -65,6 +65,12 @@ public class AdvertiserAccountRptsDayGet {
 
     private Date logDate;
 
+    private Long effect;
+
+    private Long campaignModel;
+
+    private String effectType;
+
     public Long getId() {
         return id;
     }
@@ -311,5 +317,29 @@ public class AdvertiserAccountRptsDayGet {
 
     public void setLogDate(Date logDate) {
         this.logDate = logDate;
+    }
+
+    public Long getEffect() {
+        return effect;
+    }
+
+    public void setEffect(Long effect) {
+        this.effect = effect;
+    }
+
+    public Long getCampaignModel() {
+        return campaignModel;
+    }
+
+    public void setCampaignModel(Long campaignModel) {
+        this.campaignModel = campaignModel;
+    }
+
+    public String getEffectType() {
+        return effectType;
+    }
+
+    public void setEffectType(String effectType) {
+        this.effectType = effectType == null ? null : effectType.trim();
     }
 }

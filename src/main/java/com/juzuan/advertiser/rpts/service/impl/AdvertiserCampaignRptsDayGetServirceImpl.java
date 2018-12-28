@@ -56,12 +56,12 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserCampaignRptsDayGetRequest req = new ZuanshiAdvertiserCampaignRptsDayGetRequest();
-                req.setStartTime("2018-11-28");
-                req.setEndTime("2018-12-20");
+                req.setStartTime("2018-11-09");
+                req.setEndTime("2018-11-12");
                 req.setCampaignId(id);
-                req.setEffect(7L);
-                req.setCampaignModel(1L);
-                req.setEffectType("click");
+                req.setEffect(request.getEffect());
+                req.setCampaignModel(request.getCampaignModel());
+                req.setEffectType(request.getEffectType());
                 ZuanshiAdvertiserCampaignRptsDayGetResponse rsp = null;
                 try {
                     rsp = client.execute(req, sessionKey);
@@ -80,85 +80,82 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
                     for (Object ob : three.toArray()) {
                         System.out.println("遍历目标数组" + ob.toString());
                     }
-                    List<CampaignRptsDayGetData> campaignRptsDayGetDatas = JSONObject.parseArray(three.toString(), CampaignRptsDayGetData.class);
+                    List<AdvertiserCampaignRptsDayGet> advertiserCampaignRptsDayGets = JSONObject.parseArray(three.toString(), AdvertiserCampaignRptsDayGet.class);
                     //遍历json数据属性对象
-                    for (CampaignRptsDayGetData campaignRptsDayGetData : campaignRptsDayGetDatas) {
-                        AdvertiserCampaignRptsDayGet advertiserCampaignRptsDayGet = new AdvertiserCampaignRptsDayGet();//创建表中对象
-                        System.out.println("遍历对象数组  " + campaignRptsDayGetData.toString());
+                    for (AdvertiserCampaignRptsDayGet advertiserCampaignRptsDayGet : advertiserCampaignRptsDayGets) {
+                        System.out.println("遍历对象数组  " + advertiserCampaignRptsDayGet.toString());
                         //插入计算的属性值
-                        if (campaignRptsDayGetData.getAdPv() == null) {
-                            campaignRptsDayGetData.setAdPv("0");
+                        if (advertiserCampaignRptsDayGet.getAdPv() == null) {
+                            advertiserCampaignRptsDayGet.setAdPv("0");
                         }
-                        //campaignRptsDayGetData.setCartNum(campaignRptsDayGetData.getCartNum()==null?"0":campaignRptsDayGetData.getCartNum());
-                        if (campaignRptsDayGetData.getAlipayInshopAmt() == null) {
-                            campaignRptsDayGetData.setAlipayInshopAmt("0");
+                        //advertiserCampaignRptsDayGet.setCartNum(advertiserCampaignRptsDayGet.getCartNum()==null?"0":advertiserCampaignRptsDayGet.getCartNum());
+                        if (advertiserCampaignRptsDayGet.getAlipayInshopAmt() == null) {
+                            advertiserCampaignRptsDayGet.setAlipayInshopAmt("0");
                         }
-                        if (campaignRptsDayGetData.getAlipayInShopNum() == null) {
-                            campaignRptsDayGetData.setAlipayInShopNum("0");
+                        if (advertiserCampaignRptsDayGet.getAlipayInShopNum() == null) {
+                            advertiserCampaignRptsDayGet.setAlipayInShopNum("0");
                         }
-                        if (campaignRptsDayGetData.getAvgAccessPageNum() == null) {
-                            campaignRptsDayGetData.setAvgAccessPageNum("0");
+                        if (advertiserCampaignRptsDayGet.getAvgAccessPageNum() == null) {
+                            advertiserCampaignRptsDayGet.setAvgAccessPageNum("0");
                         }
-
-                        if (campaignRptsDayGetData.getCampaignId() == null) {
-                            campaignRptsDayGetData.setCampaignId(String.valueOf(campaignList.getCampaignId()));
+                        if (advertiserCampaignRptsDayGet.getCampaignId() == null) {
+                            advertiserCampaignRptsDayGet.setCampaignId(String.valueOf(campaignList.getCampaignId()));
                         }
-                        if (campaignRptsDayGetData.getCampaignName() == null) {
-                            campaignRptsDayGetData.setCampaignName(campaignList.getCampaignName());
+                        if (advertiserCampaignRptsDayGet.getCampaignName() == null) {
+                            advertiserCampaignRptsDayGet.setCampaignName(campaignList.getCampaignName());
                         }
-                        if (campaignRptsDayGetData.getCartNum() == null) {
-                            campaignRptsDayGetData.setCartNum("0");
+                        if (advertiserCampaignRptsDayGet.getCartNum() == null) {
+                            advertiserCampaignRptsDayGet.setCartNum("0");
                         }
-                        if (campaignRptsDayGetData.getAvgAccessTime() == null) {
-                            campaignRptsDayGetData.setAvgAccessTime("0");
+                        if (advertiserCampaignRptsDayGet.getAvgAccessTime() == null) {
+                            advertiserCampaignRptsDayGet.setAvgAccessTime("0");
                         }
-                        if (campaignRptsDayGetData.getCharge() == null) {
-                            campaignRptsDayGetData.setCharge("0");
+                        if (advertiserCampaignRptsDayGet.getCharge() == null) {
+                            advertiserCampaignRptsDayGet.setCharge("0");
                         }
-                        if (campaignRptsDayGetData.getClick() == null) {
-                            campaignRptsDayGetData.setClick("0");
+                        if (advertiserCampaignRptsDayGet.getClick() == null) {
+                            advertiserCampaignRptsDayGet.setClick("0");
                         }
-                        if (campaignRptsDayGetData.getCtr() == null) {
-                            campaignRptsDayGetData.setCtr("0");
+                        if (advertiserCampaignRptsDayGet.getCtr() == null) {
+                            advertiserCampaignRptsDayGet.setCtr("0");
                         }
-                        if (campaignRptsDayGetData.getCvr() == null) {
-                            campaignRptsDayGetData.setCvr("0");
+                        if (advertiserCampaignRptsDayGet.getCvr() == null) {
+                            advertiserCampaignRptsDayGet.setCvr("0");
                         }
-                        if (campaignRptsDayGetData.getDeepInshopUv() == null) {
-                            campaignRptsDayGetData.setDeepInshopUv("0");
+                        if (advertiserCampaignRptsDayGet.getDeepInshopUv() == null) {
+                            advertiserCampaignRptsDayGet.setDeepInshopUv("0");
                         }
-                        if (campaignRptsDayGetData.getUv() == null) {
-                            campaignRptsDayGetData.setUv("0");
+                        if (advertiserCampaignRptsDayGet.getUv() == null) {
+                            advertiserCampaignRptsDayGet.setUv("0");
                         }
-                        if (campaignRptsDayGetData.getRoi() == null) {
-                            campaignRptsDayGetData.setRoi("0");
+                        if (advertiserCampaignRptsDayGet.getRoi() == null) {
+                            advertiserCampaignRptsDayGet.setRoi("0");
                         }
-                        if (campaignRptsDayGetData.getDirShopColNum() == null) {
-                            campaignRptsDayGetData.setDirShopColNum("0");
+                        if (advertiserCampaignRptsDayGet.getDirShopColNum() == null) {
+                            advertiserCampaignRptsDayGet.setDirShopColNum("0");
                         }
-                        if (campaignRptsDayGetData.getEcpc() == null) {
-                            campaignRptsDayGetData.setEcpc("0");
+                        if (advertiserCampaignRptsDayGet.getEcpc() == null) {
+                            advertiserCampaignRptsDayGet.setEcpc("0");
                         }
-                        if (campaignRptsDayGetData.getEcpm() == null) {
-                            campaignRptsDayGetData.setEcpm("0");
+                        if (advertiserCampaignRptsDayGet.getEcpm() == null) {
+                            advertiserCampaignRptsDayGet.setEcpm("0");
                         }
-                        if (campaignRptsDayGetData.getGmvInshopAmt() == null) {
-                            campaignRptsDayGetData.setGmvInshopAmt("0");
+                        if (advertiserCampaignRptsDayGet.getGmvInshopAmt() == null) {
+                            advertiserCampaignRptsDayGet.setGmvInshopAmt("0");
                         }
-                        if (campaignRptsDayGetData.getGmvInshopNum() == null) {
-                            campaignRptsDayGetData.setGmvInshopNum("0");
+                        if (advertiserCampaignRptsDayGet.getGmvInshopNum() == null) {
+                            advertiserCampaignRptsDayGet.setGmvInshopNum("0");
                         }
-                        if (campaignRptsDayGetData.getCartNum() == null) {
-                            campaignRptsDayGetData.setCartNum("0");
+                        if (advertiserCampaignRptsDayGet.getCartNum() == null) {
+                            advertiserCampaignRptsDayGet.setCartNum("0");
                         }
-                        if (campaignRptsDayGetData.getLogDate() == null) {
-                            campaignRptsDayGetData.setLogDate("0");
+                        if (advertiserCampaignRptsDayGet.getInshopItemColNum() == null) {
+                            advertiserCampaignRptsDayGet.setInshopItemColNum("0");
                         }
-                        if (campaignRptsDayGetData.getInshopItemColNum() == null) {
-                            campaignRptsDayGetData.setInshopItemColNum("0");
-                        }
-                        BeanUtils.copyProperties(campaignRptsDayGetData, advertiserCampaignRptsDayGet);//反射属性值
                         advertiserCampaignRptsDayGet.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
+                        advertiserCampaignRptsDayGet.setEffect(request.getEffect());
+                        advertiserCampaignRptsDayGet.setCampaignModel(request.getCampaignModel());
+                        advertiserCampaignRptsDayGet.setEffectType(request.getEffectType());
                         if (Double.parseDouble(advertiserCampaignRptsDayGet.getClick()) == 0) {
                             advertiserCampaignRptsDayGet.setCommodityPurchaseRate("0");//点击量为零
                             advertiserCampaignRptsDayGet.setCommodityCollectionRate("0");

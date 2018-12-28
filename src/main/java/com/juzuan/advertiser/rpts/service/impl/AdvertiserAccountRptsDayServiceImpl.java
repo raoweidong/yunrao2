@@ -72,12 +72,15 @@ public class AdvertiserAccountRptsDayServiceImpl {
                 JSONObject two = JSON.parseObject(onee.toString());
                 JSONObject twoo = two.getJSONObject("account_offline_rpt_days_list");//包含data的json对象
                 if (twoo.size() == 0) {
-                    System.out.println("空");
+                    continue;
                 } else {
                     JSONObject thre = JSON.parseObject(twoo.toString());
                     JSONArray three = thre.getJSONArray("data");
                     List<AdvertiserAccountRptsDayGet> adzoneRptsDayss = JSONObject.parseArray(three.toString(), AdvertiserAccountRptsDayGet.class);
                     for (AdvertiserAccountRptsDayGet adzoneRptsDay : adzoneRptsDayss) {
+                        adzoneRptsDay.setEffect(request.getEffect());
+                        adzoneRptsDay.setEffectType(request.getEffectType());
+                        adzoneRptsDay.setCampaignModel(request.getCampaignModel());
                         adzoneRptsDay.setCvr(adzoneRptsDay.getCvr() == null ? "0" : adzoneRptsDay.getCvr());
                         adzoneRptsDay.setAlipayInShopNum(adzoneRptsDay.getAlipayInShopNum() == null ? "0" : adzoneRptsDay.getAlipayInShopNum());
                         adzoneRptsDay.setAlipayInshopAmt(adzoneRptsDay.getAlipayInshopAmt() == null ? "0" : adzoneRptsDay.getAlipayInshopAmt());

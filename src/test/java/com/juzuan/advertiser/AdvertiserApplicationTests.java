@@ -19,9 +19,7 @@ public class AdvertiserApplicationTests {
 
     @Test
     public void test() {
-        String cartNum="100";
-        List<AdvertiserAccountRptsDayGet> list = advertiserAccountRptsDayGetMapper.selectByCartNum(Long.valueOf(cartNum));
-        System.out.println(list.size());
+
     }
 
 }

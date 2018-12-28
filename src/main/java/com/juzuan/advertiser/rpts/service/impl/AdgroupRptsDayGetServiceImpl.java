@@ -43,9 +43,8 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
     @Autowired
     private RequestMapper requestMapper;
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public String AdgroupRptsDayGet() throws ApiException {
-        System.out.println("jajaj");
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         //获取系统当前时间

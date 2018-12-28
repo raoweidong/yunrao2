@@ -70,9 +70,9 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
                 req.setCampaignId(adg);
                 req.setAdgroupId(cam);
                 req.setAdzoneId(adz);
-                req.setEffect(7L);
-                req.setCampaignModel(1L);
-                req.setEffectType("click");
+                req.setEffect(request.getEffect());
+                req.setCampaignModel(request.getCampaignModel());
+                req.setEffectType(request.getEffectType());
                 ZuanshiAdvertiserAdzoneRptsDayGetResponse rsp = null;
                 try {
                     rsp = client.execute(req, sessionKey);
@@ -118,6 +118,9 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
                         adzoneRptsDay.setRoi(adzoneRptsDay.getRoi() == null ? "0" : adzoneRptsDay.getRoi());
                         AdvertiserAdzoneRptsDayGet advertiserAdzoneRptsDayGet = new AdvertiserAdzoneRptsDayGet();
                         BeanUtils.copyProperties(adzoneRptsDay, advertiserAdzoneRptsDayGet);
+                        advertiserAdzoneRptsDayGet.setEffect(request.getEffect());
+                        advertiserAdzoneRptsDayGet.setCampaignModel(request.getCampaignModel());
+                        advertiserAdzoneRptsDayGet.setEffectType(request.getEffectType());
                         Double collectionAndBuy = Double.parseDouble(advertiserAdzoneRptsDayGet.getDirShopColNum()) + Double.parseDouble(advertiserAdzoneRptsDayGet.getInshopItemColNum()) + Double.parseDouble(advertiserAdzoneRptsDayGet.getCartNum());
                         if (collectionAndBuy == 0) {
                             advertiserAdzoneRptsDayGet.setTotalCollectionPlusCost("0");

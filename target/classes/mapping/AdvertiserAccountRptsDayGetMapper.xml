@@ -33,6 +33,9 @@
     <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
     <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
     <result column="log_date" property="logDate" jdbcType="TIMESTAMP" />
+    <result column="effect" property="effect" jdbcType="BIGINT" />
+    <result column="campaign_model" property="campaignModel" jdbcType="BIGINT" />
+    <result column="effect_type" property="effectType" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, taobao_user_id, charge, click, ad_pv, ecpm, ctr, ecpc, cvr, alipay_inshop_amt, 
@@ -40,39 +43,13 @@
     avg_access_page_num, avg_access_time, deep_inshop_uv, uv, roi, commodity_purchase_rate, 
     commodity_collection_rate, total_collection_rate, commodity_plus_cost, commodity_collection_cost, 
     total_collection_plus_cost, average_cost_of_order, order_average_amount, average_uv_value, 
-    log_date
+    log_date, effect, campaign_model, effect_type
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
+    select 
     <include refid="Base_Column_List" />
     from advertiser_account_rpts_day_get
     where id = #{id,jdbcType=BIGINT}
-  </select>
-  <select id="selectByCartNum" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-    where cart_num>#{cartNum,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap"  >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-  </select>
-
-  <select id="selectByUserIdAndLogDate" resultMap="BaseResultMap" parameterType="com.juzuan.advertiser.rpts.query.DayGetQuery" >
-    select
-    <include refid="Base_Column_List" />
-    from advertiser_account_rpts_day_get
-    <where>
-      <if test="userId != null">
-        and taobao_user_id = #{userId,jdbcType=VARCHAR}
-      </if>
-      <if test="logDate != null">
-        and log_date = #{logDate,jdbcType=TIMESTAMP}
-      </if>
-    </where>
-
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from advertiser_account_rpts_day_get
@@ -89,7 +66,8 @@
       commodity_collection_rate, total_collection_rate, 
       commodity_plus_cost, commodity_collection_cost, 
       total_collection_plus_cost, average_cost_of_order, 
-      order_average_amount, average_uv_value, log_date
+      order_average_amount, average_uv_value, log_date, 
+      effect, campaign_model, effect_type
       )
     values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
       #{click,jdbcType=VARCHAR}, #{adPv,jdbcType=VARCHAR}, #{ecpm,jdbcType=VARCHAR}, 
@@ -101,7 +79,8 @@
       #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
       #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
       #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
-      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP}
+      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP}, 
+      #{effect,jdbcType=BIGINT}, #{campaignModel,jdbcType=BIGINT}, #{effectType,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsDayGet" >
@@ -200,6 +179,15 @@
       <if test="logDate != null" >
         log_date,
       </if>
+      <if test="effect != null" >
+        effect,
+      </if>
+      <if test="campaignModel != null" >
+        campaign_model,
+      </if>
+      <if test="effectType != null" >
+        effect_type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -294,6 +282,15 @@
       </if>
       <if test="logDate != null" >
         #{logDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effect != null" >
+        #{effect,jdbcType=BIGINT},
+      </if>
+      <if test="campaignModel != null" >
+        #{campaignModel,jdbcType=BIGINT},
+      </if>
+      <if test="effectType != null" >
+        #{effectType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -390,6 +387,15 @@
       <if test="logDate != null" >
         log_date = #{logDate,jdbcType=TIMESTAMP},
       </if>
+      <if test="effect != null" >
+        effect = #{effect,jdbcType=BIGINT},
+      </if>
+      <if test="campaignModel != null" >
+        campaign_model = #{campaignModel,jdbcType=BIGINT},
+      </if>
+      <if test="effectType != null" >
+        effect_type = #{effectType,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -424,7 +430,10 @@
       average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
       order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
       average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
-      log_date = #{logDate,jdbcType=TIMESTAMP}
+      log_date = #{logDate,jdbcType=TIMESTAMP},
+      effect = #{effect,jdbcType=BIGINT},
+      campaign_model = #{campaignModel,jdbcType=BIGINT},
+      effect_type = #{effectType,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

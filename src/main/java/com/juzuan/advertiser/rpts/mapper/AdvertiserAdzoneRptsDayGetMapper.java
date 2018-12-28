@@ -8,16 +8,18 @@ import java.util.Map;
 
 @Mapper
 public interface AdvertiserAdzoneRptsDayGetMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(AdvertiserAdzoneRptsDayGet record);
 
     int insertSelective(AdvertiserAdzoneRptsDayGet record);
 
-    AdvertiserAdzoneRptsDayGet selectByPrimaryKey(Long id);
+    AdvertiserAdzoneRptsDayGet selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(AdvertiserAdzoneRptsDayGet record);
 
     int updateByPrimaryKey(AdvertiserAdzoneRptsDayGet record);
+
     List<AdvertiserAdzoneRptsDayGet> queryAdzoneRptsDayGetsBySql(Map<String,Object> data);
+
 }
