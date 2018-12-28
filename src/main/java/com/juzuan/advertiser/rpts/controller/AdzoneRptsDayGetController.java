@@ -31,7 +31,6 @@ public class AdzoneRptsDayGetController {
         pb.setList(ss);
         System.out.println("哈哈");
 
-
         return pb;
     }
 }
