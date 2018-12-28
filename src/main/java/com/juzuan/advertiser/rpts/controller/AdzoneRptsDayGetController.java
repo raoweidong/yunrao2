@@ -30,6 +30,8 @@ public class AdzoneRptsDayGetController {
         pb.setTotalRecord(totalRecord);
         pb.setList(ss);
         System.out.println("哈哈");
+
+
         return pb;
     }
 }
