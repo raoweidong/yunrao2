@@ -32,6 +32,7 @@ public class AdzoneListBindController {
         }else {
             System.out.println("1");
         }
+
         return adzoneListBindUpdate;
     }
     public  static void main(String[] args){
