@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1750">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="184">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
             </state>
           </provider>
         </entry>
@@ -140,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneListBindUpdate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/HellpWorldController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneListBindController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsTotalGetServiceImpl.java" />
@@ -151,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsTotalGetServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -388,7 +388,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546061102824" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546063309331" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -574,7 +574,7 @@
       <workItem from="1545613082711" duration="85952000" />
       <workItem from="1545913086536" duration="29307000" />
       <workItem from="1546005014447" duration="76000" />
-      <workItem from="1546045521792" duration="9476000" />
+      <workItem from="1546045521792" duration="9759000" />
     </task>
     <task id="LOCAL-00001" summary="12-24">
       <created>1545632506514</created>
@@ -702,7 +702,21 @@
       <option name="project" value="LOCAL" />
       <updated>1546061054981</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="12-27">
+      <created>1546063104080</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1546063104080</updated>
+    </task>
+    <task id="LOCAL-00020" summary="12-27">
+      <created>1546063316554</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1546063316554</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -729,7 +743,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="625750000" />
+    <option name="totallyTimeSpent" value="626033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -745,13 +759,13 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32925472" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32258064" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.40195015" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.50278085" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.50278085" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.38820913" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -1212,8 +1226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1750">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="184">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>
     </entry>
