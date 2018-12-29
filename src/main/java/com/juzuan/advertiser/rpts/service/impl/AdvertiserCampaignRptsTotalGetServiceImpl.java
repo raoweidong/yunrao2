@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.juzuan.advertiser.rpts.mapper.AdvertiserCampaignRptsTotalGetMapper;
 import com.juzuan.advertiser.rpts.mapper.CampaignListMapper;
+import com.juzuan.advertiser.rpts.mapper.RequestMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.*;
 import com.taobao.api.ApiException;
@@ -17,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 @Service
 public class AdvertiserCampaignRptsTotalGetServiceImpl {
@@ -26,202 +29,178 @@ public class AdvertiserCampaignRptsTotalGetServiceImpl {
     @Autowired
     private TaobaoAuthorizeUserMapper taobaoAuthorizeUserMapper;
     @Autowired
-    private CampaignListMapper campaignListMapper;
+    private RequestMapper requestMapper;
     @Autowired
     private AdvertiserCampaignRptsTotalGetMapper advertiserCampaignRptsTotalGetMapper;
     //@Scheduled(cron = "*/5 * * * * ?")
     public String parseCampaign(){
-        List<TaobaoAuthorizeUser> taobaoAuthorizeUsers=taobaoAuthorizeUserMapper.selectAllToken();
-        //List<CampaignList> campaignLists=campaignListMapper.selectAllCampaign();
-        for (TaobaoAuthorizeUser taobaoAuthorizeUser:taobaoAuthorizeUsers){
-            String sessionKey=taobaoAuthorizeUser.getAccessToken();
-            TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
-            ZuanshiAdvertiserCampaignRptsTotalGetRequest req = new ZuanshiAdvertiserCampaignRptsTotalGetRequest();
-            req.setStartTime("2018-08-29");
-            req.setEndTime("2018-11-27");
-            req.setEffect(7L);
-            req.setCampaignModel(1L);
-            req.setEffectType("click");
-            req.setPageSize(200L);
-            req.setOffset(0L);
-            ZuanshiAdvertiserCampaignRptsTotalGetResponse rsp = null;
-            try {
-                rsp = client.execute(req, sessionKey);
-            } catch (ApiException e) {
-                e.printStackTrace();
-            }
-            System.out.println(rsp.getBody());
-            JSONObject one= JSON.parseObject(rsp.getBody());
-            JSONObject onee=one.getJSONObject("zuanshi_advertiser_campaign_rpts_total_get_response");
-           // System.out.println(taobaoAuthorizeUser.getTaobaoUserId()+"  "+campaign.getCampaignId() +"  "+onee.toString());
-            JSONObject two=JSON.parseObject(onee.toString());
-            JSONObject tw=two.getJSONObject("campaign_offline_rpt_total_list");
-            if (tw.size()!=0){
-                JSONArray three=tw.getJSONArray("data");
-
-                for (Object ob:three.toArray()){
-                    System.out.println("遍历目标数组"+ob.toString());
+        //时间格式化
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        //获取系统当前时间
+        String time= sdf.format(new java.util.Date());
+        System.out.println(time);
+        //获取系统前一天时间
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,-1);
+        String yestime = sdf.format(calendar.getTime());
+        List<Request> requests = requestMapper.selectAllRequest();
+        for (Request request:requests) {
+            List<TaobaoAuthorizeUser> taobaoAuthorizeUsers = taobaoAuthorizeUserMapper.selectAllToken();
+            for (TaobaoAuthorizeUser taobaoAuthorizeUser : taobaoAuthorizeUsers) {
+                String sessionKey = taobaoAuthorizeUser.getAccessToken();
+                TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
+                ZuanshiAdvertiserCampaignRptsTotalGetRequest req = new ZuanshiAdvertiserCampaignRptsTotalGetRequest();
+                req.setStartTime("2018-08-29");
+                req.setEndTime("2018-11-27");
+                req.setEffect(request.getEffect());
+                req.setCampaignModel(request.getCampaignModel());
+                req.setEffectType(request.getEffectType());
+                req.setPageSize(200L);
+                req.setOffset(0L);
+                ZuanshiAdvertiserCampaignRptsTotalGetResponse rsp = null;
+                try {
+                    rsp = client.execute(req, sessionKey);
+                } catch (ApiException e) {
+                    e.printStackTrace();
                 }
-                List<CampaignRptsDayGetData> campaignRptsDayGets=JSONObject.parseArray(three.toString(), CampaignRptsDayGetData.class);
-                //遍历json数据属性对象
-                for (CampaignRptsDayGetData campaignRptsDayGet:campaignRptsDayGets){
-                    AdvertiserCampaignRptsTotalGet advertiserCampaignRptsTotalGet=new AdvertiserCampaignRptsTotalGet();//创建表中对象
-                    System.out.println("遍历对象数组  "+campaignRptsDayGet.toString());
-                    //插入计算的属性值
-                    if (campaignRptsDayGet.getAdPv()==null){
-                        campaignRptsDayGet.setAdPv("0");
-                    }
-                    //campaignRptsDayGetData.setCartNum(campaignRptsDayGetData.getCartNum()==null?"0":campaignRptsDayGetData.getCartNum());
-                    if (campaignRptsDayGet.getAlipayInshopAmt()==null){
-                        campaignRptsDayGet.setAlipayInshopAmt("0");
-                    }
-                    if (campaignRptsDayGet.getAlipayInShopNum()==null){
-                        campaignRptsDayGet.setAlipayInShopNum("0");
-                    }
-                    if (campaignRptsDayGet.getAvgAccessPageNum()==null){
-                        campaignRptsDayGet.setAvgAccessPageNum("0");
-                    }
+                System.out.println(rsp.getBody());
+                JSONObject one = JSON.parseObject(rsp.getBody());
+                JSONObject onee = one.getJSONObject("zuanshi_advertiser_campaign_rpts_total_get_response");
+                // System.out.println(taobaoAuthorizeUser.getTaobaoUserId()+"  "+campaign.getCampaignId() +"  "+onee.toString());
+                JSONObject two = JSON.parseObject(onee.toString());
+                JSONObject tw = two.getJSONObject("campaign_offline_rpt_total_list");
+                if (tw.size() != 0) {
+                    JSONArray three = tw.getJSONArray("data");
 
-                    if (campaignRptsDayGet.getCampaignId()==null){
-                        campaignRptsDayGet.setCampaignId("0");
+                    for (Object ob : three.toArray()) {
+                        System.out.println("遍历目标数组" + ob.toString());
                     }
-                    if (campaignRptsDayGet.getCampaignName()==null){
-                        campaignRptsDayGet.setCampaignName("0");
-                    }
-                    if (campaignRptsDayGet.getCartNum()==null){
-                        campaignRptsDayGet.setCartNum("0");
-                    }
-                    if (campaignRptsDayGet.getAvgAccessTime()==null){
-                        campaignRptsDayGet.setAvgAccessTime("0");
-                    }
-                    if (campaignRptsDayGet.getCharge()==null){
-                        campaignRptsDayGet.setCharge("0");
-                    }
-                    if (campaignRptsDayGet.getClick()==null){
-                        campaignRptsDayGet.setClick("0");
-                    }
-                    if (campaignRptsDayGet.getCtr()==null){
-                        campaignRptsDayGet.setCtr("0");
-                    }
-                    if (campaignRptsDayGet.getCvr()==null){
-                        campaignRptsDayGet.setCvr("0");
-                    }
-                    if (campaignRptsDayGet.getDeepInshopUv()==null){
-                        campaignRptsDayGet.setDeepInshopUv("0");
-                    }
-                    if (campaignRptsDayGet.getUv()==null){
-                        campaignRptsDayGet.setUv("0");
-                    }
-                    if (campaignRptsDayGet.getRoi()==null){
-                        campaignRptsDayGet.setRoi("0");
-                    }
-                    if (campaignRptsDayGet.getDirShopColNum()==null){
-                        campaignRptsDayGet.setDirShopColNum("0");
-                    }
-                    if (campaignRptsDayGet.getEcpc()==null){
-                        campaignRptsDayGet.setEcpc("0");
-                    }
-                    if (campaignRptsDayGet.getEcpm()==null){
-                        campaignRptsDayGet.setEcpm("0");
-                    }
-                    if (campaignRptsDayGet.getGmvInshopAmt()==null){
-                        campaignRptsDayGet.setGmvInshopAmt("0");
-                    }
-                    if (campaignRptsDayGet.getGmvInshopNum()== null){
-                        campaignRptsDayGet.setGmvInshopNum("0");
-                    }
-                    if (campaignRptsDayGet.getCartNum()==null){
-                        campaignRptsDayGet.setCartNum("0");
-                    }
-                    if (campaignRptsDayGet.getLogDate()==null){
-                        campaignRptsDayGet.setLogDate("0");
-                    }
-                    if (campaignRptsDayGet.getInshopItemColNum()==null){
-                        campaignRptsDayGet.setInshopItemColNum("0");
-                    }
-                    BeanUtils.copyProperties(campaignRptsDayGet,advertiserCampaignRptsTotalGet);//反射属性值
-                    advertiserCampaignRptsTotalGet.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())==0){
-                        advertiserCampaignRptsTotalGet.setCommodityPurchaseRate("0");//点击量为零
-                        advertiserCampaignRptsTotalGet.setCommodityCollectionRate("0");
-                        advertiserCampaignRptsTotalGet.setTotalCollectionRate("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum())/Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//加购率=添加购物车量/点击量
-                        advertiserCampaignRptsTotalGet.setCommodityCollectionRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum())/Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//收藏率=收藏宝贝量/点击量
-                        advertiserCampaignRptsTotalGet.setTotalCollectionRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())/Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//总收藏加购率=（收藏宝贝量+收藏店铺量+添加购物车量）/点击量
+                    List<AdvertiserCampaignRptsTotalGet> advertiserCampaignRptsTotalGets = JSONObject.parseArray(three.toString(), AdvertiserCampaignRptsTotalGet.class);
+                    //遍历json数据属性对象
+                    for (AdvertiserCampaignRptsTotalGet advertiserCampaignRptsTotalGet : advertiserCampaignRptsTotalGets) {
+                        System.out.println("遍历对象数组  " + advertiserCampaignRptsTotalGet.toString());
+                        //插入计算的属性值
+                        if (advertiserCampaignRptsTotalGet.getAdPv() == null) {
+                            advertiserCampaignRptsTotalGet.setAdPv("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getAlipayInshopAmt() == null) {
+                            advertiserCampaignRptsTotalGet.setAlipayInshopAmt("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getAlipayInShopNum() == null) {
+                            advertiserCampaignRptsTotalGet.setAlipayInShopNum("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getAvgAccessPageNum() == null) {
+                            advertiserCampaignRptsTotalGet.setAvgAccessPageNum("0");
+                        }
 
-                    }
-                    Double collectionAndBuy=Double.parseDouble(advertiserCampaignRptsTotalGet.getDirShopColNum())+Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum())+Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum());
-                    if (collectionAndBuy==0){
-                        advertiserCampaignRptsTotalGet.setTotalCollectionPlusCost("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setTotalCollectionPlusCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge())/collectionAndBuy));//总收藏加购成本=消耗/（收藏宝贝量+收藏店铺量+添加购物车量 )
-                    }
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum())==0){
-                        advertiserCampaignRptsTotalGet.setCommodityCollectionCost("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setCommodityCollectionCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge())/Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum())));//收藏成本=消耗/收藏宝贝量
-                    }
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum())==0){
-                        advertiserCampaignRptsTotalGet.setCommodityPlusCost("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setCommodityPlusCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge())/Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum())));//加购成本=消耗/添加购物车量
-                    }
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getUv())==0){
-                        advertiserCampaignRptsTotalGet.setAverageUvValue("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setAverageUvValue(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt())/Double.parseDouble(advertiserCampaignRptsTotalGet.getUv())));//平均访客价值 (average_uv_value) = 成交订单金额/访客
+                        if (advertiserCampaignRptsTotalGet.getCampaignId() == null) {
+                            advertiserCampaignRptsTotalGet.setCampaignId("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCampaignName() == null) {
+                            advertiserCampaignRptsTotalGet.setCampaignName("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCartNum() == null) {
+                            advertiserCampaignRptsTotalGet.setCartNum("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getAvgAccessTime() == null) {
+                            advertiserCampaignRptsTotalGet.setAvgAccessTime("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCharge() == null) {
+                            advertiserCampaignRptsTotalGet.setCharge("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getClick() == null) {
+                            advertiserCampaignRptsTotalGet.setClick("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCtr() == null) {
+                            advertiserCampaignRptsTotalGet.setCtr("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCvr() == null) {
+                            advertiserCampaignRptsTotalGet.setCvr("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getDeepInshopUv() == null) {
+                            advertiserCampaignRptsTotalGet.setDeepInshopUv("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getUv() == null) {
+                            advertiserCampaignRptsTotalGet.setUv("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getRoi() == null) {
+                            advertiserCampaignRptsTotalGet.setRoi("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getDirShopColNum() == null) {
+                            advertiserCampaignRptsTotalGet.setDirShopColNum("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getEcpc() == null) {
+                            advertiserCampaignRptsTotalGet.setEcpc("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getEcpm() == null) {
+                            advertiserCampaignRptsTotalGet.setEcpm("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getGmvInshopAmt() == null) {
+                            advertiserCampaignRptsTotalGet.setGmvInshopAmt("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getGmvInshopNum() == null) {
+                            advertiserCampaignRptsTotalGet.setGmvInshopNum("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getCartNum() == null) {
+                            advertiserCampaignRptsTotalGet.setCartNum("0");
+                        }
+                        if (advertiserCampaignRptsTotalGet.getInshopItemColNum() == null) {
+                            advertiserCampaignRptsTotalGet.setInshopItemColNum("0");
+                        }
+                        advertiserCampaignRptsTotalGet.setTaobaoUserId(taobaoAuthorizeUser.getTaobaoUserId());
+                        advertiserCampaignRptsTotalGet.setEffect(request.getEffect());
+                        advertiserCampaignRptsTotalGet.setEffectType(request.getEffectType());
+                        advertiserCampaignRptsTotalGet.setCampaignModel(request.getCampaignModel());
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getClick()) == 0) {
+                            advertiserCampaignRptsTotalGet.setCommodityPurchaseRate("0");//点击量为零
+                            advertiserCampaignRptsTotalGet.setCommodityCollectionRate("0");
+                            advertiserCampaignRptsTotalGet.setTotalCollectionRate("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setCommodityPurchaseRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//加购率=添加购物车量/点击量
+                            advertiserCampaignRptsTotalGet.setCommodityCollectionRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//收藏率=收藏宝贝量/点击量
+                            advertiserCampaignRptsTotalGet.setTotalCollectionRate(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getClick()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getClick())));//总收藏加购率=（收藏宝贝量+收藏店铺量+添加购物车量）/点击量
 
-                    }
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt())==0){
-                        advertiserCampaignRptsTotalGet.setOrderAverageAmount("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setOrderAverageAmount(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt())/Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInShopNum())));//订单平均金额(order_average_amount)订单平均金额 = 成交订单金额/成交订单量
-                    }
-                    if (Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge())==0){
-                        advertiserCampaignRptsTotalGet.setAverageCostOfOrder("0");
-                    }
-                    else {
-                        advertiserCampaignRptsTotalGet.setAverageCostOfOrder(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge())/Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInShopNum())));//订单平均成本(average_cost_of_order)订单平均成本 = 消耗/成交订单量
+                        }
+                        Double collectionAndBuy = Double.parseDouble(advertiserCampaignRptsTotalGet.getDirShopColNum()) + Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum()) + Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum());
+                        if (collectionAndBuy == 0) {
+                            advertiserCampaignRptsTotalGet.setTotalCollectionPlusCost("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setTotalCollectionPlusCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge()) / collectionAndBuy));//总收藏加购成本=消耗/（收藏宝贝量+收藏店铺量+添加购物车量 )
+                        }
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum()) == 0) {
+                            advertiserCampaignRptsTotalGet.setCommodityCollectionCost("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setCommodityCollectionCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getInshopItemColNum())));//收藏成本=消耗/收藏宝贝量
+                        }
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum()) == 0) {
+                            advertiserCampaignRptsTotalGet.setCommodityPlusCost("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setCommodityPlusCost(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getCartNum())));//加购成本=消耗/添加购物车量
+                        }
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getUv()) == 0) {
+                            advertiserCampaignRptsTotalGet.setAverageUvValue("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setAverageUvValue(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getUv())));//平均访客价值 (average_uv_value) = 成交订单金额/访客
 
+                        }
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt()) == 0) {
+                            advertiserCampaignRptsTotalGet.setOrderAverageAmount("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setOrderAverageAmount(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInshopAmt()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInShopNum())));//订单平均金额(order_average_amount)订单平均金额 = 成交订单金额/成交订单量
+                        }
+                        if (Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge()) == 0) {
+                            advertiserCampaignRptsTotalGet.setAverageCostOfOrder("0");
+                        } else {
+                            advertiserCampaignRptsTotalGet.setAverageCostOfOrder(String.valueOf(Double.parseDouble(advertiserCampaignRptsTotalGet.getCharge()) / Double.parseDouble(advertiserCampaignRptsTotalGet.getAlipayInShopNum())));//订单平均成本(average_cost_of_order)订单平均成本 = 消耗/成交订单量
+
+                        }
                     }
-
-                    //advertiserCampaignRptsTotalGetMapper.insert(advertiserCampaignRptsTotalGet);
-
-                    System.out.println("呵呵呵");
+                } else {
+                    System.out.println("没有获取的信息");
+                    continue;
                 }
-            } else {
-
-                System.out.println("没有获取的信息");
-                continue;
-
             }
-
-
         }
         return "";
     }
-
-    public void saveCampaign(String json){
-        JSONObject one= JSON.parseObject(json);
-        JSONObject  getResponse=one.getJSONObject("zuanshi_advertiser_campaign_rpts_total_get_response");
-        JSONObject rptDaysList=getResponse.getJSONObject("campaign_offline_rpt_days_list");
-        System.out.println("campaign_offline_rpt_days_list  "+rptDaysList.toString());
-        //省略许多
-
-
-
-
-
-
-
-    }
-
-
 }

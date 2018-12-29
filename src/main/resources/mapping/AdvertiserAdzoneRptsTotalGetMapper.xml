@@ -38,6 +38,9 @@
     <result column="average_cost_of_order" property="averageCostOfOrder" jdbcType="VARCHAR" />
     <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
     <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
+    <result column="effect" property="effect" jdbcType="BIGINT" />
+    <result column="campaign_model" property="campaignModel" jdbcType="BIGINT" />
+    <result column="effect_type" property="effectType" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, taobao_user_id, campaign_id, campaign_name, adgroup_id, adgroup_name, adzone_id, 
@@ -45,7 +48,8 @@
     cart_num, dir_shop_col_num, inshop_item_col_num, avg_access_page_num, avg_access_time, 
     deep_inshop_uv, uv, ecpm, ecpc, ctr, charge, click, ad_pv, roi, commodity_purchase_rate, 
     commodity_collection_rate, total_collection_rate, commodity_plus_cost, commodity_collection_cost, 
-    total_collection_plus_cost, average_cost_of_order, order_average_amount, average_uv_value
+    total_collection_plus_cost, average_cost_of_order, order_average_amount, average_uv_value, 
+    effect, campaign_model, effect_type
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -70,7 +74,8 @@
       commodity_collection_rate, total_collection_rate, 
       commodity_plus_cost, commodity_collection_cost, 
       total_collection_plus_cost, average_cost_of_order, 
-      order_average_amount, average_uv_value)
+      order_average_amount, average_uv_value, effect, 
+      campaign_model, effect_type)
     values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=VARCHAR}, 
       #{campaignName,jdbcType=VARCHAR}, #{adgroupId,jdbcType=VARCHAR}, #{adgroupName,jdbcType=VARCHAR}, 
       #{adzoneId,jdbcType=VARCHAR}, #{adzoneName,jdbcType=VARCHAR}, #{cvr,jdbcType=VARCHAR}, 
@@ -83,7 +88,8 @@
       #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
       #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
       #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
-      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR})
+      #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{effect,jdbcType=BIGINT}, 
+      #{campaignModel,jdbcType=BIGINT}, #{effectType,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsTotalGet" >
     insert into advertiser_adzone_rpts_total_get
@@ -196,6 +202,15 @@
       <if test="averageUvValue != null" >
         average_uv_value,
       </if>
+      <if test="effect != null" >
+        effect,
+      </if>
+      <if test="campaignModel != null" >
+        campaign_model,
+      </if>
+      <if test="effectType != null" >
+        effect_type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -305,6 +320,15 @@
       </if>
       <if test="averageUvValue != null" >
         #{averageUvValue,jdbcType=VARCHAR},
+      </if>
+      <if test="effect != null" >
+        #{effect,jdbcType=BIGINT},
+      </if>
+      <if test="campaignModel != null" >
+        #{campaignModel,jdbcType=BIGINT},
+      </if>
+      <if test="effectType != null" >
+        #{effectType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -416,6 +440,15 @@
       <if test="averageUvValue != null" >
         average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
       </if>
+      <if test="effect != null" >
+        effect = #{effect,jdbcType=BIGINT},
+      </if>
+      <if test="campaignModel != null" >
+        campaign_model = #{campaignModel,jdbcType=BIGINT},
+      </if>
+      <if test="effectType != null" >
+        effect_type = #{effectType,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -455,7 +488,10 @@
       total_collection_plus_cost = #{totalCollectionPlusCost,jdbcType=VARCHAR},
       average_cost_of_order = #{averageCostOfOrder,jdbcType=VARCHAR},
       order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
-      average_uv_value = #{averageUvValue,jdbcType=VARCHAR}
+      average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
+      effect = #{effect,jdbcType=BIGINT},
+      campaign_model = #{campaignModel,jdbcType=BIGINT},
+      effect_type = #{effectType,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

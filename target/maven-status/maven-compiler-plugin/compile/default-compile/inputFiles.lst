@@ -26,7 +26,6 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\Relations
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\CreativeList.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\DmpTargetList.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\AdzoneListBindMapper.java
-D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\controller\RptsDayGet.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\TargetAdzoneRptsTotalGetMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\IndustryshopListService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\AdzoneListMapper.java
@@ -56,6 +55,7 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\CampaignList.jav
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\AdgroupListDetailsServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\ShopItemListService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\MylikeTargetList.java
+D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\RequestMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\CpmTargetListService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\DmpTargetListServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\TargetCatelabelListServiceImpl.java
@@ -73,6 +73,7 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\TargetAdzoneRp
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\IndustryshopList.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\CpcTargetListMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\AdvertiserCampaignRptsDayGetServirceImpl.java
+D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\Request.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\AdgroupRptsDayGetService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\AdvertiserCampaignRptsTotalGetServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\CampaignRptsDayGetData.java
@@ -102,6 +103,7 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\AdvertiserApplication.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\CrowdListService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\CampaignDetailsServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\TargetRptsTotalGetService.java
+D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\controller\AdzoneListBindController.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\IntelligenceListService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\SeniorinterestListMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\TargetCatelabelList.java
@@ -120,6 +122,7 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\AccountGet.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\CreativeListServiceimpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\AdgroupListServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\AdgroupListService.java
+D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\AdzoneListBindUpdate.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\CpcTargetListServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\CrowdList.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\TargetAdzoneRptsDayGet.java
@@ -152,7 +155,6 @@ D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\Advertise
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\CampaignListMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\DmpTargetListMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\model\AdvertiserAccountRptsDayGet.java
-D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\RptsDayGetServiceImpl.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\AccountGetService.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\mapper\CpmTargetListMapper.java
 D:\yun\yunrao2-1\src\main\java\com\juzuan\advertiser\rpts\service\impl\CreativeRptsDaygetServiceImpl.java

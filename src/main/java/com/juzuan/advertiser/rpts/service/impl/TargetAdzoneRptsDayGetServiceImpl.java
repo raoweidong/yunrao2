@@ -65,8 +65,8 @@ public class TargetAdzoneRptsDayGetServiceImpl implements TargetAdzoneRptsDayGet
                 req.setAdgroupId(cl.getAdgroupId());
                 req.setAdzoneId(cl.getAdzoneId());
                 req.setTargetId(cl.getTargetId());
-                req.setEffectType("click");
-                req.setEffect(7L);
+                req.setEffectType(request.getEffectType());
+                req.setEffect(request.getEffect());
                 req.setStartTime("2018-11-28");
                 req.setEndTime("2018-12-20");
                 ZuanshiAdvertiserTargetAdzoneRptsDayGetResponse rsp = null;
@@ -88,6 +88,8 @@ public class TargetAdzoneRptsDayGetServiceImpl implements TargetAdzoneRptsDayGet
                 } else {
                     List<TargetAdzoneRptsDayGet> targetAdzoneRptsDayGets = JSONObject.parseArray(data.toString(), TargetAdzoneRptsDayGet.class);
                     for (TargetAdzoneRptsDayGet tard : targetAdzoneRptsDayGets) {
+                        tard.setEffect(request.getEffect());
+                        tard.setEffectType(request.getEffectType());
                         tard.setTaobaoUserId(cl.getTaobaoUserId());
                         tard.setCampaignId(tard.getCampaignId());
                         tard.setCampaignName(tard.getCampaignName());

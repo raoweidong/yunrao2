@@ -62,9 +62,9 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
                 req.setCampaignId(clb.getCampaignId());
                 req.setAdgroupId(clb.getAdgroupId());
                 req.setCreativeId(clb.getCreativeId());
-                req.setEffect(7L);
-                req.setCampaignModel(1L);
-                req.setEffectType("impression");
+                req.setEffect(request.getEffect());
+                req.setCampaignModel(request.getCampaignModel());
+                req.setEffectType(request.getEffectType());
                 ZuanshiAdvertiserCreativeRptsDayGetResponse rsp = null;
                 try {
                     rsp = client.execute(req, sessionKey);
@@ -92,6 +92,9 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
                     //遍历creativeLists,并插入data中的数据
                     for (CreativeRptsDayget item : creativeRptsDaygets) {
                         item.setTaobaoUserId(clb.getTaobaoUserId());
+                        item.setEffect(request.getEffect());
+                        item.setCampaignModel(request.getCampaignModel());
+                        item.setEffectType(request.getEffectType());
                         item.setUv(item.getUv() == null ? "0" : item.getUv());
                         item.setAvgAccessTime(item.getAvgAccessTime() == null ? "0" : item.getAvgAccessTime());
                         item.setCharge(item.getCharge() == null ? "0" : item.getCharge());

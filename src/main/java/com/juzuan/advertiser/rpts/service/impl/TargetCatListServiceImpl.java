@@ -37,7 +37,7 @@ public class TargetCatListServiceImpl implements TargetCatListService {
     @Autowired
     private TargetCatListMapper targetCatListMapper;
     //定时更新，每天2:05
-    //@Scheduled(cron = "0 5 2 * * ?")
+    @Scheduled(cron = "0 5 2 * * ?")
     public String TargetCatList(){
         targetCatListMapper.deleteALL();
         List<CampaignList> campaignLists = campaignListMapper.selectDistinct();

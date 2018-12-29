@@ -1,7 +1,6 @@
 com\juzuan\advertiser\rpts\mapper\RelationshopConditionMapper.class
 com\juzuan\advertiser\rpts\mapper\MylikeTargetListMapper.class
 com\juzuan\advertiser\rpts\model\ZiDian.class
-com\juzuan\advertiser\rpts\service\impl\RptsDayGetServiceImpl.class
 com\juzuan\advertiser\rpts\service\TargetCatelabelListService.class
 com\juzuan\advertiser\rpts\mapper\CategoryRptsTotalGetMapper.class
 com\juzuan\advertiser\rpts\mapper\TargetCatListMapper.class
@@ -9,6 +8,7 @@ com\juzuan\advertiser\rpts\model\ShopItemList.class
 com\juzuan\advertiser\rpts\service\impl\CreativeRptsDaygetServiceImpl.class
 com\juzuan\advertiser\rpts\model\AdgroupRptsDayGet.class
 com\juzuan\advertiser\rpts\service\RelationshopListService.class
+com\juzuan\advertiser\rpts\mapper\RequestMapper.class
 com\juzuan\advertiser\rpts\mapper\IndustryshopListMapper.class
 com\juzuan\advertiser\rpts\model\CampaignRptsDayGetData.class
 com\juzuan\advertiser\rpts\service\impl\TargetCatListServiceImpl.class
@@ -64,7 +64,6 @@ com\juzuan\advertiser\rpts\service\TargetRptsDayGetService.class
 com\juzuan\advertiser\rpts\service\ShopItemListService.class
 com\juzuan\advertiser\rpts\model\AdvertiserCampaignRptsDayGet.class
 com\juzuan\advertiser\rpts\mapper\AdvertiserAdzoneRptsDayGetMapper.class
-com\juzuan\advertiser\rpts\controller\RptsDayGet.class
 com\juzuan\advertiser\rpts\service\impl\IndustryshopListServiceImpl.class
 com\juzuan\advertiser\rpts\mapper\AdgroupListDetailsMapper.class
 com\juzuan\advertiser\rpts\service\impl\AdvertiserAdzoneRptsTotalGetServiceImpl.class
@@ -90,6 +89,7 @@ com\juzuan\advertiser\rpts\service\impl\TargetRptsTotalGetServiceImpl.class
 com\juzuan\advertiser\rpts\model\CampaignList.class
 com\juzuan\advertiser\rpts\service\impl\AdvertiserCampaignRptsTotalGetServiceImpl.class
 com\juzuan\advertiser\rpts\service\impl\IntelligenceListServiceImpl.class
+com\juzuan\advertiser\rpts\model\AdzoneListBindUpdate.class
 com\juzuan\advertiser\rpts\mapper\AdgroupRptsDayGetMapper.class
 com\juzuan\advertiser\rpts\mapper\RelationshopListMapper.class
 com\juzuan\advertiser\rpts\model\CreativeRptsDayget.class
@@ -110,6 +110,7 @@ com\juzuan\advertiser\rpts\service\impl\CreativeListServiceimpl.class
 com\juzuan\advertiser\rpts\service\TargetCatListService.class
 com\juzuan\advertiser\rpts\service\CreativeListService.class
 com\juzuan\advertiser\rpts\model\CreativeListBind.class
+com\juzuan\advertiser\rpts\model\Request.class
 com\juzuan\advertiser\rpts\mapper\AccountGetMapper.class
 com\juzuan\advertiser\rpts\model\TargetAdzoneRptsTotalGet.class
 com\juzuan\advertiser\rpts\model\BannerCrowdFind.class
@@ -155,6 +156,7 @@ com\juzuan\advertiser\rpts\model\Page.class
 com\juzuan\advertiser\rpts\mapper\TargetRptsDayGetMapper.class
 com\juzuan\advertiser\rpts\service\impl\TargetRptsDayGetServiceImpl.class
 com\juzuan\advertiser\rpts\mapper\CreativeListBindMapper.class
+com\juzuan\advertiser\rpts\controller\AdzoneListBindController.class
 com\juzuan\advertiser\rpts\service\AdzoneListBindService.class
 com\juzuan\advertiser\rpts\mapper\AdgroupRptsTotalGetMapper.class
 com\juzuan\advertiser\rpts\mapper\CreativeListMapper.class

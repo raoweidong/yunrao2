@@ -54,8 +54,8 @@ public class AdvertiserAccountRptsDayServiceImpl {
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserAccountRptsDayGetRequest req = new ZuanshiAdvertiserAccountRptsDayGetRequest();
-                req.setStartTime(yestime);
-                req.setEndTime(time);
+                req.setStartTime("2018-11-01");
+                req.setEndTime("2018-11-10");
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
                 req.setEffectType(request.getEffectType());

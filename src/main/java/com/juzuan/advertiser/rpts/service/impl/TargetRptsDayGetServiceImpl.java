@@ -65,9 +65,9 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
                 req.setCampaignId(cro.getCampaignId());
                 req.setAdgroupId(cro.getAdgroupId());
                 req.setTargetId(cro.getTargetId());
-                req.setEffect(7L);
-                req.setCampaignModel(1L);
-                req.setEffectType("impression");
+                req.setEffect(request.getEffect());
+                req.setCampaignModel(request.getCampaignModel());
+                req.setEffectType(request.getEffectType());
                 ZuanshiAdvertiserTargetRptsDayGetResponse rsp = null;
                 try {
                     rsp = client.execute(req, sessionKey);
@@ -90,6 +90,9 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
                     System.out.println("data数组 : " + data.toString());
                     List<TargetRptsDayGet> targetRptsDayGets = JSONObject.parseArray(data.toString(), TargetRptsDayGet.class);
                     for (TargetRptsDayGet trd : targetRptsDayGets) {
+                        trd.setEffect(request.getEffect());
+                        trd.setCampaignModel(request.getCampaignModel());
+                        trd.setEffectType(request.getEffectType());
                         trd.setTaobaoUserId(cro.getTaobaoUserId());
                         trd.setUv(trd.getUv() == null ? "0" : trd.getUv());
                         trd.setAvgAccessTime(trd.getAvgAccessTime() == null ? "0" : trd.getAvgAccessTime());
