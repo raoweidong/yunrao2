@@ -164,6 +164,8 @@ public class AdzoneListBindServiceImpl implements AdzoneListBindService {
                         adzoneListBind.setCrowdType(bbb.getLong("crowd_type"));
                         adzoneListBind.setPrice(bbb.getLong("price"));
                     }
+
+
                     adzoneListBindMapper.insert(adzoneListBind);
                 }
             }
