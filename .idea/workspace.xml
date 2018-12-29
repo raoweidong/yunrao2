@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e90cc9f-75d0-4711-8251-b7ac86001c76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/AdzoneListBindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdzoneListBindUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/controller/RptsDayGet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupRptsTotalGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdgroupRptsTotalGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserAdzoneRptsTotalGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserAdzoneRptsTotalGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsTotalGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/AdvertiserCampaignRptsTotalGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CreativeRptsDayget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/CreativeRptsDayget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/TargetAdzoneRptsDayGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/TargetAdzoneRptsDayGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/TargetRptsDayGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/model/TargetRptsDayGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/AdzoneListBindService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsTotalGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdgroupRptsTotalGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAccountRptsDayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserAdzoneRptsTotalGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsTotalGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdvertiserCampaignRptsTotalGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/CreativeRptsDaygetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetAdzoneRptsDayGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetCatListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/TargetRptsDayGetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupRptsTotalGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdgroupRptsTotalGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsTotalGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserAdzoneRptsTotalGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserCampaignRptsTotalGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdvertiserCampaignRptsTotalGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdzoneListBindMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/CreativeRptsDaygetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/CreativeRptsDaygetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TargetAdzoneRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TargetAdzoneRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TargetRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TargetRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdgroupRptsTotalGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdgroupRptsTotalGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdvertiserAdzoneRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdzoneListBindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdzoneListBindMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/CreativeRptsDaygetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/CreativeRptsDaygetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/TargetAdzoneRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/TargetAdzoneRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/TargetRptsDayGetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/TargetRptsDayGetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,20 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="1750">
               <caret line="112" selection-start-line="112" selection-end-line="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -434,7 +388,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546060378356" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546061102824" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -620,7 +574,7 @@
       <workItem from="1545613082711" duration="85952000" />
       <workItem from="1545913086536" duration="29307000" />
       <workItem from="1546005014447" duration="76000" />
-      <workItem from="1546045521792" duration="8479000" />
+      <workItem from="1546045521792" duration="9476000" />
     </task>
     <task id="LOCAL-00001" summary="12-24">
       <created>1545632506514</created>
@@ -734,7 +688,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545976010930</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="12-27">
+      <created>1546060722225</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1546060722225</updated>
+    </task>
+    <task id="LOCAL-00018" summary="12-27">
+      <created>1546061054981</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1546061054981</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -761,7 +729,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624753000" />
+    <option name="totallyTimeSpent" value="625750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1235,17 +1203,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/juzuan/advertiser/rpts/service/impl/AdzoneListBindServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1750">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
         </state>
       </provider>
     </entry>
