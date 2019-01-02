@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.juzuan.advertiser.rpts.mapper.TargetAdzoneRptsTotalGetMapper" >
-  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.TargetAdzoneRptsTotalGet" >
-    <id column="id" property="id" jdbcType="INTEGER" />
+<mapper namespace="com.juzuan.advertiser.rpts.mapper.AdvertiserAccountRptsTotalGetMapper" >
+  <resultMap id="BaseResultMap" type="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsTotalGet" >
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="taobao_user_id" property="taobaoUserId" jdbcType="VARCHAR" />
-    <result column="campaign_id" property="campaignId" jdbcType="BIGINT" />
-    <result column="campaign_name" property="campaignName" jdbcType="VARCHAR" />
-    <result column="adgroup_id" property="adgroupId" jdbcType="BIGINT" />
-    <result column="adgroup_name" property="adgroupName" jdbcType="VARCHAR" />
-    <result column="target_id" property="targetId" jdbcType="BIGINT" />
-    <result column="adzone_id" property="adzoneId" jdbcType="BIGINT" />
-    <result column="adzone_name" property="adzoneName" jdbcType="VARCHAR" />
+    <result column="charge" property="charge" jdbcType="VARCHAR" />
+    <result column="click" property="click" jdbcType="VARCHAR" />
+    <result column="ad_pv" property="adPv" jdbcType="VARCHAR" />
+    <result column="ecpm" property="ecpm" jdbcType="VARCHAR" />
+    <result column="ctr" property="ctr" jdbcType="VARCHAR" />
+    <result column="ecpc" property="ecpc" jdbcType="VARCHAR" />
     <result column="cvr" property="cvr" jdbcType="VARCHAR" />
     <result column="alipay_inshop_amt" property="alipayInshopAmt" jdbcType="VARCHAR" />
     <result column="alipay_in_shop_num" property="alipayInShopNum" jdbcType="VARCHAR" />
@@ -23,12 +22,6 @@
     <result column="avg_access_time" property="avgAccessTime" jdbcType="VARCHAR" />
     <result column="deep_inshop_uv" property="deepInshopUv" jdbcType="VARCHAR" />
     <result column="uv" property="uv" jdbcType="VARCHAR" />
-    <result column="ecpm" property="ecpm" jdbcType="VARCHAR" />
-    <result column="ecpc" property="ecpc" jdbcType="VARCHAR" />
-    <result column="ctr" property="ctr" jdbcType="VARCHAR" />
-    <result column="charge" property="charge" jdbcType="VARCHAR" />
-    <result column="click" property="click" jdbcType="VARCHAR" />
-    <result column="ad_pv" property="adPv" jdbcType="VARCHAR" />
     <result column="roi" property="roi" jdbcType="VARCHAR" />
     <result column="commodity_purchase_rate" property="commodityPurchaseRate" jdbcType="VARCHAR" />
     <result column="commodity_collection_rate" property="commodityCollectionRate" jdbcType="VARCHAR" />
@@ -40,59 +33,55 @@
     <result column="order_average_amount" property="orderAverageAmount" jdbcType="VARCHAR" />
     <result column="average_uv_value" property="averageUvValue" jdbcType="VARCHAR" />
     <result column="effect" property="effect" jdbcType="BIGINT" />
+    <result column="campaign_model" property="campaignModel" jdbcType="BIGINT" />
     <result column="effect_type" property="effectType" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, taobao_user_id, campaign_id, campaign_name, adgroup_id, adgroup_name, target_id, 
-    adzone_id, adzone_name, cvr, alipay_inshop_amt, alipay_in_shop_num, gmv_inshop_amt, 
-    gmv_inshop_num, cart_num, dir_shop_col_num, inshop_item_col_num, avg_access_page_num, 
-    avg_access_time, deep_inshop_uv, uv, ecpm, ecpc, ctr, charge, click, ad_pv, roi, 
-    commodity_purchase_rate, commodity_collection_rate, total_collection_rate, commodity_plus_cost, 
-    commodity_collection_cost, total_collection_plus_cost, average_cost_of_order, order_average_amount, 
-    average_uv_value, effect, effect_type
+    id, taobao_user_id, charge, click, ad_pv, ecpm, ctr, ecpc, cvr, alipay_inshop_amt, 
+    alipay_in_shop_num, gmv_inshop_amt, gmv_inshop_num, cart_num, dir_shop_col_num, inshop_item_col_num, 
+    avg_access_page_num, avg_access_time, deep_inshop_uv, uv, roi, commodity_purchase_rate, 
+    commodity_collection_rate, total_collection_rate, commodity_plus_cost, commodity_collection_cost, 
+    total_collection_plus_cost, average_cost_of_order, order_average_amount, average_uv_value, 
+    effect, campaign_model, effect_type
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from advertiser_target_adzone_rpts_total_get
-    where id = #{id,jdbcType=INTEGER}
+    from advertiser_account_rpts_total_get
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertiser_target_adzone_rpts_total_get
-    where id = #{id,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from advertiser_account_rpts_total_get
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.TargetAdzoneRptsTotalGet" >
-    insert ignore into advertiser_target_adzone_rpts_total_get (id, taobao_user_id, campaign_id,
-      campaign_name, adgroup_id, adgroup_name, 
-      target_id, adzone_id, adzone_name, 
-      cvr, alipay_inshop_amt, alipay_in_shop_num, 
-      gmv_inshop_amt, gmv_inshop_num, cart_num, 
-      dir_shop_col_num, inshop_item_col_num, avg_access_page_num, 
-      avg_access_time, deep_inshop_uv, uv, 
-      ecpm, ecpc, ctr, charge, 
-      click, ad_pv, roi, commodity_purchase_rate, 
+  <insert id="insert" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsTotalGet" >
+    insert into advertiser_account_rpts_total_get (id, taobao_user_id, charge, 
+      click, ad_pv, ecpm, 
+      ctr, ecpc, cvr, alipay_inshop_amt, 
+      alipay_in_shop_num, gmv_inshop_amt, gmv_inshop_num, 
+      cart_num, dir_shop_col_num, inshop_item_col_num, 
+      avg_access_page_num, avg_access_time, deep_inshop_uv, 
+      uv, roi, commodity_purchase_rate, 
       commodity_collection_rate, total_collection_rate, 
       commodity_plus_cost, commodity_collection_cost, 
       total_collection_plus_cost, average_cost_of_order, 
       order_average_amount, average_uv_value, effect, 
-      effect_type)
-    values (#{id,jdbcType=INTEGER}, #{taobaoUserId,jdbcType=VARCHAR}, #{campaignId,jdbcType=BIGINT}, 
-      #{campaignName,jdbcType=VARCHAR}, #{adgroupId,jdbcType=BIGINT}, #{adgroupName,jdbcType=VARCHAR}, 
-      #{targetId,jdbcType=BIGINT}, #{adzoneId,jdbcType=BIGINT}, #{adzoneName,jdbcType=VARCHAR}, 
-      #{cvr,jdbcType=VARCHAR}, #{alipayInshopAmt,jdbcType=VARCHAR}, #{alipayInShopNum,jdbcType=VARCHAR}, 
-      #{gmvInshopAmt,jdbcType=VARCHAR}, #{gmvInshopNum,jdbcType=VARCHAR}, #{cartNum,jdbcType=VARCHAR}, 
-      #{dirShopColNum,jdbcType=VARCHAR}, #{inshopItemColNum,jdbcType=VARCHAR}, #{avgAccessPageNum,jdbcType=VARCHAR}, 
-      #{avgAccessTime,jdbcType=VARCHAR}, #{deepInshopUv,jdbcType=VARCHAR}, #{uv,jdbcType=VARCHAR}, 
-      #{ecpm,jdbcType=VARCHAR}, #{ecpc,jdbcType=VARCHAR}, #{ctr,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
-      #{click,jdbcType=VARCHAR}, #{adPv,jdbcType=VARCHAR}, #{roi,jdbcType=VARCHAR}, #{commodityPurchaseRate,jdbcType=VARCHAR}, 
+      campaign_model, effect_type)
+    values (#{id,jdbcType=BIGINT}, #{taobaoUserId,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
+      #{click,jdbcType=VARCHAR}, #{adPv,jdbcType=VARCHAR}, #{ecpm,jdbcType=VARCHAR}, 
+      #{ctr,jdbcType=VARCHAR}, #{ecpc,jdbcType=VARCHAR}, #{cvr,jdbcType=VARCHAR}, #{alipayInshopAmt,jdbcType=VARCHAR}, 
+      #{alipayInShopNum,jdbcType=VARCHAR}, #{gmvInshopAmt,jdbcType=VARCHAR}, #{gmvInshopNum,jdbcType=VARCHAR}, 
+      #{cartNum,jdbcType=VARCHAR}, #{dirShopColNum,jdbcType=VARCHAR}, #{inshopItemColNum,jdbcType=VARCHAR}, 
+      #{avgAccessPageNum,jdbcType=VARCHAR}, #{avgAccessTime,jdbcType=VARCHAR}, #{deepInshopUv,jdbcType=VARCHAR}, 
+      #{uv,jdbcType=VARCHAR}, #{roi,jdbcType=VARCHAR}, #{commodityPurchaseRate,jdbcType=VARCHAR}, 
       #{commodityCollectionRate,jdbcType=VARCHAR}, #{totalCollectionRate,jdbcType=VARCHAR}, 
       #{commodityPlusCost,jdbcType=VARCHAR}, #{commodityCollectionCost,jdbcType=VARCHAR}, 
       #{totalCollectionPlusCost,jdbcType=VARCHAR}, #{averageCostOfOrder,jdbcType=VARCHAR}, 
       #{orderAverageAmount,jdbcType=VARCHAR}, #{averageUvValue,jdbcType=VARCHAR}, #{effect,jdbcType=BIGINT}, 
-      #{effectType,jdbcType=VARCHAR})
+      #{campaignModel,jdbcType=BIGINT}, #{effectType,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.TargetAdzoneRptsTotalGet" >
-    insert into advertiser_target_adzone_rpts_total_get
+  <insert id="insertSelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsTotalGet" >
+    insert into advertiser_account_rpts_total_get
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -100,26 +89,23 @@
       <if test="taobaoUserId != null" >
         taobao_user_id,
       </if>
-      <if test="campaignId != null" >
-        campaign_id,
+      <if test="charge != null" >
+        charge,
       </if>
-      <if test="campaignName != null" >
-        campaign_name,
+      <if test="click != null" >
+        click,
       </if>
-      <if test="adgroupId != null" >
-        adgroup_id,
+      <if test="adPv != null" >
+        ad_pv,
       </if>
-      <if test="adgroupName != null" >
-        adgroup_name,
+      <if test="ecpm != null" >
+        ecpm,
       </if>
-      <if test="targetId != null" >
-        target_id,
+      <if test="ctr != null" >
+        ctr,
       </if>
-      <if test="adzoneId != null" >
-        adzone_id,
-      </if>
-      <if test="adzoneName != null" >
-        adzone_name,
+      <if test="ecpc != null" >
+        ecpc,
       </if>
       <if test="cvr != null" >
         cvr,
@@ -157,24 +143,6 @@
       <if test="uv != null" >
         uv,
       </if>
-      <if test="ecpm != null" >
-        ecpm,
-      </if>
-      <if test="ecpc != null" >
-        ecpc,
-      </if>
-      <if test="ctr != null" >
-        ctr,
-      </if>
-      <if test="charge != null" >
-        charge,
-      </if>
-      <if test="click != null" >
-        click,
-      </if>
-      <if test="adPv != null" >
-        ad_pv,
-      </if>
       <if test="roi != null" >
         roi,
       </if>
@@ -208,37 +176,37 @@
       <if test="effect != null" >
         effect,
       </if>
+      <if test="campaignModel != null" >
+        campaign_model,
+      </if>
       <if test="effectType != null" >
         effect_type,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="taobaoUserId != null" >
         #{taobaoUserId,jdbcType=VARCHAR},
       </if>
-      <if test="campaignId != null" >
-        #{campaignId,jdbcType=BIGINT},
+      <if test="charge != null" >
+        #{charge,jdbcType=VARCHAR},
       </if>
-      <if test="campaignName != null" >
-        #{campaignName,jdbcType=VARCHAR},
+      <if test="click != null" >
+        #{click,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupId != null" >
-        #{adgroupId,jdbcType=BIGINT},
+      <if test="adPv != null" >
+        #{adPv,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupName != null" >
-        #{adgroupName,jdbcType=VARCHAR},
+      <if test="ecpm != null" >
+        #{ecpm,jdbcType=VARCHAR},
       </if>
-      <if test="targetId != null" >
-        #{targetId,jdbcType=BIGINT},
+      <if test="ctr != null" >
+        #{ctr,jdbcType=VARCHAR},
       </if>
-      <if test="adzoneId != null" >
-        #{adzoneId,jdbcType=BIGINT},
-      </if>
-      <if test="adzoneName != null" >
-        #{adzoneName,jdbcType=VARCHAR},
+      <if test="ecpc != null" >
+        #{ecpc,jdbcType=VARCHAR},
       </if>
       <if test="cvr != null" >
         #{cvr,jdbcType=VARCHAR},
@@ -276,24 +244,6 @@
       <if test="uv != null" >
         #{uv,jdbcType=VARCHAR},
       </if>
-      <if test="ecpm != null" >
-        #{ecpm,jdbcType=VARCHAR},
-      </if>
-      <if test="ecpc != null" >
-        #{ecpc,jdbcType=VARCHAR},
-      </if>
-      <if test="ctr != null" >
-        #{ctr,jdbcType=VARCHAR},
-      </if>
-      <if test="charge != null" >
-        #{charge,jdbcType=VARCHAR},
-      </if>
-      <if test="click != null" >
-        #{click,jdbcType=VARCHAR},
-      </if>
-      <if test="adPv != null" >
-        #{adPv,jdbcType=VARCHAR},
-      </if>
       <if test="roi != null" >
         #{roi,jdbcType=VARCHAR},
       </if>
@@ -327,37 +277,37 @@
       <if test="effect != null" >
         #{effect,jdbcType=BIGINT},
       </if>
+      <if test="campaignModel != null" >
+        #{campaignModel,jdbcType=BIGINT},
+      </if>
       <if test="effectType != null" >
         #{effectType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.TargetAdzoneRptsTotalGet" >
-    update advertiser_target_adzone_rpts_total_get
+  <update id="updateByPrimaryKeySelective" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsTotalGet" >
+    update advertiser_account_rpts_total_get
     <set >
       <if test="taobaoUserId != null" >
         taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
       </if>
-      <if test="campaignId != null" >
-        campaign_id = #{campaignId,jdbcType=BIGINT},
+      <if test="charge != null" >
+        charge = #{charge,jdbcType=VARCHAR},
       </if>
-      <if test="campaignName != null" >
-        campaign_name = #{campaignName,jdbcType=VARCHAR},
+      <if test="click != null" >
+        click = #{click,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupId != null" >
-        adgroup_id = #{adgroupId,jdbcType=BIGINT},
+      <if test="adPv != null" >
+        ad_pv = #{adPv,jdbcType=VARCHAR},
       </if>
-      <if test="adgroupName != null" >
-        adgroup_name = #{adgroupName,jdbcType=VARCHAR},
+      <if test="ecpm != null" >
+        ecpm = #{ecpm,jdbcType=VARCHAR},
       </if>
-      <if test="targetId != null" >
-        target_id = #{targetId,jdbcType=BIGINT},
+      <if test="ctr != null" >
+        ctr = #{ctr,jdbcType=VARCHAR},
       </if>
-      <if test="adzoneId != null" >
-        adzone_id = #{adzoneId,jdbcType=BIGINT},
-      </if>
-      <if test="adzoneName != null" >
-        adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      <if test="ecpc != null" >
+        ecpc = #{ecpc,jdbcType=VARCHAR},
       </if>
       <if test="cvr != null" >
         cvr = #{cvr,jdbcType=VARCHAR},
@@ -395,24 +345,6 @@
       <if test="uv != null" >
         uv = #{uv,jdbcType=VARCHAR},
       </if>
-      <if test="ecpm != null" >
-        ecpm = #{ecpm,jdbcType=VARCHAR},
-      </if>
-      <if test="ecpc != null" >
-        ecpc = #{ecpc,jdbcType=VARCHAR},
-      </if>
-      <if test="ctr != null" >
-        ctr = #{ctr,jdbcType=VARCHAR},
-      </if>
-      <if test="charge != null" >
-        charge = #{charge,jdbcType=VARCHAR},
-      </if>
-      <if test="click != null" >
-        click = #{click,jdbcType=VARCHAR},
-      </if>
-      <if test="adPv != null" >
-        ad_pv = #{adPv,jdbcType=VARCHAR},
-      </if>
       <if test="roi != null" >
         roi = #{roi,jdbcType=VARCHAR},
       </if>
@@ -446,22 +378,24 @@
       <if test="effect != null" >
         effect = #{effect,jdbcType=BIGINT},
       </if>
+      <if test="campaignModel != null" >
+        campaign_model = #{campaignModel,jdbcType=BIGINT},
+      </if>
       <if test="effectType != null" >
         effect_type = #{effectType,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.TargetAdzoneRptsTotalGet" >
-    update advertiser_target_adzone_rpts_total_get
+  <update id="updateByPrimaryKey" parameterType="com.juzuan.advertiser.rpts.model.AdvertiserAccountRptsTotalGet" >
+    update advertiser_account_rpts_total_get
     set taobao_user_id = #{taobaoUserId,jdbcType=VARCHAR},
-      campaign_id = #{campaignId,jdbcType=BIGINT},
-      campaign_name = #{campaignName,jdbcType=VARCHAR},
-      adgroup_id = #{adgroupId,jdbcType=BIGINT},
-      adgroup_name = #{adgroupName,jdbcType=VARCHAR},
-      target_id = #{targetId,jdbcType=BIGINT},
-      adzone_id = #{adzoneId,jdbcType=BIGINT},
-      adzone_name = #{adzoneName,jdbcType=VARCHAR},
+      charge = #{charge,jdbcType=VARCHAR},
+      click = #{click,jdbcType=VARCHAR},
+      ad_pv = #{adPv,jdbcType=VARCHAR},
+      ecpm = #{ecpm,jdbcType=VARCHAR},
+      ctr = #{ctr,jdbcType=VARCHAR},
+      ecpc = #{ecpc,jdbcType=VARCHAR},
       cvr = #{cvr,jdbcType=VARCHAR},
       alipay_inshop_amt = #{alipayInshopAmt,jdbcType=VARCHAR},
       alipay_in_shop_num = #{alipayInShopNum,jdbcType=VARCHAR},
@@ -474,12 +408,6 @@
       avg_access_time = #{avgAccessTime,jdbcType=VARCHAR},
       deep_inshop_uv = #{deepInshopUv,jdbcType=VARCHAR},
       uv = #{uv,jdbcType=VARCHAR},
-      ecpm = #{ecpm,jdbcType=VARCHAR},
-      ecpc = #{ecpc,jdbcType=VARCHAR},
-      ctr = #{ctr,jdbcType=VARCHAR},
-      charge = #{charge,jdbcType=VARCHAR},
-      click = #{click,jdbcType=VARCHAR},
-      ad_pv = #{adPv,jdbcType=VARCHAR},
       roi = #{roi,jdbcType=VARCHAR},
       commodity_purchase_rate = #{commodityPurchaseRate,jdbcType=VARCHAR},
       commodity_collection_rate = #{commodityCollectionRate,jdbcType=VARCHAR},
@@ -491,7 +419,8 @@
       order_average_amount = #{orderAverageAmount,jdbcType=VARCHAR},
       average_uv_value = #{averageUvValue,jdbcType=VARCHAR},
       effect = #{effect,jdbcType=BIGINT},
+      campaign_model = #{campaignModel,jdbcType=BIGINT},
       effect_type = #{effectType,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

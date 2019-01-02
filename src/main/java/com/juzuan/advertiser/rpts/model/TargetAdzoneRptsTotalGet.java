@@ -75,6 +75,10 @@ public class TargetAdzoneRptsTotalGet {
 
     private String averageUvValue;
 
+    private Long effect;
+
+    private String effectType;
+
     public Integer getId() {
         return id;
     }
@@ -369,5 +373,21 @@ public class TargetAdzoneRptsTotalGet {
 
     public void setAverageUvValue(String averageUvValue) {
         this.averageUvValue = averageUvValue == null ? null : averageUvValue.trim();
+    }
+
+    public Long getEffect() {
+        return effect;
+    }
+
+    public void setEffect(Long effect) {
+        this.effect = effect;
+    }
+
+    public String getEffectType() {
+        return effectType;
+    }
+
+    public void setEffectType(String effectType) {
+        this.effectType = effectType == null ? null : effectType.trim();
     }
 }

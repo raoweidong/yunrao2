@@ -32,7 +32,8 @@ public class AdvertiserCampaignRptsTotalGetServiceImpl {
     private RequestMapper requestMapper;
     @Autowired
     private AdvertiserCampaignRptsTotalGetMapper advertiserCampaignRptsTotalGetMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每周周日3:00
+    @Scheduled(cron = "0 0 3 1/7 * ?")
     public String parseCampaign(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -41,7 +42,7 @@ public class AdvertiserCampaignRptsTotalGetServiceImpl {
         System.out.println(time);
         //获取系统前一天时间
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE,-1);
+        calendar.add(Calendar.DATE,-7);
         String yestime = sdf.format(calendar.getTime());
         List<Request> requests = requestMapper.selectAllRequest();
         for (Request request:requests) {
@@ -50,8 +51,8 @@ public class AdvertiserCampaignRptsTotalGetServiceImpl {
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserCampaignRptsTotalGetRequest req = new ZuanshiAdvertiserCampaignRptsTotalGetRequest();
-                req.setStartTime("2018-08-29");
-                req.setEndTime("2018-11-27");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
                 req.setEffectType(request.getEffectType());
