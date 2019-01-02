@@ -43,7 +43,8 @@ public class AdvertiserAdzoneRptsDayGetServiceImpl implements AdvertiserAdzoneRp
     private AdzoneListBindMapper adzoneListBindMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "0 0 3 * * ?")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ?")
     public String getAdzone(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");

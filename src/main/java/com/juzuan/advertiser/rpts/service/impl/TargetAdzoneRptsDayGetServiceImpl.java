@@ -42,7 +42,8 @@ public class TargetAdzoneRptsDayGetServiceImpl implements TargetAdzoneRptsDayGet
     private TargetAdzoneRptsDayGetMapper targetAdzoneRptsDayGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ?")
     public String TargetAdzoneRptsDayGet(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -67,8 +68,8 @@ public class TargetAdzoneRptsDayGetServiceImpl implements TargetAdzoneRptsDayGet
                 req.setTargetId(cl.getTargetId());
                 req.setEffectType(request.getEffectType());
                 req.setEffect(request.getEffect());
-                req.setStartTime("2018-11-28");
-                req.setEndTime("2018-12-20");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 ZuanshiAdvertiserTargetAdzoneRptsDayGetResponse rsp = null;
                 try {
                     rsp = client.execute(req, sessionKey);

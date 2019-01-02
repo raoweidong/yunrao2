@@ -42,7 +42,8 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
     private CrowdListMapper crowdListMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ?")
     public String TargetRptsDayGet(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -60,8 +61,8 @@ public class TargetRptsDayGetServiceImpl implements TargetRptsDayGetService {
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserTargetRptsDayGetRequest req = new ZuanshiAdvertiserTargetRptsDayGetRequest();
-                req.setStartTime("2018-09-20");
-                req.setEndTime("2018-12-20");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 req.setCampaignId(cro.getCampaignId());
                 req.setAdgroupId(cro.getAdgroupId());
                 req.setTargetId(cro.getTargetId());

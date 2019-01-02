@@ -39,7 +39,8 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
     private CreativeListBindMapper creativeListBindMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ?")
     public String creativeRptsDayget(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -57,8 +58,8 @@ public class CreativeRptsDaygetServiceImpl implements CreativeRptsDaygetService 
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserCreativeRptsDayGetRequest req = new ZuanshiAdvertiserCreativeRptsDayGetRequest();
-                req.setStartTime("2018-8-29");
-                req.setEndTime("2018-11-27");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 req.setCampaignId(clb.getCampaignId());
                 req.setAdgroupId(clb.getAdgroupId());
                 req.setCreativeId(clb.getCreativeId());

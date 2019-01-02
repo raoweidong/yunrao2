@@ -35,7 +35,8 @@ public class AdvertiserAccountRptsDayServiceImpl {
     private AdvertiserAccountRptsDayGetMapper advertiserAccountRptsDayGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "0 0 3 * * ? ")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ? ")
     public void parseAndSaveAccountDays(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -54,8 +55,8 @@ public class AdvertiserAccountRptsDayServiceImpl {
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserAccountRptsDayGetRequest req = new ZuanshiAdvertiserAccountRptsDayGetRequest();
-                req.setStartTime("2018-11-01");
-                req.setEndTime("2018-11-10");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
                 req.setEffectType(request.getEffectType());

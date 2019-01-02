@@ -42,8 +42,8 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
     private AdgroupRptsDayGetMapper adgroupRptsDayGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新，每天3:00
+    @Scheduled(cron = "0 0 3 * * ?")
     public String AdgroupRptsDayGet() throws ApiException {
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -62,8 +62,10 @@ public class AdgroupRptsDayGetServiceImpl implements AdgroupRptsDayGetService {
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserAdgroupRptsDayGetRequest req = new ZuanshiAdvertiserAdgroupRptsDayGetRequest();
-                req.setStartTime("2018-11-06");
-                req.setEndTime("2018-11-12");
+                //req.setStartTime("2018-11-06");
+                req.setStartTime(yestime);
+                //req.setEndTime("2018-11-12");
+                req.setEndTime(time);
                 req.setCampaignId(ad.getCampaignId());
                 req.setAdgroupId(ad.getAdgroupId());
                 req.setEffect(request.getEffect());

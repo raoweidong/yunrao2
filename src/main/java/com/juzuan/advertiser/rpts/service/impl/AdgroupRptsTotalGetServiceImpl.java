@@ -42,16 +42,17 @@ public class AdgroupRptsTotalGetServiceImpl implements AdgroupRptsTotalGetServic
     private AdgroupRptsTotalGetMapper adgroupRptsTotalGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron = "*/5 * * * * ?")
+    //定时更新：每周周日3:20
+    @Scheduled(cron = "0 20 3 1/7 * ?")
     public String AdgroupRptsTotalGet(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         //获取系统当前时间
         String time= sdf.format(new java.util.Date());
         System.out.println(time);
-        //获取系统前一天时间
+        //获取系统前七天时间
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE,-1);
+        calendar.add(Calendar.DATE,-7);
         String yestime = sdf.format(calendar.getTime());
         List<Request> requests = requestMapper.selectAllRequest();
         for (Request request:requests) {
@@ -61,8 +62,10 @@ public class AdgroupRptsTotalGetServiceImpl implements AdgroupRptsTotalGetServic
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserAdgroupRptsTotalGetRequest req = new ZuanshiAdvertiserAdgroupRptsTotalGetRequest();
-                req.setStartTime("2018-08-29");
-                req.setEndTime("2018-11-30");
+                //req.setStartTime("2018-08-29");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
+                //req.setEndTime("2018-11-30");
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
                 req.setEffectType(request.getEffectType());

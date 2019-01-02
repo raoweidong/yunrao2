@@ -36,8 +36,8 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
     private AdvertiserCampaignRptsDayGetMapper advertiserCampaignRptsDayGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-
-    //@Scheduled( cron = "*/5 * * * * ?")
+    //定时更新，每天3:00
+    @Scheduled( cron = "0 0 3 * * ? ")
     public String getAdvertiserCampaignRptsDay(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -56,8 +56,10 @@ public class AdvertiserCampaignRptsDayGetServirceImpl implements AdvertiserCampa
                 String sessionKey = taobaoAuthorizeUser.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserCampaignRptsDayGetRequest req = new ZuanshiAdvertiserCampaignRptsDayGetRequest();
-                req.setStartTime("2018-11-09");
-                req.setEndTime("2018-11-12");
+                //req.setStartTime("2018-11-09");
+                req.setStartTime(yestime);
+                //req.setEndTime("2018-11-22");
+                req.setEndTime(time);
                 req.setCampaignId(id);
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
