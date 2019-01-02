@@ -24,6 +24,7 @@ public class AdzoneListBindController {
         AdzoneListBindUpdate adzoneListBindUpdate =new AdzoneListBindUpdate();
 
         String status =  adzoneListBindService.update(taobaoUserId,campaignId,adgroupId);
+        System.out.println(status);
         if (status.equals("200")){
             adzoneListBindUpdate.setAdgroupId(adgroupId);
             adzoneListBindUpdate.setCampaignId(campaignId);

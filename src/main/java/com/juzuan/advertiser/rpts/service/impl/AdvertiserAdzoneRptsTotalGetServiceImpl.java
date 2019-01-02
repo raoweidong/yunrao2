@@ -7,7 +7,6 @@ import com.juzuan.advertiser.rpts.mapper.AdvertiserAdzoneRptsTotalGetMapper;
 import com.juzuan.advertiser.rpts.mapper.RequestMapper;
 import com.juzuan.advertiser.rpts.mapper.TaobaoAuthorizeUserMapper;
 import com.juzuan.advertiser.rpts.model.AdvertiserAdzoneRptsTotalGet;
-import com.juzuan.advertiser.rpts.model.AdzoneRptsDay;
 import com.juzuan.advertiser.rpts.model.Request;
 import com.juzuan.advertiser.rpts.model.TaobaoAuthorizeUser;
 import com.taobao.api.ApiException;
@@ -17,6 +16,7 @@ import com.taobao.api.request.ZuanshiAdvertiserAdzoneRptsTotalGetRequest;
 import com.taobao.api.response.ZuanshiAdvertiserAdzoneRptsTotalGetResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -34,7 +34,8 @@ public class AdvertiserAdzoneRptsTotalGetServiceImpl {
     private AdvertiserAdzoneRptsTotalGetMapper advertiserAdzoneRptsTotalGetMapper;
     @Autowired
     private RequestMapper requestMapper;
-    //@Scheduled(cron ="*/5 * * * * ?")
+    //定时更新：每周周日3:00
+    @Scheduled(cron ="0 0 3 1/7 * ?")
     public void parseAndSaveAdzoneTotal(){
         //时间格式化
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -52,8 +53,8 @@ public class AdvertiserAdzoneRptsTotalGetServiceImpl {
                 String sessionKey = user.getAccessToken();
                 TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
                 ZuanshiAdvertiserAdzoneRptsTotalGetRequest req = new ZuanshiAdvertiserAdzoneRptsTotalGetRequest();
-                req.setStartTime("2018-08-29");
-                req.setEndTime("2018-11-27");
+                req.setStartTime(yestime);
+                req.setEndTime(time);
                 req.setEffect(request.getEffect());
                 req.setCampaignModel(request.getCampaignModel());
                 req.setEffectType(request.getEffectType());

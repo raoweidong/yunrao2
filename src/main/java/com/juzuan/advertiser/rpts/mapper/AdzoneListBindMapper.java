@@ -20,5 +20,6 @@ public interface AdzoneListBindMapper {
     int updateByPrimaryKeySelective(AdzoneListBind record);
 
     int updateByPrimaryKey(AdzoneListBind record);
+
     List<AdzoneListBind> selectAllAdzoneListBind();
 }
